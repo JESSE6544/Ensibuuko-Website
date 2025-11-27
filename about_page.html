@@ -5,62 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>About Ensibuuko</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-  <style>
-    :root{
-      --navy:#0A1A3A;
-      --accent:#00D4AA;
-      --accent-2:#10B981;
-      --light:#E8FBEA;
-      --max-width:1200px;
-    }
-
-    body{margin:0;font-family:'Inter',sans-serif;background:#ccf9dd;color:#0B1220;line-height:1.6;}
-    header{background:var(--navy);padding:1rem 0;position:sticky;top:0;z-index:50;transition:transform 0.4s ease;box-shadow:0 2px 12px rgba(0,0,0,0.2);} 
-    nav{max-width:var(--max-width);margin:0 auto;display:flex;justify-content:space-between;align-items:center;padding:0 1rem;} 
-    nav a{text-decoration:none;color:white;font-weight:600;margin-left:1rem;} nav a:hover{opacity:0.85;}
-
-    .hero{
-      position:relative;
-      height:55vh;
-      min-height:380px;
-      display:flex;flex-direction:column;justify-content:center;align-items:center;
-      text-align:center;
-      background:url('assets/images/team.png') center/cover no-repeat;
-      color:white;
-      overflow:hidden;
-    }
-    .hero::before{
-      content:"";position:absolute;inset:0;background:rgba(0,0,0,0.55);z-index:0;
-    }
-    .hero *{position:relative;z-index:1;animation:fadeIn 1.4s ease-out forwards;opacity:0;}
-    @keyframes fadeIn{0%{opacity:0;transform:translateY(20px);}100%{opacity:1;transform:translateY(0);}}
-
-    .section{max-width:var(--max-width);margin:4rem auto;padding:0 1rem;}
-    h2.section-title{text-align:center;font-size:2.2rem;font-weight:800;margin-bottom:2rem;color:#0A1A3A;}
-
-    .metrics-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.5rem;}
-    .metric-card{background:white;padding:2rem;border-radius:18px;box-shadow:0 4px 12px rgba(0,0,0,0.08);text-align:center;}
-    .metric-card h3{font-size:2rem;color:var(--accent-2);margin:0;}
-    .metric-card p{margin:0;margin-top:0.5rem;color:#475569;}
-
-    .partners{display:flex;flex-wrap:wrap;gap:2rem;justify-content:center;align-items:center;margin-top:2rem;}
-    .partners img{height:60px;object-fit:contain;filter:grayscale(100%);opacity:0.9;transition:0.3s;}
-    .partners img:hover{filter:none;opacity:1;}
-
-    .approach-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:2rem;margin-top:2rem;}
-    .approach-card{background:white;padding:2rem;border-radius:18px;box-shadow:0 4px 12px rgba(0,0,0,0.08);} 
-    .approach-card h3{margin-top:0;color:#0A1A3A;font-size:1.4rem;font-weight:700;}
-
-    footer{background:var(--navy);color:white;padding:2rem 1rem;margin-top:4rem;text-align:center;} 
-
-    @media(max-width:768px){
-      .hero h1{font-size:2rem;} 
-      .hero p{font-size:1rem;}
-      .impact-wrapper{flex-direction:column;gap:2rem;}
-      .impact-divider{width:60px;height:1px;}
-      .team-track{flex-direction:column;align-items:center;}
-    }
-  </style>
+<link rel="stylesheet" href="css/about.css">
 </head>
 <body>
 
@@ -71,7 +16,7 @@
       <span style="color:white;font-weight:800;font-size:1.2rem;">Ensibuuko</span>
     </div>
     <div>
-      <a href="index.html">Home</a>
+      <a href="home.html">Home</a>
       <a href="products_page.html">Products</a>
       <a href="about_page.html">About</a>
       <a href="contact.html">Contact</a>
