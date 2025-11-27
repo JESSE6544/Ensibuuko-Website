@@ -1,0 +1,433 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>About Ensibuuko</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --navy:#0A1A3A;
+      --accent:#00D4AA;
+      --accent-2:#10B981;
+      --light:#E8FBEA;
+      --max-width:1200px;
+    }
+
+    body{margin:0;font-family:'Inter',sans-serif;background:#ccf9dd;color:#0B1220;line-height:1.6;}
+    header{background:var(--navy);padding:1rem 0;position:sticky;top:0;z-index:50;transition:transform 0.4s ease;box-shadow:0 2px 12px rgba(0,0,0,0.2);} 
+    nav{max-width:var(--max-width);margin:0 auto;display:flex;justify-content:space-between;align-items:center;padding:0 1rem;} 
+    nav a{text-decoration:none;color:white;font-weight:600;margin-left:1rem;} nav a:hover{opacity:0.85;}
+
+    .hero{
+      position:relative;
+      height:55vh;
+      min-height:380px;
+      display:flex;flex-direction:column;justify-content:center;align-items:center;
+      text-align:center;
+      background:url('assets/images/team.png') center/cover no-repeat;
+      color:white;
+      overflow:hidden;
+    }
+    .hero::before{
+      content:"";position:absolute;inset:0;background:rgba(0,0,0,0.55);z-index:0;
+    }
+    .hero *{position:relative;z-index:1;animation:fadeIn 1.4s ease-out forwards;opacity:0;}
+    @keyframes fadeIn{0%{opacity:0;transform:translateY(20px);}100%{opacity:1;transform:translateY(0);}}
+
+    .section{max-width:var(--max-width);margin:4rem auto;padding:0 1rem;}
+    h2.section-title{text-align:center;font-size:2.2rem;font-weight:800;margin-bottom:2rem;color:#0A1A3A;}
+
+    .metrics-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.5rem;}
+    .metric-card{background:white;padding:2rem;border-radius:18px;box-shadow:0 4px 12px rgba(0,0,0,0.08);text-align:center;}
+    .metric-card h3{font-size:2rem;color:var(--accent-2);margin:0;}
+    .metric-card p{margin:0;margin-top:0.5rem;color:#475569;}
+
+    .partners{display:flex;flex-wrap:wrap;gap:2rem;justify-content:center;align-items:center;margin-top:2rem;}
+    .partners img{height:60px;object-fit:contain;filter:grayscale(100%);opacity:0.9;transition:0.3s;}
+    .partners img:hover{filter:none;opacity:1;}
+
+    .approach-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:2rem;margin-top:2rem;}
+    .approach-card{background:white;padding:2rem;border-radius:18px;box-shadow:0 4px 12px rgba(0,0,0,0.08);} 
+    .approach-card h3{margin-top:0;color:#0A1A3A;font-size:1.4rem;font-weight:700;}
+
+    footer{background:var(--navy);color:white;padding:2rem 1rem;margin-top:4rem;text-align:center;} 
+
+    @media(max-width:768px){
+      .hero h1{font-size:2rem;} 
+      .hero p{font-size:1rem;}
+      .impact-wrapper{flex-direction:column;gap:2rem;}
+      .impact-divider{width:60px;height:1px;}
+      .team-track{flex-direction:column;align-items:center;}
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <div style="display:flex;align-items:center;gap:0.75rem;">
+      <img src="assets/images/LOGO EDITS v2-01.png" width="45" style="border-radius:10px;background:white;padding:4px;" alt="Ensibuuko Logo" />
+      <span style="color:white;font-weight:800;font-size:1.2rem;">Ensibuuko</span>
+    </div>
+    <div>
+      <a href="index.html">Home</a>
+      <a href="products_page.html">Products</a>
+      <a href="about_page.html">About</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </nav>
+</header>
+
+<section class="hero">
+  <h1 style="font-size:2.8rem;font-weight:800;margin-bottom:1rem;">Who we are</h1>
+  <p style="max-width:760px;font-size:1.2rem;font-weight:300;margin:0 auto;">
+    We are more than a software company. We are a team of passionate engineers and professionals that are deeply committed to solving the issues holding back financial inclusion in Africa.
+    <br><br>
+    We are deploying technology solutions to community-based savings and loans organisations so they can efficiently reach and serve unbanked and most underserved communities in Africa with affordable and relevant financial services. Our proprietary microfinance solutions help these organizations to automate data, process and payments and to become efficient and bankable.
+  </p>
+</section>
+
+<!-- Vision & Mission Section -->
+<section class="section">
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2rem;align-items:stretch;">
+
+    <div style="background:white;padding:2.5rem;border-radius:18px;box-shadow:0 6px 16px rgba(0,0,0,0.08);">
+      <h2 style="font-size:1.8rem;font-weight:800;color:#0A1A3A;margin-bottom:1rem;text-align:center;">Our vision</h2>
+      <p style="text-align:center;font-size:1.05rem;color:#334155;">
+        We envision a world where everyone has <span style="color:var(--accent-2);font-weight:700;">access to relevant and affordable</span> financial products and services; and possesses the knowledge needed to make sound decisions about using them.
+      </p>
+    </div>
+
+    <div style="background:white;padding:2.5rem;border-radius:18px;box-shadow:0 6px 16px rgba(0,0,0,0.08);">
+      <h2 style="font-size:1.8rem;font-weight:800;color:#0A1A3A;margin-bottom:1rem;text-align:center;">Our mission</h2>
+      <p style="text-align:center;font-size:1.05rem;color:#334155;">
+        Our mission is to <span style="color:var(--accent-2);font-weight:700;">drive financial inclusion</span> by growing the developing world's digital financial infrastructure.<br><br>
+        We do this by using our expertise to design and implement digital products and services that connect the unbanked to the wider financial ecosystem.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<!-- Meet The Team Slider Section -->
+<section class="section">
+  <h2 class="section-title">Meet The Team</h2>
+  <div class="team-slider" style="position:relative;overflow:hidden;width:100%;max-width:600px;margin:0 auto;">
+
+    <div class="team-track" style="display:flex;transition:transform 0.6s ease;width:100%;">
+      <!-- Team cards will be dynamically inserted here -->
+    </div>
+
+    <!-- Navigation Arrows -->
+    <button id="team-prev" style="position:absolute;left:10px;top:50%;transform:translateY(-50%);background:var(--accent-2);border:none;color:white;padding:0.8rem 1rem;border-radius:50%;cursor:pointer;z-index:10;font-size:1.2rem;width:45px;height:45px;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(0,0,0,0.2);">‹</button>
+    <button id="team-next" style="position:absolute;right:10px;top:50%;transform:translateY(-50%);background:var(--accent-2);border:none;color:white;padding:0.8rem 1rem;border-radius:50%;cursor:pointer;z-index:10;font-size:1.2rem;width:45px;height:45px;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(0,0,0,0.2);">›</button>
+
+    <!-- Navigation Dots -->
+    <div class="team-dots" style="display:flex;gap:0.5rem;justify-content:center;margin-top:1.5rem;flex-wrap:wrap;">
+      <!-- Dots will be dynamically inserted here -->
+    </div>
+  </div>
+
+  <!-- Group Photo Placeholder -->
+  <div style="max-width:900px;margin:2.5rem auto;">
+    <img src="assets/images/team.png" alt="Ensibuuko Team" style="width:100%;border-radius:18px;box-shadow:0 4px 16px rgba(0,0,0,0.1);object-fit:cover;max-height:420px;" />
+  </div>
+</section>
+
+<script>
+// Team data from your profiles
+const teamProfiles = [
+  {name:"Gerald Otim", title:"CEO", desc:"Founder and CEO leading strategy, partnerships, and innovation in digital financial services.", image:"assets/images/ceo.png"},
+  {name:"Ambrose Mwaka", title:"Chief Technology Officer (CTO)", desc:"Leads technology strategy, architecture, and product innovation for scalable digital financial solutions.", image:"assets/team/cto.jpg"},
+  {name:"Agatha Katangaza", title:"Head of Operations", desc:"Oversees organizational operations and drives efficiency across teams and projects.", image:"assets/team/ops.jpg"},
+  {name:"Sarah Ademun", title:"Communications & Partnerships Manager", desc:"Drives communication strategy, brand visibility, and partnership engagements to advance Ensibuuko's mission.", image:"assets/team/comms.jpg"},
+  {name:"Samuel Otim", title:"Product Manager", desc:"Leads product strategy and development, working with technology teams to deliver impactful digital financial solutions.", image:"assets/team/product.jpg"},
+  {name:"Ephrance Nalunga", title:"Finance Manager", desc:"Manages financial planning, reporting, budgeting, and compliance.", image:"assets/team/finance.jpg"},
+  {name:"Linda Letaru", title:"Operations Manager (SACCOs/MFIs)", desc:"Oversees operational delivery for SACCOs and MFIs, ensuring smooth onboarding, support, and system performance.", image:"assets/team/operations.jpg"},
+  {name:"Dikan Isaac", title:"VSLA Implementation Manager", desc:"Leads rollout and execution of VSLA digitalization projects, ensuring successful community adoption.", image:"assets/team/vsla.jpg"},
+  {name:"Steward Musinguzi", title:"Senior Software Developer", desc:"Develops and maintains key system features, ensuring high-quality code and platform performance.", image:"assets/team/developer.jpg"},
+  {name:"George Opuch", title:"DevOps Engineer", desc:"Manages infrastructure reliability, deployments, and system scalability across the technology stack.", image:"assets/team/devops.jpg"},
+  {name:"Benard Charles Ndege", title:"Data Scientist", desc:"Manages analytics and insights generation, supporting decision-making and product optimization.", image:"assets/team/data.jpg"},
+  {name:"Ebucu Jesse", title:"Junior Software Developer", desc:"Contributes to building and improving Ensibuuko's digital financial solutions, ensuring reliability and user-friendliness.", image:"assets/team/developer2.jpg"},
+  {name:"Joan Amoding Enabu", title:"Credit Operations Supervisor", desc:"Oversees Ensibuuko's credit operations, ensuring efficient loan processing, compliance, and customer support.", image:"assets/team/credit.jpg"},
+  {name:"Racho Mugoya", title:"Account Manager, Quick Loans", desc:"Manages the Quick Loans portfolio, supporting partners in loan performance and service delivery.", image:"assets/team/accounts.jpg"},
+  {name:"Joseph Mayeku", title:"Account Manager", desc:"Manages key partner accounts, ensuring effective service delivery and product adoption.", image:"assets/team/accounts2.jpg"},
+  {name:"Sheena Kemigisha", title:"Credit Administrator", desc:"Supports loan administration, ensuring accuracy and compliance in credit operations.", image:"assets/team/credit-admin.jpg"},
+  {name:"Naoeme Atwiine", title:"Human Resource Manager", desc:"Leads HR operations, talent development, and organizational culture.", image:"assets/team/hr.jpg"},
+  {name:"Nakandi Sauda", title:"Finance Officer", desc:"Supports financial operations, including reporting, reconciliations, and compliance.", image:"assets/team/finance2.jpg"},
+  {name:"Namuyiga Sharon", title:"Assistant Finance Officer", desc:"Assists in day-to-day finance tasks, supporting budgeting and expenditure tracking.", image:"assets/team/finance3.jpg"},
+  {name:"Acayo Prisca", title:"Graduate Trainee, VSLA Project Coordinator", desc:"Supports VSLA activities, field operations, and capacity-building initiatives.", image:"assets/team/trainee.jpg"}
+];
+
+let teamIndex = 0;
+const track = document.querySelector('.team-track');
+const dotsContainer = document.querySelector('.team-dots');
+
+// Initialize team slider
+function initTeamSlider() {
+  // Clear existing content
+  track.innerHTML = '';
+  dotsContainer.innerHTML = '';
+  
+  // Get the slider container width
+  const sliderWidth = track.parentElement.offsetWidth;
+  
+  // Create team cards - each card takes full visible width
+  teamProfiles.forEach((member, index) => {
+    const card = document.createElement('div');
+    card.className = 'team-card';
+    card.style.flex = '0 0 100%'; // Each card takes 100% of slider width
+    card.style.width = '100%';
+    card.style.background = 'white';
+    card.style.padding = '2.5rem';
+    card.style.borderRadius = '18px';
+    card.style.boxShadow = '0 4px 12px rgba(0,0,0,0.08)';
+    card.style.textAlign = 'center';
+    card.style.boxSizing = 'border-box';
+    card.style.margin = '0';
+    
+    // Create initials for fallback avatar
+    const initials = member.name.split(' ').map(n => n[0]).slice(0,2).join('');
+    
+    card.innerHTML = `
+      <img src="${member.image}" alt="${member.name}" style="width:140px;height:140px;border-radius:50%;object-fit:cover;border:4px solid #E8FBEA;margin-bottom:1.5rem;" 
+           onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+      <div style="width:140px;height:140px;border-radius:50%;background:#E8FBEA;display:none;align-items:center;justify-content:center;margin:0 auto 1.5rem;border:4px solid #E8FBEA;">
+        <span style="font-size:2.5rem;font-weight:bold;color:#10B981;">${initials}</span>
+      </div>
+      <h3 style="margin:0.8rem 0 0.3rem;font-weight:800;color:#0A1A3A;font-size:1.5rem;">${member.name}</h3>
+      <p style="margin:0;color:#10B981;font-weight:600;font-size:1.1rem;margin-bottom:1rem;">${member.title}</p>
+      <p style="font-size:1rem;color:#475569;margin-top:1rem;line-height:1.5;max-width:400px;margin-left:auto;margin-right:auto;">${member.desc}</p>
+    `;
+    
+    track.appendChild(card);
+  });
+  
+  // Create navigation dots - one dot per team member
+  teamProfiles.forEach((_, index) => {
+    const dot = document.createElement('span');
+    dot.className = 'team-dot';
+    dot.style.width = '12px';
+    dot.style.height = '12px';
+    dot.style.borderRadius = '50%';
+    dot.style.background = index === 0 ? '#10B981' : '#CBD5E1';
+    dot.style.cursor = 'pointer';
+    dot.style.transition = 'background 0.3s ease';
+    dot.dataset.slide = index;
+    
+    dot.addEventListener('click', () => {
+      teamIndex = index;
+      updateTeamSlider();
+    });
+    
+    dotsContainer.appendChild(dot);
+  });
+  
+  updateTeamSlider();
+}
+
+function updateTeamSlider() {
+  const sliderWidth = track.parentElement.offsetWidth;
+  const translateX = -teamIndex * sliderWidth;
+  track.style.transform = `translateX(${translateX}px)`;
+  
+  // Update dots
+  const dots = document.querySelectorAll('.team-dot');
+  dots.forEach((dot, index) => {
+    dot.style.background = index === teamIndex ? '#10B981' : '#CBD5E1';
+  });
+}
+
+// Initialize slider when DOM is loaded
+document.addEventListener('DOMContentLoaded', initTeamSlider);
+
+// Navigation event listeners
+document.getElementById('team-next').addEventListener('click', () => {
+  if (teamIndex < teamProfiles.length - 1) {
+    teamIndex++;
+    updateTeamSlider();
+  } else {
+    teamIndex = 0; // Loop back to first
+    updateTeamSlider();
+  }
+});
+
+document.getElementById('team-prev').addEventListener('click', () => {
+  if (teamIndex > 0) {
+    teamIndex--;
+    updateTeamSlider();
+  } else {
+    teamIndex = teamProfiles.length - 1; // Loop to last
+    updateTeamSlider();
+  }
+});
+
+// Auto-advance slider
+let autoSlideInterval;
+function startAutoSlide() {
+  autoSlideInterval = setInterval(() => {
+    teamIndex = teamIndex < teamProfiles.length - 1 ? teamIndex + 1 : 0;
+    updateTeamSlider();
+  }, 4000); // Change every 4 seconds
+}
+
+// Start auto-slide and pause on hover
+const slider = document.querySelector('.team-slider');
+slider.addEventListener('mouseenter', () => clearInterval(autoSlideInterval));
+slider.addEventListener('mouseleave', startAutoSlide);
+
+// Start auto-slide on page load
+window.addEventListener('load', startAutoSlide);
+
+// Handle window resize
+window.addEventListener('resize', () => {
+  updateTeamSlider();
+});
+</script>
+
+<!-- Impact Metrics Section -->
+<section class="section">
+  <h2 class="section-title">Our Impact</h2>
+
+  <div class="impact-wrapper" style="display:flex;justify-content:space-between;align-items:center;background:#F5F8FB;padding:2.5rem 2rem;border-radius:20px;box-shadow:0 4px 12px rgba(0,0,0,0.06);">
+
+    <div class="impact-item" style="flex:1;text-align:center;">
+      <h3 class="impact-number" style="font-size:3.2rem;font-weight:800;" data-target="250">0<span style="color:#10B981">+</span></h3>
+      <p>Active Users</p>
+    </div>
+
+    <div class="impact-divider" style="width:1px;background:#CBD5E1;height:60px;"></div>
+
+    <div class="impact-item" style="flex:1;text-align:center;">
+      <h3 class="impact-number" style="font-size:3.2rem;font-weight:800;" data-target="780">$0<span style="color:#10B981">+</span></h3>
+      <p>Loans Given</p>
+    </div>
+
+    <div class="impact-divider" style="width:1px;background:#CBD5E1;height:60px;"></div>
+
+    <div class="impact-item" style="flex:1;text-align:center;">
+      <h3 class="impact-number" style="font-size:3.2rem;font-weight:800;" data-target="145">0<span style="color:#10B981">+</span></h3>
+      <p>Districts Affected</p>
+    </div>
+
+    <div class="impact-divider" style="width:1px;background:#CBD5E1;height:60px;"></div>
+
+    <div class="impact-item" style="flex:1;text-align:center;">
+      <h3 class="impact-number" style="font-size:3.2rem;font-weight:800;" data-target="50">0<span style="color:#10B981">+</span></h3>
+      <p>Partners Joined</p>
+    </div>
+
+  </div>
+</section>
+
+<script>
+// Fixed metrics counter
+let impactStarted = false;
+
+function animateImpact() {
+  if (impactStarted) return;
+  impactStarted = true;
+  
+  document.querySelectorAll('.impact-number').forEach(num => {
+    const target = parseInt(num.getAttribute('data-target'));
+    let count = 0;
+    const speed = Math.max(1, Math.floor(2000 / target)); // Dynamic speed based on target
+    
+    const update = () => {
+      if (count < target) {
+        count++;
+        // Check what type of number we're animating
+        if (num.innerHTML.includes('$')) {
+          num.innerHTML = '$' + count + 'K<span style="color:#10B981">+</span>';
+        } else if (num.getAttribute('data-target') === '250') {
+          num.innerHTML = count + 'K<span style="color:#10B981">+</span>';
+        } else {
+          num.innerHTML = count + '<span style="color:#10B981">+</span>';
+        }
+        setTimeout(update, speed);
+      }
+    };
+    update();
+  });
+}
+
+// Use Intersection Observer for better performance
+const impactObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      animateImpact();
+      impactObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.5 });
+
+// Observe the impact section
+const impactSection = document.querySelector('.impact-wrapper');
+if (impactSection) {
+  impactObserver.observe(impactSection);
+}
+</script>
+
+<!-- Rest of your content remains the same -->
+<section class="section">
+  <h2 class="section-title">Our Approach</h2>
+  <div class="approach-grid">
+    <div class="approach-card">
+      <div style="background:#E8FBEA;width:58px;height:58px;border-radius:50%;display:flex;justify-content:center;align-items:center;margin-bottom:1rem;">
+        <img src="assets/icons/team.png" width="28" alt="Building Icon" />
+      </div>
+      <h3>Igniting Change with Unwavering Drive</h3>
+      <p>We pour our hearts into every line of code, every client conversation, and every rural outreach.</p>
+    </div>
+    <div class="approach-card">
+      <div style="background:#E8FBEA;width:58px;height:58px;border-radius:50%;display:flex;justify-content:center;align-items:center;margin-bottom:1rem;">
+        <img src="assets/icons/finance.png" width="28" alt="Finance Icon" />
+      </div>
+      <h3>Innovating Boldly for the Unbanked</h3>
+      <p>In a world of cookie-cutter fintech, we dream differently—crafting mobile apps that fit unique SACCO needs.</p>
+    </div>
+    <div class="approach-card">
+      <div style="background:#E8FBEA;width:58px;height:58px;border-radius:50%;display:flex;justify-content:center;align-items:center;margin-bottom:1rem;">
+        <img src="assets/icons/globe.png" width="28" alt="Globe Icon" />
+      </div>
+      <h3>Rising Stronger from Every Setback</h3>
+      <p>We adapt, learn, and persist, ensuring our platform remains a reliable lifeline for rural economies.</p>
+    </div>
+    <div class="approach-card">
+      <div style="background:#E8FBEA;width:58px;height:58px;border-radius:50%;display:flex;justify-content:center;align-items:center;margin-bottom:1rem;">
+        <img src="assets/icons/people.png" width="28" alt="People Icon" />
+      </div>
+      <h3>It all comes down to people</h3>
+      <p>Determined to turn challenges into opportunities for SACCOs, communities, and the continent.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Partners Section -->
+<section class="section">
+  <h2 class="section-title">Our Partners & Supporters</h2>
+  <div class="partners">
+    <img src="assets/partners/usaid.png" alt="USAID" />
+    <img src="assets/partners/uncdf.png" alt="UNCDF" />
+    <img src="assets/partners/worldvision.png" alt="World Vision" />
+    <img src="assets/partners/mtn.png" alt="MTN" />
+    <img src="assets/partners/airtel.png" alt="Airtel" />
+    <img src="assets/partners/dca.png" alt="DCA" />
+    <img src="assets/partners/visionfund.png" alt="Vision Fund" />
+  </div>
+</section>
+
+<!-- CTA Section -->
+<section class="section" style="text-align:center;margin-top:5rem;">
+  <h2 class="section-title" style="margin-bottom:1rem;">Partner With Us</h2>
+  <p style="max-width:700px;margin:0 auto 2rem;">Join us in building inclusive digital financial ecosystems that uplift underserved communities across Africa.</p>
+  <a href="contact.html" style="background:var(--accent-2);color:white;padding:1rem 2rem;border-radius:10px;font-weight:700;text-decoration:none;">Get In Touch</a>
+</section>
+
+<footer>
+  &copy; 2025 Ensibuuko — All rights reserved.
+</footer>
+
+</body>
+</html>
