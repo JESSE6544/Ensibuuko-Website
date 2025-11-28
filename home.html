@@ -5,99 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Ensibuuko — Digitizing Financial Inclusion</title>
   <meta name="description" content="Ensibuuko — Digital solutions for SACCOs, MFIs and VSLAs: MOBIS, Chomoka, Agent Banking and Lending Services." />
-
+  <link rel="stylesheet" href="css/main.css">
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-
-  <style>
-    :root{
-      --navy: #0A1A3A;
-      --accent: #00D4AA;
-      --accent-2: #10B981;
-      --bg: #C6F8D8;
-      --muted: #F8FAFC;
-      --text: #0B1220;
-      --max-width:1200px;
-    }
-    *{box-sizing:border-box}
-    body{margin:0;font-family:'Inter',system-ui, -apple-system, 'Segoe UI', Roboto;line-height:1.5;color:var(--text);background: var(--bg);}
-    .container{max-width:var(--max-width);margin:0 auto;padding:1rem}
-    header{position:sticky;top:0;background:var(--navy);z-index:40;border-bottom:2px solid rgba(255,255,255,0.12);backdrop-filter:blur(6px);transition:opacity .4s ease, box-shadow .3s ease;box-shadow:0 2px 12px rgba(0,0,0,0.25);}
-    .nav{display:flex;align-items:center;justify-content:space-between;padding:0.75rem 0}
-    .brand{display:flex;gap:0.75rem;align-items:center}
-    .nav-logo{width:50px;height:50px;border-radius:14px;background:#FFFFFF;padding:6px;object-fit:contain;transition:transform .25s ease, box-shadow .25s ease;} .nav-logo:hover{transform:scale(1.07);box-shadow:0 0 12px rgba(0,0,0,0.06);} 
-    nav ul{display:flex;gap:1rem;list-style:none;margin:0;padding:0}
-    nav a{text-decoration:none;color:#FFFFFF;font-weight:600;transition:opacity .25s ease;} nav a:hover{opacity:0.85;}
-    .btn{padding:0.55rem 0.9rem;border-radius:10px;border:0;cursor:pointer;font-weight:600}
-    .btn.primary{background:var(--accent);color:#04202a}
-
-    .hero{display:grid;grid-template-columns:1fr 480px;gap:2rem;align-items:center;padding:3rem 0}
-    .eyebrow{display:inline-block;background:rgba(16,185,129,0.08);color:var(--accent-2);padding:0.35rem 0.6rem;border-radius:999px;font-weight:700;font-size:0.78rem}
-    .headline{font-size:2.1rem;margin:0 0 1rem 0}
-    .sub{color:#475569;margin-bottom:1rem}
-
-    .card{background:#fff;padding:1.25rem;border-radius:12px;box-shadow:0 8px 20px rgba(10,26,58,0.04)}
-    .hero-visual{background:linear-gradient(180deg, rgba(10,26,58,0.03), rgba(16,185,129,0.02));border-radius:16px;padding:1.25rem;min-height:320px;display:flex;align-items:center;justify-content:center}
-
-    section{margin-top:2rem}
-    .grid-2{display:grid;grid-template-columns:1fr 380px;gap:1rem;align-items:start}
-
-    .partners{display:flex;flex-wrap:wrap;gap:0.75rem;align-items:center}
-    .partner{background:#fff;padding:0.6rem 0.8rem;border-radius:8px;border:1px solid rgba(10,26,58,0.04)}
-
-    .testimonials{display:flex;gap:1rem;overflow:hidden}
-    .testimonial{min-width:280px;background:#fff;padding:1rem;border-radius:10px}
-
-    .team-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
-    .team-member{background:#fff;padding:1rem;border-radius:10px;text-align:center}
-
-    .newsletter{background:var(--muted);padding:1rem;border-radius:12px;display:flex;justify-content:space-between;gap:1rem;align-items:center}
-    .newsletter form{display:flex;gap:0.5rem;align-items:center}
-    .newsletter input{padding:0.6rem;border-radius:10px;border:1px solid rgba(10,26,58,0.06)}
-
-    footer{background:var(--navy);color:#E6F6F3;padding:2rem 0;border-top-left-radius:20px;border-top-right-radius:20px;margin-top:2rem}
-    .footer-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}
-    .footer-logo{width:60px;height:60px;border-radius:12px;background:#FFFFFF;padding:4px;object-fit:contain}
-
-    @media(max-width:920px){.hero{grid-template-columns:1fr 360px}.grid-2{grid-template-columns:1fr}.team-grid{grid-template-columns:repeat(2,1fr)}.features{grid-template-columns:1fr}}
-
-    .pattern-bar {
-  width: 100%;
-  height: 50vh;
-  background: url('assets/images/00023.jpg') center/cover no-repeat;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 2rem 0;
-}
-.pattern-bar::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(45deg, rgba(0,212,170,0.4), transparent);
-  z-index: 1;
-}
-    .pattern-content{position:relative;z-index:2;color:#fff;max-width:900px;padding:3rem 1rem;width:100%;}
-
-    
-
-    /* small helpers */
-    .product-tab{padding:0.5rem 1rem;border-radius:8px;cursor:pointer;transition:all .25s ease;background:#dfffe4;color:#0A1A3A}
-    .product-tab:hover{background:#c8fbdc;color:#0A1A3A}
-    .active-tab{background:var(--accent) !important;color:#04202a !important}
-  @keyframes fadeIn {0%{opacity:0;transform:translateY(-10px);}100%{opacity:1;transform:translateY(0);}}
-</style>
-<style>
-      /* Scroll Reveal Animation */
-      .reveal {opacity:0; transform:translateY(30px); transition:all 0.9s ease-out;} 
-      .reveal.visible {opacity:1; transform:translateY(0);} 
-    </style>
 </head>
 <body>
 
@@ -110,8 +22,9 @@
 
    <nav style="margin-left:auto;">
       <ul style="margin-left:auto;">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#products">Products</a></li>
+        <li><a href="home.html">Home</a></li>
+        <li><a href="products_page.html">Products</a></li>
+        <li> <a href="about_page.html">About</a> </li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
@@ -405,95 +318,6 @@
     </div>
   </div>
 </footer>
-
-<script>
-  // Small page scripts (clean, no unterminated comments)
-  document.getElementById('year').textContent = new Date().getFullYear();
-
-  function switchTab(tab){
-    document.querySelectorAll('.product-tab').forEach(t=>t.classList.remove('active-tab'));
-    document.querySelectorAll('.product-card').forEach(c=>c.style.display='none');
-    const tabBtn = document.querySelector(`[onclick="switchTab('${tab}')"]`);
-    if(tabBtn) tabBtn.classList.add('active-tab');
-    const card = document.getElementById(`tab-${tab}`);
-    if(card) card.style.display='flex';
-  }
-
-  function subscribeForm(){
-    // placeholder - replace with real API call
-    alert('Thanks for subscribing — (simulated)');
-  }
-
-  // Card hover animation
-  document.querySelectorAll('section div[style*="box-shadow"]').forEach(card=>{
-    card.addEventListener('mouseenter',()=>{card.style.transform='translateY(-6px)';});
-    card.addEventListener('mouseleave',()=>{card.style.transform='translateY(0)';});
-  });
-
-  // Impact counters and reveal using IntersectionObserver
-  (function(){
-    const counters = [
-      {id:'impact-users',target:250, suffix:'K+'},
-      {id:'impact-loans',target:780, prefix:'$', suffix:'K+'},
-      {id:'impact-districts',target:145, suffix:'+'},
-      {id:'impact-partners',target:50, suffix:'+'}
-    ];
-
-    function runCounter(el, target, speed=18, prefix='', suffix=''){
-      let count = 0;
-      const step = Math.max(1, Math.floor(target / (1000 / speed)));
-      const timer = setInterval(()=>{
-        count += step;
-        if(count >= target){ count = target; clearInterval(timer); }
-        el.textContent = prefix + count.toLocaleString() + (suffix || '');
-      }, speed);
-    }
-
-    const obs = new IntersectionObserver((entries, observer)=>{
-      entries.forEach(entry=>{
-        if(entry.isIntersecting){
-          counters.forEach(c=>{
-            const el = document.getElementById(c.id);
-            if(el && !el.dataset.started){
-              runCounter(el, c.target, 12, c.prefix || '', c.suffix || '');
-              el.dataset.started = '1';
-            }
-          });
-          observer.disconnect();
-        }
-      });
-    },{threshold:0.5});
-
-    const impactSection = document.getElementById('impact');
-    if(impactSection) obs.observe(impactSection);
-  })();
-
-  // Pause partners animation on hover is handled via CSS
-</script>
-<script>
-  // Scroll reveal logic
-  const revealElements = document.querySelectorAll('.reveal');
-  const revealObserver = new IntersectionObserver((entries)=>{
-    entries.forEach(entry=>{
-      if(entry.isIntersecting){ entry.target.classList.add('visible'); }
-    });
-  },{threshold:0.15});
-  revealElements.forEach(el=>revealObserver.observe(el));
-// Testimonial slider
-  (function(){
-    const track = document.querySelector('.testimonials-track');
-    if(!track) return;
-
-    let index = 0;
-    const slides = track.children.length;
-
-    function moveSlider(){
-      index = (index + 1) % slides;
-      track.style.transform = `translateX(-${index * 100}%)`;
-    }
-
-    setInterval(moveSlider, 4500);
-  })();
-</script>
+<script src="js/script.js"></script>
 </body>
 </html>
