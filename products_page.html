@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Ensibuuko Products</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
   <link rel="stylesheet" href="css/products.css">
 </head>
 <body>
@@ -22,6 +23,15 @@
       <a href="about_page.html">About</a> 
       <a href="contact.html">Contact</a>
     </div>
+
+    <!-- Mobile menu toggle -->
+    <button id="mobile-menu-toggle" class="mobile-menu-toggle" aria-controls="site-nav" aria-expanded="false" aria-label="Toggle navigation">☰</button>
+
+    <!-- Navigation links -->
+    <a href="index.html">Home</a>
+    <a href="products.html">Products</a>
+    <a href="about.html">About</a> 
+    <a href="contact.html">Contact</a>
   </nav>
 </header>
 
@@ -38,7 +48,7 @@
       <h3 style="color:var(--accent-2);font-weight:700;">Chomoka</h3>
       <h2>Digitizing Village Savings Groups</h2>
       <p>Chomoka transforms traditional VSLA record keeping with a mobile-first system. Record meetings, track contributions, issue loans, automate calculations and integrate Mobile Money.</p>
-      <button class="btn primary">Learn More →</button>
+      <button class="btn primary learn-more" type="button">Learn More →</button>
     </div>
     <!-- Fixed image with proper styling -->
     <img src="assets/images/Chomoka-phone.png" alt="Chomoka App" onerror="this.style.display='none'" />
@@ -54,7 +64,7 @@
       <h3 style="color:var(--accent-2);font-weight:700;">MOBIS</h3>
       <h2>Complete Digital Banking for SACCOs & MFIs</h2>
       <p>MOBIS is a comprehensive core banking suite built for rural financial institutions. Manage accounts, automate reporting, enable mobile & USSD member access, and improve operational efficiency.</p>
-      <button class="btn primary">Learn More →</button>
+      <button class="btn primary learn-more" type="button">Learn More →</button>
     </div>
   </div>
 
@@ -66,7 +76,7 @@
       <h3 style="color:var(--accent-2);font-weight:700;">Lending Services</h3>
       <h2>Accessible Financing for Underserved Communities</h2>
       <p>Through strong partnerships, Ensibuuko offers agro-loans, emergency loans, and working capital financing tailored to rural communities and micro‑enterprises.</p>
-      <button class="btn primary">Learn More →</button>
+      <button class="btn primary learn-more" type="button">Learn More →</button>
     </div>
     <!-- Fixed image styling -->
     <img src="assets/images/LOGO EDITS v2-01.png" alt="Lending" style="max-width:200px;opacity:0.4;object-fit:contain;" />
@@ -78,6 +88,36 @@
   <p>Talk to our team and discover the right digital tools for your organization.</p>
   <button class="btn primary" onclick="window.location.href='contact.html'">Contact Us</button>
 </div>
+
+  <!-- Modal HTML - Add this before closing body tag -->
+  <div class="modal" id="productModal">
+      <div class="modal-overlay"></div>
+      <div class="modal-content">
+          <div class="modal-header">
+              <h2 id="modalTitle">Product Title</h2>
+              <button class="modal-close" id="modalClose">&times;</button>
+          </div>
+          <div class="modal-body">
+              <div class="modal-image">
+                  <img id="modalImage" src="" alt="Product Image">
+              </div>
+              <div class="modal-info">
+                  <p class="modal-description" id="modalDescription">Product description will appear here.</p>
+                  <ul class="modal-features" id="modalFeatures">
+                      <!-- Features will be populated by JavaScript -->
+                  </ul>
+                  <div class="modal-actions">
+                      <button class="btn primary">
+                          <i class="fas fa-calendar-alt"></i> Request Demo
+                      </button>
+                      <button class="btn secondary">
+                          <i class="fas fa-file-pdf"></i> Download Brochure
+                      </button>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
 
 <footer>
   &copy; 2025 Ensibuuko — All rights reserved.

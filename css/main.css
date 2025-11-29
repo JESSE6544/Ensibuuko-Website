@@ -15,8 +15,8 @@
     .nav{display:flex;align-items:center;justify-content:space-between;padding:0.75rem 0}
     .brand{display:flex;gap:0.75rem;align-items:center}
     .nav-logo{width:50px;height:50px;border-radius:14px;background:#FFFFFF;padding:6px;object-fit:contain;transition:transform .25s ease, box-shadow .25s ease;} .nav-logo:hover{transform:scale(1.07);box-shadow:0 0 12px rgba(0,0,0,0.06);} 
-    nav ul{display:flex;gap:1rem;list-style:none;margin:0;padding:0}
-    nav a{text-decoration:none;color:#FFFFFF;font-weight:600;transition:opacity .25s ease;} nav a:hover{opacity:0.85;}
+    /* nav ul{display:flex;gap:1rem;list-style:none;margin:0;padding:0} */
+    nav a{text-decoration:none;color:#FFFFFF;font-weight:600;transition:opacity .25s ease;margin-left:1.5rem} nav a:hover{opacity:0.85;}
     .btn{padding:0.55rem 0.9rem;border-radius:10px;border:0;cursor:pointer;font-weight:600}
     .btn.primary{background:var(--accent);color:#04202a}
 

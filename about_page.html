@@ -5,7 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>About Ensibuuko</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/about.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/about.css">
 </head>
 <body>
 
@@ -21,6 +22,15 @@
       <a href="about_page.html">About</a>
       <a href="contact.html">Contact</a>
     </div>
+
+
+    <!-- Mobile menu toggle -->
+    <button id="mobile-menu-toggle" class="mobile-menu-toggle" aria-controls="site-nav" aria-expanded="false" aria-label="Toggle navigation">☰</button>
+    <!-- Navigation links -->
+    <a href="index.html">Home</a>
+    <a href="products.html">Products</a>
+    <a href="about.html">About</a> 
+    <a href="contact.html">Contact</a>
   </nav>
 </header>
 
@@ -75,8 +85,8 @@
   </div>
 
   <!-- Group Photo Placeholder -->
-  <div style="max-width:900px;margin:2.5rem auto;">
-    <img src="assets/images/team.png" alt="Ensibuuko Team" style="width:100%;border-radius:18px;box-shadow:0 4px 16px rgba(0,0,0,0.1);object-fit:cover;max-height:420px;" />
+  <div class="team-photo">
+    <img src="assets/team/team.png" alt="Ensibuuko Team" loading="lazy" />
   </div>
 </section>
 
