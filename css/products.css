@@ -31,7 +31,7 @@
       justify-content:center;
       align-items:center;
       text-align:center;
-      background:url('assets/images/00012.jpg') center/cover no-repeat;
+      background:url('../assets/images/00012.jpg') center/cover no-repeat;
       box-shadow:0 4px 12px rgba(0,0,0,0.15);
       color:white;
       overflow:hidden;
@@ -121,4 +121,22 @@
   .hero p{font-size:0.95rem;}
   nav{flex-direction:column;gap:1rem;}
   .btn{padding:0.75rem 1.25rem;min-height:44px;font-size:0.95rem}
+}
+
+/* Mobile: evenly space nav links when the menu is open */
+@media (max-width:768px){
+  #site-nav.open{
+    display:flex;
+    flex-direction:column;
+    justify-content:space-around;
+    height:calc(100vh - 0px);
+    padding-top:1rem;
+  }
+  #site-nav.open > a{
+    display:flex !important;
+    justify-content:center;
+    align-items:center;
+    padding:1rem;
+    min-height:56px;
+  }
 }

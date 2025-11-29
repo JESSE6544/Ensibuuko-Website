@@ -84,6 +84,7 @@
     setInterval(moveSlider, 4500);
   })();
 
+
 /// Hide navbar on scroll (active on all pages)
 let lastScrollY = window.scrollY;
 

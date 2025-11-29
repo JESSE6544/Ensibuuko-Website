@@ -53,7 +53,7 @@
     .pattern-bar {
   width: 100%;
   height: 50vh;
-  background: url('assets/images/00023.jpg') center/cover no-repeat;
+  background: url('../assets/images/00023.jpg') center/cover no-repeat;
   position: relative;
   display: flex;
   align-items: center;
@@ -157,4 +157,22 @@
   
   /* Testimonial slider full width */
   .testimonial{min-width:100%}
+}
+
+/* Mobile: evenly space nav links when the menu is open */
+@media (max-width:768px){
+  #site-nav.open{
+    display:flex;
+    flex-direction:column;
+    justify-content:space-around;
+    height:calc(100vh - 0px);
+    padding-top:1rem;
+  }
+  #site-nav.open > a{
+    display:flex !important;
+    justify-content:center;
+    align-items:center;
+    padding:1rem;
+    min-height:56px;
+  }
 }

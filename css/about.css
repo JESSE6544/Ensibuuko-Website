@@ -27,7 +27,7 @@
       min-height:380px;
       display:flex;flex-direction:column;justify-content:center;align-items:center;
       text-align:center;
-      background:url('assets/images/team.png') center/cover no-repeat;
+      background:url('../assets/team/team.png') center/cover no-repeat;
       color:white;
       overflow:hidden;
     }
@@ -137,3 +137,20 @@
       footer{padding:1.5rem 1rem}
     }
  
+/* Mobile: evenly space nav links when the menu is open */
+@media (max-width:768px){
+  #site-nav.open{
+    display:flex;
+    flex-direction:column;
+    justify-content:space-around;
+    height:calc(100vh - 0px);
+    padding-top:1rem;
+  }
+  #site-nav.open > a{
+    display:flex !important;
+    justify-content:center;
+    align-items:center;
+    padding:1rem;
+    min-height:56px;
+  }
+}

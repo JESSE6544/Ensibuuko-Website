@@ -37,7 +37,7 @@ nav a:hover{opacity:0.85;}
   justify-content:center;
   align-items:center;
   text-align:center;
-  background:url('assets/images/00012.jpg') center/cover no-repeat;
+  background:url('../assets/images/00008.jpg') center/cover no-repeat;
   color:white;
   overflow:hidden;
 }
@@ -65,22 +65,22 @@ nav a:hover{opacity:0.85;}
 h2.section-title{text-align:center;font-size:2.2rem;font-weight:800;margin-bottom:2rem;color:#0A1A3A;}
 
 /* Contact Form Styles */
-.contact-container{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start;background:white;padding:3rem;border-radius:20px;box-shadow:0 6px 20px rgba(0,0,0,0.08);}
+.contact-container{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start;background:#0A1A3A;padding:3rem;border-radius:20px;box-shadow:0 6px 20px rgba(0,0,0,0.08);}
 
 .contact-info{display:flex;flex-direction:column;gap:2rem;}
-.contact-info h3{font-size:1.5rem;font-weight:800;color:#0A1A3A;margin:0}
-.contact-info p{color:#475569;line-height:1.6;margin:0}
+.contact-info h3{font-size:1.5rem;font-weight:800;color:#FFFFFF;margin:0}
+.contact-info p{color:#F8FAFC;line-height:1.6;margin:0}
 
 .info-block{display:flex;gap:1rem}
 .info-icon{width:50px;height:50px;background:#E8FBEA;border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
 .info-icon svg{width:28px;height:28px;color:var(--accent-2)}
-.info-text h4{margin:0 0 0.5rem 0;color:#0A1A3A;font-weight:700}
-.info-text p{margin:0;color:#475569;font-size:0.95rem}
+.info-text h4{margin:0 0 0.5rem 0;color:#FFFFFF;font-weight:700}
+.info-text p{margin:0;color:#F8FAFC;font-size:0.95rem}
 
 /* Form Styles */
 .contact-form{display:flex;flex-direction:column;gap:1.5rem}
 .form-group{display:flex;flex-direction:column;gap:0.5rem}
-.form-group label{font-weight:600;color:#0A1A3A;font-size:0.95rem}
+.form-group label{font-weight:600;color:#FFFFFF;font-size:0.95rem}
 .form-group input,
 .form-group textarea{
   padding:0.85rem 1rem;
@@ -148,4 +148,22 @@ footer{background:var(--navy);color:white;padding:2rem 1rem;margin-top:4rem;text
   .option-card{padding:1.5rem}
 
   .footer-grid{grid-template-columns:repeat(1,1fr);gap:2rem}
+}
+
+/* Mobile: evenly space nav links when the menu is open */
+@media (max-width:768px){
+  #site-nav.open{
+    display:flex;
+    flex-direction:column;
+    justify-content:space-around;
+    height:calc(100vh - 0px);
+    padding-top:1rem;
+  }
+  #site-nav.open > a{
+    display:flex !important;
+    justify-content:center;
+    align-items:center;
+    padding:1rem;
+    min-height:56px;
+  }
 }
