@@ -14,39 +14,34 @@
 <body>
 
 <header>
-  <div class="container nav" role="navigation">
+  <nav id="site-nav" class="container nav" role="navigation" aria-label="Primary navigation">
    <div class="brand" style="margin-right:auto;display:flex;gap:0.75rem;align-items:center;">
       <img src="assets/images/LOGO EDITS v2-01.png" alt="Ensibuuko Logo" class="nav-logo" />
       <div style="font-weight:800;color:#FFFFFF">Ensibuuko</div>
     </div>
 
-   <nav style="margin-left:auto;">
-      <ul style="margin-left:auto;">
-        <li><a href="home.html">Home</a></li>
-        <li><a href="products_page.html">Products</a></li>
-        <li> <a href="about_page.html">About</a> </li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-
-  </div>
+    <!-- Mobile menu toggle -->
+    <button id="mobile-menu-toggle" class="mobile-menu-toggle" aria-controls="site-nav" aria-expanded="false" aria-label="Toggle navigation">☰</button>
+    <!-- Navigation links -->
+    <a href="index.html">Home</a>
+    <a href="products.html">Products</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </nav>
 </header>
 
 <!-- Hero Section -->
-<div class="pattern-bar">
-  <div class="pattern-content hero-animate" style="text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center;animation:fadeIn 1.4s ease-out;">
-    <h2 style="font-size:2.6rem;font-weight:900;margin:0 0 0.75rem;color:#FFFFFF;">Empowering Financial Inclusion in Uganda.</h2>
-    <p style="font-size:1.25rem;max-width:780px;margin:0 0 1.2rem;color:#F1F5F9;">We design and implement user-friendly digital products and services that connect unbanked and underserved communities to formal financial systems, enabling them to access, use, and benefit from financial services in meaningful ways.</p>
+  <div class="pattern-bar">
+  <div class="pattern-content hero-inner hero-animate">
+    <h2 class="hero-title">Empowering Financial Inclusion in Uganda.</h2>
+    <p class="hero-sub">We design and implement user-friendly digital products and services that connect unbanked and underserved communities to formal financial systems, enabling them to access, use, and benefit from financial services in meaningful ways.</p>
 
-    <div style="margin-top:1rem; display:flex; gap:1rem; justify-content:center;">
-      <button class="btn primary" style="padding:0.9rem 2rem;font-size:1rem;border-radius:12px;">Get Started</button>
-      <button class="btn" style="padding:0.9rem 2rem;font-size:1rem;border-radius:12px;">See Demo</button>
+    <div class="hero-ctas">
+      <button class="btn primary">Get Started</button>
+      <button class="btn">See Demo</button>
     </div>
   </div>
 </div>
-
-  
-  </div>
 </div>
 
 <!-- Products Showcase Section with Tabs (Option B cleaned) -->
@@ -58,7 +53,7 @@
   </div>
 
   <!-- Tabs -->
-  <div style="display:flex;gap:3rem;margin-bottom:2rem;font-weight:700;font-size:1.1rem;">
+  <div style="display:flex;gap:1rem;margin-bottom:2rem;font-weight:700;font-size:1.1rem;flex-wrap:wrap;justify-content:center;">
     <div class="product-tab active-tab" onclick="switchTab('chomoka')">Chomoka</div>
     <div class="product-tab" onclick="switchTab('mobis')">Mobis</div>
     <div class="product-tab" onclick="switchTab('lending')">Lending</div>
@@ -68,41 +63,41 @@
   <div style="width:100%;display:flex;justify-content:center;">
 
     <!-- Chomoka Card -->
-    <div id="tab-chomoka" class="product-card" style="max-width:1100px;width:100%;display:flex;gap:2rem;align-items:center;background:#FFFFFF;padding:2rem;border-radius:20px;box-shadow:0 4px 14px rgba(0,0,0,0.08);">
-      <div style="flex:1;">
+    <div id="tab-chomoka" class="product-card">
+      <div class="card-content">
         <h3 style="color:#0A1A3A;margin-bottom:0.5rem;font-size:1.3rem;font-weight:700;">Chomoka</h3>
         <h2 style="color:#0A1A3A;font-size:2rem;font-weight:800;margin-bottom:1rem;">Digitizing Village Savings Groups</h2>
         <p style="color:#475569;line-height:1.6;margin-bottom:1.5rem;">Empower your VSLA with Chomoka, our mobile app that brings transparency and efficiency to group activities. Track contributions, record meetings, send reminders, manage loans, penalties, and integrate mobile money — all in one place.</p>
-        <button class="btn primary" style="padding:0.9rem 2rem;border-radius:12px;">Learn More →</button>
+        <button class="btn primary">Learn More →</button>
       </div>
-      <div style="flex:1;display:flex;justify-content:center;">
-        <img src="assets/images/Chomoka-phone.png" alt="Chomoka demo" style="width:100%;max-width:420px;border-radius:18px;box-shadow:0 6px 16px rgba(0,0,0,0.12);object-fit:cover;">
+      <div class="card-media">
+        <img src="assets/images/Chomoka-phone.png" alt="Chomoka demo" loading="lazy">
       </div>
     </div>
 
     <!-- MOBIS Card -->
-    <div id="tab-mobis" class="product-card" style="display:none;max-width:1100px;width:100%;gap:2rem;align-items:center;background:#FFFFFF;padding:2rem;border-radius:20px;box-shadow:0 4px 14px rgba(0,0,0,0.08);">
-      <div style="flex:1;">
+    <div id="tab-mobis" class="product-card" style="display:none;">
+      <div class="card-content">
         <h3 style="color:#0A1A3A;margin-bottom:0.5rem;font-size:1.3rem;font-weight:700;">MOBIS</h3>
         <h2 style="color:#0A1A3A;font-size:2rem;font-weight:800;margin-bottom:1rem;">The All‑in‑One Rural Banking SaaS Platform</h2>
         <p style="color:#475569;line-height:1.6;margin-bottom:1.5rem;">Transform operations with MOBIS, our suite for SACCOs and MFIs. Manage accounts seamlessly via our web app, while members access services through mobile apps or USSD.</p>
-        <button class="btn primary" style="padding:0.9rem 2rem;border-radius:12px;">Learn More →</button>
+        <button class="btn primary">Learn More →</button>
       </div>
-      <div style="flex:1;display:flex;justify-content:center;">
-        <img src="assets/images/Mobis.png" alt="MOBIS demo" style="width:100%;max-width:480px;border-radius:18px;box-shadow:0 6px 16px rgba(0,0,0,0.12);object-fit:cover;">
+      <div class="card-media">
+        <img src="assets/images/Mobis.png" alt="MOBIS demo" style="max-width:480px">
       </div>
     </div>
 
     <!-- Lending Card -->
-    <div id="tab-lending" class="product-card" style="display:none;max-width:1100px;width:100%;gap:2rem;align-items:center;background:#FFFFFF;padding:2rem;border-radius:20px;box-shadow:0 4px 14px rgba(0,0,0,0.08);">
-      <div style="flex:1;">
+    <div id="tab-lending" class="product-card" style="display:none;">
+      <div class="card-content">
         <h3 style="color:#0A1A3A;margin-bottom:0.5rem;font-size:1.3rem;font-weight:700;">Lending Services</h3>
         <h2 style="color:#0A1A3A;font-size:2rem;font-weight:800;margin-bottom:1rem;">Unlocking Financing Opportunities Through Partners</h2>
         <p style="color:#475569;line-height:1.6;margin-bottom:1.5rem;">Ensibuuko provides accessible financing tailored to underserved communities — from Quick Loans to Agro and Asset Financing — through strong partnerships.</p>
-        <button class="btn primary" style="padding:0.9rem 2rem;border-radius:12px;">Learn More →</button>
+        <button class="btn primary">Learn More →</button>
       </div>
-      <div style="flex:1;display:flex;justify-content:center;">
-        <img src="assets/images/LOGO EDITS v2-01.png" alt="Ensibuuko" style="width:100%;max-width:320px;border-radius:18px;opacity:0.4;object-fit:contain;">
+      <div class="card-media">
+        <img src="assets/images/LOGO EDITS v2-01.png" alt="Ensibuuko" style="max-width:320px;opacity:0.4;object-fit:contain;">
       </div>
     </div>
 
@@ -114,8 +109,8 @@
   <!-- Why Choose Ensibuuko (video + text) -->
   <section class="reveal" id="why" style="margin-top:3rem;padding:3rem 1rem;border-radius:18px;display:flex;gap:2rem;align-items:center;justify-content:center;flex-wrap:wrap;background:#E8FFF1;box-shadow:0 6px 18px rgba(0,0,0,0.06);">
 
-    <div style="flex:1;min-width:320px;display:flex;justify-content:center;">
-      <video controls poster="assets/images/00023.jpg" style="width:100%;max-width:460px;border-radius:18px;box-shadow:0 6px 16px rgba(0,0,0,0.12);">
+    <div style="flex:1;display:flex;justify-content:center;">
+      <video controls poster="assets/images/00023.jpg" style="width:100%;max-width:460px;border-radius:18px;box-shadow:0 6px 16px rgba(0,0,0,0.12);" loading="lazy">
         <source src="assets/videos/ensibuuko-story.mp4" type="video/mp4">
         Your browser does not support video.
       </video>
@@ -167,21 +162,21 @@
     We are backed by leading investors and partners to deliver our promise on financial inclusion in Africa.
   </p>
   <div style="display:flex;flex-wrap:wrap;gap:2rem;justify-content:center;align-items:center;max-width:1100px;margin:0 auto;">
-    <img src="assets/images/usaid.png" style="height:65px;object-fit:contain;">
-    <img src="assets/images/uncdf.png" style="height:65px;object-fit:contain;">
-    <img src="assets/images/gsma.png" style="height:65px;object-fit:contain;">
-    <img src="assets/images/opportunity.png" style="height:65px;object-fit:contain;">
-    <img src="assets/images/dca.png" style="height:65px;object-fit:contain;">
-    <img src="assets/images/fao.png" style="height:65px;object-fit:contain;">
-    <img src="assets/images/worldvision.png" style="height:65px;object-fit:contain;">
-    <img src="assets/images/mtn.png" style="height:65px;object-fit:contain;">
-    <img src="assets/images/airtel.png" style="height:65px;object-fit:contain;">
-    <img src="assets/images/villagecapital.png" style="height:65px;object-fit:contain;">
-    <img src="assets/images/fmt.png" style="height:65px;object-fit:contain;">
-    <img src="assets/images/cenfri.png" style="height:65px;object-fit:contain;">
-    <img src="assets/images/cta.png" style="height:65px;object-fit:contain;">
-    <img src="assets/images/outbox.png" style="height:65px;object-fit:contain;">
-    <img src="assets/images/fca.png" style="height:65px;object-fit:contain;">
+    <img src="assets/images/usaid.png" style="height:65px;object-fit:contain;" loading="lazy" alt="USAID partner logo" />
+    <img src="assets/images/uncdf.png" style="height:65px;object-fit:contain;" loading="lazy" alt="UNCDF partner logo" />
+    <img src="assets/images/gsma.png" style="height:65px;object-fit:contain;" loading="lazy" alt="GSMA partner logo" />
+    <img src="assets/images/opportunity.png" style="height:65px;object-fit:contain;" loading="lazy" alt="Opportunity partner logo" />
+    <img src="assets/images/dca.png" style="height:65px;object-fit:contain;" loading="lazy" alt="DCA partner logo" />
+    <img src="assets/images/fao.png" style="height:65px;object-fit:contain;" loading="lazy" alt="FAO partner logo" />
+    <img src="assets/images/worldvision.png" style="height:65px;object-fit:contain;" loading="lazy" alt="World Vision partner logo" />
+    <img src="assets/images/mtn.png" style="height:65px;object-fit:contain;" loading="lazy" alt="MTN partner logo" />
+    <img src="assets/images/airtel.png" style="height:65px;object-fit:contain;" loading="lazy" alt="Airtel partner logo" />
+    <img src="assets/images/villagecapital.png" style="height:65px;object-fit:contain;" loading="lazy" alt="Village Capital partner logo" />
+    <img src="assets/images/fmt.png" style="height:65px;object-fit:contain;" loading="lazy" alt="FMT partner logo" />
+    <img src="assets/images/cenfri.png" style="height:65px;object-fit:contain;" loading="lazy" alt="Cenfri partner logo" />
+    <img src="assets/images/cta.png" style="height:65px;object-fit:contain;" loading="lazy" alt="CTA partner logo" />
+    <img src="assets/images/outbox.png" style="height:65px;object-fit:contain;" loading="lazy" alt="Outbox partner logo" />
+    <img src="assets/images/fca.png" style="height:65px;object-fit:contain;" loading="lazy" alt="FCA partner logo" />
   </div>
 </section>
 

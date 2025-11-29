@@ -84,15 +84,82 @@
     setInterval(moveSlider, 4500);
   })();
 
-// Hide navbar on scroll
-let lastScroll = 0;
-const header = document.querySelector('header');
-window.addEventListener('scroll', () => {
-  let current = window.scrollY;
-  if(current > lastScroll && current > 50){ 
-    header.style.transform = 'translateY(-100%)'; 
-  } else { 
-    header.style.transform = 'translateY(0)'; 
+/// Hide navbar on scroll (active on all pages)
+let lastScrollY = window.scrollY;
+
+window.addEventListener("scroll", () => {
+  const header = document.querySelector("header");
+  if (!header) return;
+
+  // Only hide when past 50px from top
+  if (window.scrollY > 50) {
+    // scrolling down → hide
+    if (window.scrollY > lastScrollY) {
+      header.classList.add("hide");
+    }
+    // scrolling up → show
+    else {
+      header.classList.remove("hide");
+    }
+  } else {
+    // Always show near top
+    header.classList.remove("hide");
   }
-  lastScroll = current;
+
+  lastScrollY = window.scrollY;
 });
+
+// Mobile nav toggle with accessibility improvements
+(function(){
+  const toggle = document.getElementById('mobile-menu-toggle');
+  const siteNav = document.getElementById('site-nav');
+  if(!toggle || !siteNav) return;
+
+  toggle.addEventListener('click', ()=>{
+    const expanded = toggle.getAttribute('aria-expanded') === 'true';
+    toggle.setAttribute('aria-expanded', String(!expanded));
+    siteNav.classList.toggle('open');
+    if(!expanded) siteNav.setAttribute('aria-hidden', 'false');
+    else siteNav.setAttribute('aria-hidden', 'true');
+  });
+
+  // Close mobile menu when a link is clicked
+  siteNav.querySelectorAll('a').forEach(a=>{
+    a.addEventListener('click', ()=>{
+      siteNav.classList.remove('open');
+      toggle.setAttribute('aria-expanded','false');
+      siteNav.setAttribute('aria-hidden', 'true');
+    });
+  });
+
+  // Close menu on Escape key
+  document.addEventListener('keydown', (e)=>{
+    if(e.key === 'Escape' && siteNav.classList.contains('open')){
+      siteNav.classList.remove('open');
+      toggle.setAttribute('aria-expanded','false');
+      siteNav.setAttribute('aria-hidden', 'true');
+      toggle.focus();
+    }
+  });
+
+  // Focus trap: keep focus within nav when open
+  const focusableElements = siteNav.querySelectorAll('a, button');
+  const firstFocusable = focusableElements[0];
+  const lastFocusable = focusableElements[focusableElements.length - 1];
+
+  document.addEventListener('keydown', (e)=>{
+    if(e.key === 'Tab' && siteNav.classList.contains('open')){
+      if(e.shiftKey){
+        if(document.activeElement === firstFocusable){
+          e.preventDefault();
+          lastFocusable.focus();
+        }
+      } else {
+        if(document.activeElement === lastFocusable){
+          e.preventDefault();
+          firstFocusable.focus();
+        }
+      }
+    }
+  });
+})();

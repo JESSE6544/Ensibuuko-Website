@@ -16,7 +16,7 @@
     .brand{display:flex;gap:0.75rem;align-items:center}
     .nav-logo{width:50px;height:50px;border-radius:14px;background:#FFFFFF;padding:6px;object-fit:contain;transition:transform .25s ease, box-shadow .25s ease;} .nav-logo:hover{transform:scale(1.07);box-shadow:0 0 12px rgba(0,0,0,0.06);} 
     nav ul{display:flex;gap:1rem;list-style:none;margin:0;padding:0}
-    nav a{text-decoration:none;color:#FFFFFF;font-weight:600;transition:opacity .25s ease;} nav a:hover{opacity:0.85;}
+    nav a{text-decoration:none;color:#FFFFFF;font-weight:600;transition:opacity .25s ease;margin-left:1.5rem} nav a:hover{opacity:0.85;}
     .btn{padding:0.55rem 0.9rem;border-radius:10px;border:0;cursor:pointer;font-weight:600}
     .btn.primary{background:var(--accent);color:#04202a}
 
@@ -72,10 +72,39 @@
 }
     .pattern-content{position:relative;z-index:2;color:#fff;max-width:900px;padding:3rem 1rem;width:100%;}
 
+/* Hero-specific classes (replace inline hero styles) */
+.hero-inner{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;animation:fadeIn 1.4s ease-out}
+.hero-title{font-size:2.6rem;font-weight:900;margin:0 0 0.75rem;color:#FFFFFF}
+.hero-sub{font-size:1.25rem;max-width:780px;margin:0 0 1.2rem;color:#F1F5F9}
+.hero-ctas{margin-top:1rem;display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+.hero-ctas .btn{padding:0.9rem 2rem;font-size:1rem;border-radius:12px;min-height:44px;display:flex;align-items:center}
+
+/* Product card base styles (moved from inline) */
+.product-card{max-width:1100px;width:100%;display:flex;gap:2rem;align-items:center;background:#FFFFFF;padding:2rem;border-radius:20px;box-shadow:0 4px 14px rgba(0,0,0,0.08)}
+.product-card .card-content{flex:1}
+.product-card .card-media{flex:1;display:flex;justify-content:center}
+.product-card img{width:100%;max-width:420px;border-radius:18px;box-shadow:0 6px 16px rgba(0,0,0,0.12);object-fit:cover}
+
+/* Mobile nav toggle */
+.mobile-menu-toggle{display:none;border:0;background:transparent;color:#FFFFFF;font-size:1.5rem;cursor:pointer;padding:0.35rem}
+#site-nav ul{display:flex;gap:1rem;list-style:none;margin:0;padding:0}
+
+@media (max-width:768px){
+  #site-nav{flex-direction:column;align-items:stretch;padding:0}
+  #site-nav.container{padding:0}
+  .mobile-menu-toggle{display:block;align-self:flex-start;padding:1rem;min-height:44px;min-width:44px;font-size:1.4rem;border:0;background:transparent;color:#FFFFFF;cursor:pointer;z-index:1000;position:relative}
+  #site-nav .brand{padding:0;margin-right:0;width:100%;justify-content:center}
+  #site-nav > a{display:none;padding:0.75rem 1rem;border-bottom:1px solid rgba(255,255,255,0.1);text-decoration:none;color:white;font-weight:600;font-size:0.95rem;min-height:44px;display:flex;align-items:center}
+  #site-nav.open > a{display:flex}
+  #site-nav a:hover{opacity:0.85}
+  #site-nav ul{flex-direction:column;gap:0.75rem;align-items:center}
+  #site-nav ul li a{display:block;padding:0.75rem 1rem;min-height:44px;display:flex;align-items:center}
+}
+
     
 
     /* small helpers */
-    .product-tab{padding:0.5rem 1rem;border-radius:8px;cursor:pointer;transition:all .25s ease;background:#dfffe4;color:#0A1A3A}
+    .product-tab{padding:0.5rem 1rem;border-radius:8px;cursor:pointer;transition:all .25s ease;background:#dfffe4;color:#0A1A3A;min-height:44px;display:flex;align-items:center;justify-content:center;font-size:1rem}
     .product-tab:hover{background:#c8fbdc;color:#0A1A3A}
     .active-tab{background:var(--accent) !important;color:#04202a !important}
   @keyframes fadeIn {0%{opacity:0;transform:translateY(-10px);}100%{opacity:1;transform:translateY(0);}}
@@ -83,3 +112,49 @@
       /* Scroll Reveal Animation */
       .reveal {opacity:0; transform:translateY(30px); transition:all 0.9s ease-out;} 
       .reveal.visible {opacity:1; transform:translateY(0);} 
+
+/* Mobile responsiveness tweaks */
+@media (max-width:768px) {
+  :root{--max-width:900px}
+  .brand{justify-content:center;width:100%;margin-right:0 !important}
+  .pattern-bar{height:auto;padding:3rem 1rem}
+  .pattern-content{padding:1.5rem}
+  .pattern-content h2{font-size:1.6rem;line-height:1.25}
+  .pattern-content p{font-size:1rem;margin:0 auto;max-width:100%}
+
+  /* Hero mobile adjustments */
+  .hero-title{font-size:1.5rem !important}
+  .hero-sub{font-size:1rem !important;max-width:100%}
+  .hero-ctas{gap:0.75rem}
+  .hero-ctas .btn{padding:0.75rem 1.25rem;font-size:0.95rem;width:100%;max-width:280px}
+
+  /* Product tabs mobile */
+  .product-tab{padding:0.6rem 0.9rem;font-size:0.9rem}
+
+  /* Product cards stack vertically on small screens */
+  .product-card{flex-direction:column;align-items:flex-start;gap:1rem;padding:1rem}
+  .product-card > div{width:100%}
+  .product-card img{max-width:100%;height:auto;display:block;margin:0 auto}
+
+  /* Make hero buttons easier to tap */
+  .pattern-content .btn{padding:0.85rem 1rem;font-size:1rem;width:100%;max-width:340px;min-height:44px}
+
+  /* Newsletter form stacks */
+  #news-form{grid-template-columns:1fr;align-items:stretch;gap:0.75rem}
+  #news-form input{min-height:44px;padding:0.75rem 1rem}
+  #news-form .newsletter-btn{width:100%;min-height:44px;padding:0.75rem}
+
+  /* Navigation wraps and centers */
+  nav ul{flex-wrap:wrap;gap:0.5rem;justify-content:center}
+  .nav{padding:0.5rem 0}
+
+  /* Reduce large headings elsewhere */
+  .headline{font-size:1.4rem}
+  .hero{grid-template-columns:1fr}
+
+  /* Footer stacks */
+  .footer-grid{grid-template-columns:repeat(1,1fr);gap:2rem}
+  
+  /* Testimonial slider full width */
+  .testimonial{min-width:100%}
+}
