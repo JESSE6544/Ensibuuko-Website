@@ -18,7 +18,8 @@
     nav ul{display:flex;gap:1rem;list-style:none;margin:0;padding:0}
     nav a{text-decoration:none;color:#FFFFFF;font-weight:600;transition:opacity .25s ease;margin-left:1.5rem} nav a:hover{opacity:0.85;}
     .btn{padding:0.55rem 0.9rem;border-radius:10px;border:0;cursor:pointer;font-weight:600}
-    .btn.primary{background:var(--accent);color:#04202a}
+    .btn.primary{background:var(--accent);color:#06233dcc}
+    
 
     .hero{display:grid;grid-template-columns:1fr 480px;gap:2rem;align-items:center;padding:3rem 0}
     .eyebrow{display:inline-block;background:rgba(16,185,129,0.08);color:var(--accent-2);padding:0.35rem 0.6rem;border-radius:999px;font-weight:700;font-size:0.78rem}
@@ -70,7 +71,8 @@
   background: linear-gradient(45deg, rgba(0,212,170,0.4), transparent);
   z-index: 1;
 }
-    .pattern-content{position:relative;z-index:2;color:#fff;max-width:900px;padding:3rem 1rem;width:100%;}
+   
+.pattern-content{position:relative;z-index:2;color:#fff;max-width:900px;padding:3rem 1rem;width:100%;}
 
 /* Hero-specific classes (replace inline hero styles) */
 .hero-inner{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;animation:fadeIn 1.4s ease-out}
@@ -84,6 +86,7 @@
 .product-card .card-content{flex:1}
 .product-card .card-media{flex:1;display:flex;justify-content:center}
 .product-card img{width:100%;max-width:420px;border-radius:18px;box-shadow:0 6px 16px rgba(0,0,0,0.12);object-fit:cover}
+
 
 /* Mobile nav toggle */
 .mobile-menu-toggle{display:none;border:0;background:transparent;color:#FFFFFF;font-size:1.5rem;cursor:pointer;padding:0.35rem}
@@ -176,3 +179,4 @@
     min-height:56px;
   }
 }
+
