@@ -162,21 +162,68 @@
   .testimonial{min-width:100%}
 }
 
-/* Mobile: evenly space nav links when the menu is open */
+/* Mobile nav toggle */
+.mobile-menu-toggle{display:none;border:0;background:transparent;color:#FFFFFF;font-size:1.5rem;cursor:pointer;padding:0.35rem}
+
 @media (max-width:768px){
-  #site-nav.open{
+  .nav{
+    position:relative;
+    flex-wrap:wrap;
     display:flex;
-    flex-direction:column;
-    justify-content:space-around;
-    height:calc(100vh - 0px);
-    padding-top:1rem;
-  }
-  #site-nav.open > a{
-    display:flex !important;
-    justify-content:center;
+    justify-content:space-between;
     align-items:center;
-    padding:1rem;
-    min-height:56px;
+  }
+  
+  .mobile-menu-toggle{
+    display:block;
+    padding:0.5rem;
+    min-height:44px;
+    min-width:44px;
+    font-size:1.6rem;
+    border:0;
+    background:transparent;
+    color:#FFFFFF;
+    cursor:pointer;
+    z-index:1000;
+    order:2;
+    justify-content:flex-end !important;
+  }
+  
+  .brand{
+    margin-right:0 !important;
+    justify-content:flex-start !important;
+    order:1;
+  }
+  
+  /* Hide navigation links by default on mobile */
+  #site-nav > a{
+    display:none;
+    width:100%;
+    padding:1rem 1.5rem;
+    border-bottom:1px solid rgba(255,255,255,0.1);
+    text-decoration:none;
+    color:white;
+    font-weight:600;
+    font-size:1rem;
+    min-height:50px;
+    align-items:center;
+    transition:background 0.2s ease;
+    margin-left:0;
+    order:3;
+  }
+  
+  #site-nav > a:hover{
+    background:rgba(255,255,255,0.08);
+    opacity:1;
+  }
+  
+  /* Show navigation links when menu is open */
+  #site-nav.open{
+    background:var(--navy);
+    padding-bottom:1rem;
+  }
+  
+  #site-nav.open > a{
+    display:flex;
   }
 }
-

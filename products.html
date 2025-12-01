@@ -4,20 +4,29 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Ensibuuko Products</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <!-- Main CSS must come first to establish base styles -->
+  <link rel="stylesheet" href="css/main.css">
+  <!-- Products CSS comes second to add page-specific styles -->
   <link rel="stylesheet" href="css/products.css">
 </head>
 <body>
 
 <header>
   <nav id="site-nav" class="container nav" role="navigation" aria-label="Primary navigation">
-   <div class="brand" style="margin-right:auto;display:flex;gap:0.75rem;align-items:center;">
-      <img src="assets/images/LOGO EDITS v2-01.png" alt="Ensibuuko Logo" class="nav-logo" />
+   <div class="brand" style="margin-right:auto;display:flex;">
+     <div style="margin-right:auto;display:flex;gap:0.75rem;align-items:center;">
+       <img src="assets/images/LOGO EDITS v2-01.png" alt="Ensibuuko Logo" class="nav-logo" />
       <div style="font-weight:800;color:#FFFFFF">Ensibuuko</div>
+     </div>
+
+      <!-- Mobile menu toggle -->
+      <button id="mobile-menu-toggle" class="mobile-menu-toggle" aria-controls="site-nav" aria-expanded="false" aria-label="Toggle navigation">☰</button>
+
     </div>
 
-    <!-- Mobile menu toggle -->
-    <button id="mobile-menu-toggle" class="mobile-menu-toggle" aria-controls="site-nav" aria-expanded="false" aria-label="Toggle navigation">☰</button>
     <!-- Navigation links -->
     <a href="index.html">Home</a>
     <a href="products.html">Products</a>
@@ -41,7 +50,6 @@
       <p>Chomoka transforms traditional VSLA record keeping with a mobile-first system. Record meetings, track contributions, issue loans, automate calculations and integrate Mobile Money.</p>
       <button class="btn primary">Learn More →</button>
     </div>
-    <!-- Fixed image with proper styling -->
     <img src="assets/images/Chomoka-phone.png" alt="Chomoka App" loading="lazy" onerror="this.style.display='none'" />
   </div>
 
@@ -49,7 +57,6 @@
 
   <!-- MOBIS -->
   <div class="product-card">
-    <!-- Fixed image with proper styling -->
     <img src="assets/images/Mobis.png" alt="Mobis App" loading="lazy" onerror="this.style.display='none'" />
     <div>
       <h3>MOBIS</h3>
@@ -69,7 +76,6 @@
       <p>Through strong partnerships, Ensibuuko offers agro-loans, emergency loans, and working capital financing tailored to rural communities and micro‑enterprises.</p>
       <button class="btn primary">Learn More →</button>
     </div>
-    <!-- Fixed image styling -->
     <img src="assets/images/LOGO EDITS v2-01.png" alt="Lending" loading="lazy" style="max-width:200px;opacity:0.4;object-fit:contain;" />
   </div>
 </div>
@@ -81,7 +87,9 @@
 </div>
 
 <footer>
-  &copy; 2025 Ensibuuko — All rights reserved.
+  <div class="container">
+    <p>&copy; <span id="year">2025</span> Ensibuuko — All rights reserved.</p>
+  </div>
 </footer>
 
 <script src="js/script.js"></script>
