@@ -31,6 +31,7 @@
     <a href="index.html">Home</a>
     <a href="products.html">Products</a>
     <a href="about.html">About</a>
+    <a href="careers.html">Careers</a>
     <a href="contact.html">Contact</a>
   </nav>
 </header>
@@ -48,7 +49,7 @@
       <h3>Chomoka</h3>
       <h2>Digitizing Village Savings Groups</h2>
       <p>Chomoka transforms traditional VSLA record keeping with a mobile-first system. Record meetings, track contributions, issue loans, automate calculations and integrate Mobile Money.</p>
-      <button class="btn primary">Learn More →</button>
+      <button class="btn primary learn-more" type="button" data-title="Chomoka" data-image="assets/images/Chomoka-phone.png" data-description="Dummy data: Chomoka is a mobile-first VSLA management tool that helps groups record meetings, track contributions and manage loans." data-features="Offline support,Mobile Money integration,Automated calculations">Learn More →</button>
     </div>
     <img src="assets/images/Chomoka-phone.png" alt="Chomoka App" loading="lazy" onerror="this.style.display='none'" />
   </div>
@@ -62,7 +63,7 @@
       <h3>MOBIS</h3>
       <h2>Complete Digital Banking for SACCOs & MFIs</h2>
       <p>MOBIS is a comprehensive core banking suite built for rural financial institutions. Manage accounts, automate reporting, enable mobile & USSD member access, and improve operational efficiency.</p>
-      <button class="btn primary">Learn More →</button>
+      <button class="btn primary learn-more" type="button" data-title="MOBIS" data-image="assets/images/Mobis.png" data-description="Dummy data: MOBIS is a core banking platform for SACCOs and MFIs offering accounts, reporting and member access channels." data-features="Core banking,USSD support,Automated reports">Learn More →</button>
     </div>
   </div>
 
@@ -74,7 +75,7 @@
       <h3>Lending Services</h3>
       <h2>Accessible Financing for Underserved Communities</h2>
       <p>Through strong partnerships, Ensibuuko offers agro-loans, emergency loans, and working capital financing tailored to rural communities and micro‑enterprises.</p>
-      <button class="btn primary">Learn More →</button>
+      <button class="btn primary learn-more" type="button" data-title="Lending Services" data-image="assets/images/LOGO EDITS v2-01.png" data-description="Dummy data: Ensibuuko lending connects community groups to tailored small loans for agriculture and emergencies." data-features="Flexible terms,Partner networks,Rapid disbursement">Learn More →</button>
     </div>
     <img src="assets/images/LOGO EDITS v2-01.png" alt="Lending" loading="lazy" style="max-width:200px;opacity:0.4;object-fit:contain;" />
   </div>
@@ -84,6 +85,21 @@
   <h2 style="font-weight:800;font-size:2rem;">Ready to Get Started?</h2>
   <p>Talk to our team and discover the right digital tools for your organization.</p>
   <button class="btn primary" onclick="window.location.href='contact.html'">Contact Us</button>
+</div>
+<!-- Product details modal (pop-up) -->
+<div id="product-modal" class="modal" aria-hidden="true" role="dialog" aria-labelledby="product-modal-title" aria-modal="true">
+  <div class="modal-overlay"></div>
+  <div class="modal-content">
+    <button class="modal-close" aria-label="Close product details">×</button>
+    <div class="modal-body">
+      <div class="modal-image"><img src="" alt=""></div>
+      <div class="modal-info">
+        <h2 id="product-modal-title"></h2>
+        <p class="modal-description"></p>
+        <ul class="modal-features"></ul>
+      </div>
+    </div>
+  </div>
 </div>
 
 <footer>

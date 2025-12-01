@@ -164,3 +164,87 @@ window.addEventListener("scroll", () => {
     }
   });
 })();
+
+// Product data used to populate the modal (can be expanded or loaded from JSON)
+const PRODUCT_DATA = {
+  MOBIS: {
+    title: 'MOBIS',
+    image: 'assets/images/Mobis.png',
+    description: 'Transform your operations with MOBIS — a comprehensive core banking suite designed for SACCOs, MFIs and rural financial institutions. Manage customer accounts through an intuitive web app while offering members access via mobile apps and USSD for non-smartphone users. MOBIS streamlines reporting, automates workflows, and scales as your institution grows.',
+    features: [
+      'Core banking system with accounts, ledgers and reports',
+      'Transaction processing: deposits, withdrawals, transfers and payments',
+      'Accounts management: onboard and track customer profiles',
+      'Loans & savings: automated lending workflows and interest calculations',
+      'Mobile & USSD access for customers',
+      'Agent banking support and integrations'
+    ]
+  }
+};
+
+// Product details modal behavior
+(function(){
+  const modal = document.getElementById('product-modal');
+  if(!modal) return;
+  const overlay = modal.querySelector('.modal-overlay');
+  const closeBtn = modal.querySelector('.modal-close');
+  const titleEl = modal.querySelector('#product-modal-title');
+  const descEl = modal.querySelector('.modal-description');
+  const featuresEl = modal.querySelector('.modal-features');
+  const imgEl = modal.querySelector('.modal-image img');
+
+  let opener = null;
+
+  function openModal(data){
+    titleEl.textContent = data.title || '';
+    descEl.textContent = data.description || '';
+    imgEl.src = data.image || '';
+    imgEl.alt = data.title || '';
+
+    featuresEl.innerHTML = '';
+    if(data.features){
+      if(Array.isArray(data.features)){
+        data.features.forEach(f=>{ const li = document.createElement('li'); li.textContent = f; featuresEl.appendChild(li); });
+      } else {
+        data.features.split(',').map(f=>f.trim()).filter(Boolean).forEach(f=>{
+          const li = document.createElement('li'); li.textContent = f; featuresEl.appendChild(li);
+        });
+      }
+    }
+
+    modal.classList.add('open');
+    modal.setAttribute('aria-hidden','false');
+    // store opener for focus return
+    if(document.activeElement) opener = document.activeElement;
+    closeBtn.focus();
+  }
+
+  function closeModal(){
+    modal.classList.remove('open');
+    modal.setAttribute('aria-hidden','true');
+    if(opener && opener.focus) opener.focus();
+  }
+
+  // Delegate clicks for any current/future .learn-more buttons
+  document.addEventListener('click', function(e){
+    const btn = e.target.closest('.learn-more');
+    if(!btn) return;
+    e.preventDefault();
+    const data = {
+      title: btn.getAttribute('data-title') || btn.closest('.product-card')?.querySelector('h2')?.textContent || '',
+      description: btn.getAttribute('data-description') || btn.closest('.product-card')?.querySelector('p')?.textContent || '',
+      image: btn.getAttribute('data-image') || btn.closest('.product-card')?.querySelector('img')?.src || '',
+      features: btn.getAttribute('data-features') || ''
+    };
+    // Prefer the richer PRODUCT_DATA entry when available
+    const key = (data.title || '').toString().trim().toUpperCase();
+    const productEntry = PRODUCT_DATA[key] || data;
+    openModal(productEntry);
+  });
+
+  // Close handlers
+  closeBtn.addEventListener('click', closeModal);
+  overlay.addEventListener('click', closeModal);
+  document.addEventListener('keydown', function(e){ if(e.key === 'Escape' && modal.classList.contains('open')) closeModal(); });
+
+})();

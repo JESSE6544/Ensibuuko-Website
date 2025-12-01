@@ -7,6 +7,28 @@
   --max-width:1200px;
 }
 
+/* Modal styles for product details */
+.modal{display:none;position:fixed;inset:0;z-index:1500;font-family:Inter,system-ui,Arial,Helvetica,sans-serif}
+.modal.open{display:block}
+.modal-overlay{position:fixed;inset:0;background:rgba(2,6,23,0.6);backdrop-filter:blur(2px)}
+.modal-content{position:fixed;left:50%;top:50%;transform:translate(-50%,-50%);max-width:980px;width:94%;background:#fff;border-radius:12px;box-shadow:0 12px 40px rgba(2,6,23,0.45);overflow:hidden}
+.modal-body{display:flex;gap:1.25rem;align-items:flex-start;padding:1.25rem}
+.modal-image{flex:0 0 320px;max-width:320px}
+.modal-image img{width:100%;height:auto;border-radius:8px;object-fit:contain}
+.modal-info{flex:1 1 0;padding:0.5rem}
+.modal-info h2{margin:0 0 0.5rem;font-size:1.6rem}
+.modal-info .modal-description{color:#334155;margin-bottom:0.75rem}
+.modal-features{margin:0;padding-left:1.15rem;color:#334155}
+.modal-close{position:absolute;right:0.5rem;top:0.5rem;background:transparent;border:0;font-size:1.6rem;padding:0.5rem;cursor:pointer}
+
+@media (max-width:768px){
+  .modal-content{width:95%;max-width:720px}
+  .modal-body{flex-direction:column;padding:0.75rem}
+  .modal-image{max-width:100%;flex:0 0 auto}
+  .modal-info h2{font-size:1.25rem}
+}
+
+
 body{
   margin:0;
   font-family:'Inter',sans-serif;
