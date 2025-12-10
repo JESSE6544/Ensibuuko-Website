@@ -1,11 +1,12 @@
  :root {
    --navy: #161d77;
-   --accent: #161d77;
+   --accent:  #54b749;;
    --accent-2: #161d77;
    --bg: #e6fbff;
    --muted: #F8FAFC;
    --text: #ecedf0;
    --max-width: 1200px;
+   
  }
 
  * {
@@ -229,14 +230,6 @@
    border-radius: 12px
  }
 
- /* footer spacing */
- footer {
-   background: var(--navy);
-   color: white;
-   padding: 2rem 1rem;
-   margin-top: 4rem;
-   text-align: center;
- }
 
 
  /* responsive */
@@ -313,10 +306,6 @@
    }
  }
 
- /* All generic paragraphs */
- p {
-   color: #0A1A3A !important;
- }
 
  /* All headings readable everywhere */
  h1,
@@ -663,6 +652,7 @@
   );
 }
 
+
 /* ===== HERO LOGO (MATCH NAV LOGO STYLE) ===== */
 .ch-logo {
   width: 200px;
@@ -701,3 +691,16 @@
   color: #ffffff !important; 
 }
 
+
+
+ /* footer spacing */
+ footer {
+   background: var(--navy);
+   color: white;
+   padding: 2rem 1rem;
+   margin-top: 4rem;
+   text-align: center;
+ }
+
+ 
+ 
