@@ -18,29 +18,48 @@
 <header>
   <nav id="site-nav" class="container nav" role="navigation" aria-label="Primary navigation">
    <div class="brand" style="margin-right:auto;display:flex;">
+    <a href="index.html" style="text-decoration:none;">
      <div style="margin-right:auto;display:flex;gap:0.75rem;align-items:center;">
-       <img src="assets/images/LOGO EDITS v2-01.png" alt="Ensibuuko Logo" class="nav-logo" loading="lazy" />
-      <div style="font-weight:800;color:#FFFFFF">Ensibuuko</div>
+       <img src="assets/images/ENSIBUUKO LOGO -01.svg" alt="Ensibuuko Logo" class="nav-logo" loading="lazy" />
      </div>
+    </a>  
 
       <!-- Mobile menu toggle -->
-      <button id="mobile-menu-toggle" class="mobile-menu-toggle" aria-controls="site-nav" aria-expanded="false" aria-label="Toggle navigation">☰</button>
+      <button id="mobile-menu-toggle" class="mobile-menu-toggle" 
+      aria-controls="site-nav" aria-expanded="false" aria-label="Toggle navigation">☰</button>
 
     </div>
 
     <!-- Navigation links -->
     <a href="index.html">Home</a>
-    <a href="products.html">Products</a>
+    <div class="nav-dropdown">
+      <a class="dropdown-toggle">Products</a>
+      <div class="dropdown-menu">
+        <a href="chomoka.html">Savings Groups Platform</a>
+        <a href="mobis.html">Microfinance Platform</a>
+        <a href="lending.html">Mobile Lending Services</a>
+      </div>
+   </div>
     <a href="about.html">About</a>
-    <a href="careers.html">Careers</a>
     <a href="contact.html">Contact</a>
   </nav>
 </header>
 
-<section class="hero">
+<main class="page-content"></main>
+<section class="hero-flex hero--contact hero--short">
+  <div class="hero-left">
   <h1>Get in Touch</h1>
   <p>Have questions? We'd love to hear from you. Contact us and let's discuss how we can help your organization.</p>
+  </div>
+
+  <div class="hero-bg"></div>
+
+  <svg class="hero-curve" viewBox="0 0 1440 320">
+    <path fill="#000239" d="M0,200L1440,140L1440,320L0,320Z"></path>
+  </svg>
 </section>
+</main>
+
 
 <section class="section">
   <div class="contact-container">
@@ -143,6 +162,22 @@
   </div>
 </section>
 
+<!-- MAP SECTION -->
+<section class="map-section">
+  <h2 class="section-title" style="text-align:center; color:#0A1A3A; margin-bottom:1.5rem;">
+    Our Location
+  </h2>
+
+  <div class="map-container">
+    <iframe 
+      loading="lazy"
+      allowfullscreen
+      referrerpolicy="no-referrer-when-downgrade"
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.753219553963!2d32.628!3d0.372!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x177dbbc3c3a0e9a7%3A0xc0e94a5c3fb4ad0c!2sPlot%20238%20Kikawa%20Rd%2C%20Kampala%2C%20Uganda!5e0!3m2!1sen!2sug!4v1700000000000"
+    ></iframe>
+  </div>
+</section>
+
 <!-- Alternative Contact Options -->
 <section class="section">
   <h2 class="section-title">Other Ways to Connect</h2>
@@ -164,7 +199,7 @@
         </svg>
       </div>
       <h3>Social Media</h3>
-      <p>Follow us on Twitter, Facebook, LinkedIn, and Instagram for updates and insights.</p>
+      <p>Follow us on X/Twitter, Facebook and LinkedIn for updates and insights.</p>
     </div>
 
     <div class="option-card">
@@ -180,10 +215,10 @@
 </section>
 
 <footer>
-  <div style="max-width:var(--max-width);margin:0 auto;">
+  <div class="container">
     <div class="footer-grid">
       <div>
-        <img src="assets/images/LOGO EDITS v2-01.png" alt="Ensibuuko Logo" class="footer-logo" loading="lazy" />
+        <img src="assets/images/LOGO EDITS v2-02.png" alt="Ensibuuko Logo" class="footer-logo" loading="lazy" />
         <p style="color:#E6F6F3;line-height:1.6;margin:0.5rem 0 0.75rem 0;">
           Plot 238 Kikawa Road<br>
           Kiwatule.<br>
@@ -197,9 +232,9 @@
       <div>
         <h4 style="color:#fff">Products</h4>
         <ul style="list-style:none;padding:0;margin:0;color:#E6F6F3">
-          <li><a href="products.html" style="color:#E6F6F3;text-decoration:none;">MOBIS</a></li>
-          <li><a href="products.html" style="color:#E6F6F3;text-decoration:none;">Chomoka</a></li>
-          <li><a href="products.html" style="color:#E6F6F3;text-decoration:none;">Lending Services</a></li>
+          <li><a href="chomoka.html" style="color:#E6F6F3;text-decoration:none;">Savings Groups Platform</a></li>
+          <li><a href="mobis.html" style="color:#E6F6F3;text-decoration:none;">Microfinance Platform</a></li>
+          <li><a href="lending.html" style="color:#E6F6F3;text-decoration:none;">Mobile Lending Services</a></li>
         </ul>
       </div>
 
@@ -207,14 +242,13 @@
         <h4 style="color:#fff">Company</h4>
         <ul style="list-style:none;padding:0;margin:0;color:#E6F6F3">
           <li><a href="about.html" style="color:#E6F6F3;text-decoration:none;">About</a></li>
-          <li><a href="about.html" style="color:#E6F6F3;text-decoration:none;">Team</a></li>
-          <li><a href="about.html" style="color:#E6F6F3;text-decoration:none;">Impact</a></li>
+          <li><a href="contact.html" style="color:#E6F6F3;text-decoration:none;">Contact Us</a></li>
         </ul>
       </div>
 
       <div>
         <h4 style="color:#fff">Connect</h4>
-        <div style="display:flex;gap:0.75rem;margin-top:0.5rem;align-items:center;flex-wrap:wrap;">
+        <div style="display:flex;gap:0.75rem;margin-top:0.5rem;align-items:center;">
           <a href="#" aria-label="Twitter" style="display:flex;align-items:center;">
             <svg width="20" height="20" fill="#E6F6F3" viewBox="0 0 24 24"><path d="M22.46 6c-.77.35-1.6.58-2.46.69a4.3 4.3 0 0 0 1.88-2.37 8.59 8.59 0 0 1-2.72 1.04 4.28 4.28 0 0 0-7.3 3.9A12.14 12.14 0 0 1 3.15 4.8a4.27 4.27 0 0 0 1.33 5.71 4.24 4.24 0 0 1-1.94-.53v.05c0 2.06 1.47 3.78 3.42 4.17-.36.1-.75.15-1.15.15-.28 0-.55-.03-.81-.08a4.29 4.29 0 0 0 4 2.97A8.6 8.6 0 0 1 2 19.54 12.1 12.1 0 0 0 8.56 21c7.55 0 11.68-6.26 11.68-11.68 0-.18-.01-.35-.02-.53A8.18 8.18 0 0 0 22.46 6z"/></svg>
           </a>
@@ -223,6 +257,9 @@
           </a>
           <a href="#" aria-label="Facebook" style="display:flex;align-items:center;">
             <svg width="20" height="20" fill="#E6F6F3" viewBox="0 0 24 24"><path d="M22 12.07C22 6.48 17.52 2 11.93 2S1.86 6.48 1.86 12.07c0 4.99 3.66 9.13 8.44 9.93v-7.03H7.9v-2.9h2.4V9.98c0-2.38 1.42-3.7 3.6-3.7 1.04 0 2.13.18 2.13.18v2.34h-1.2c-1.18 0-1.55.73-1.55 1.48v1.78h2.64l-.42 2.9h-2.22V22c4.78-.8 8.44-4.94 8.44-9.93z"/></svg>
+          </a>
+          <a href="#" aria-label="WhatsApp" style="display:flex;align-items:center;">
+            <svg width="22" height="22" fill="#E6F6F3" viewBox="0 0 24 24"><path d="M20.52 3.48A11.81 11.81 0 0 0 12 0C5.37 0 0 5.37 0 12c0 2.11.55 4.18 1.6 6.01L0 24l6.17-1.6A11.93 11.93 0 0 0 12 24c6.63 0 12-5.37 12-12 0-3.19-1.24-6.19-3.48-8.52zM12 21.6c-1.9 0-3.74-.52-5.34-1.52l-.38-.23-3.66.95.98-3.56-.25-.37A9.63 9.63 0 0 1 2.4 12c0-5.29 4.31-9.6 9.6-9.6 2.56 0 4.97 1 6.78 2.8a9.52 9.52 0 0 1 2.82 6.8c0 5.29-4.31 9.6-9.6 9.6zm5.12-7.38c-.28-.14-1.65-.81-1.9-.9-.25-.1-.43-.14-.6.14-.18.28-.7.9-.86 1.08-.16.18-.32.2-.6.07-.28-.14-1.18-.43-2.24-1.38a8.53 8.53 0 0 1-1.58-1.96c-.17-.28 0-.43.13-.57.14-.14.28-.32.43-.5.14-.18.18-.28.28-.46.1-.18.05-.35 0-.49-.05-.14-.6-1.45-.82-1.98-.22-.53-.44-.46-.6-.46h-.5c-.18 0-.49.07-.74.35-.25.28-.97.95-.97 2.32 0 1.37 1 2.69 1.14 2.88.14.18 1.96 3 4.74 4.2.66.28 1.17.45 1.57.58.66.21 1.27.18 1.74.11.53-.08 1.65-.68 1.88-1.33.23-.65.23-1.2.16-1.33-.07-.14-.25-.22-.53-.36z"/></svg>
           </a>
         </div>
         <div style="margin-top:1.5rem;color:#E6F6F3;font-size:0.9rem">&copy; <span id="year">2025</span> Ensibuuko — All rights reserved.</div>

@@ -1,15 +1,18 @@
 :root{
-  --navy:#0A1A3A;
-  --accent:#00D4AA;
-  --accent-2:#10B981;
-  --light:#E8FBEA;
-  --max-width:1200px;
-}
+      --navy: #000239;
+      --accent: #54b749;
+      --accent-2: #54b749;
+      --bg: #e6fbff;
+      --muted: #F8FAFC;
+      --text: #000239;
+      --max-width:1200px;
+    }
 
 body{
   margin:0;
-  font-family:'Inter',sans-serif;
-  background:#ccf9dd;
+   font-family: var(--font-primary);
+  font-weight: 400;
+  background:var(--bg);
   color:#0B1220;
   line-height:1.6;
 }
@@ -33,81 +36,6 @@ body{
 .btn.primary{
   background:var(--accent);
   color:#04202a;
-}
-
-.hero{
-  position:relative;
-  height:55vh;
-  min-height:380px;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-  text-align:center;
-  background:url('../assets/team/team.jpg') center/cover no-repeat;
-  color:white;
-  overflow:hidden;
-  margin-top:0;
-}
-
-.hero::before{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:rgba(0,0,0,0.55);
-  z-index:0;
-}
-
-.hero *{
-  position:relative;
-  z-index:1;
-  animation:fadeIn 1.4s ease-out forwards;
-  opacity:0;
-}
-
-@keyframes fadeIn{
-  0%{opacity:0;transform:translateY(20px);}
-  100%{opacity:1;transform:translateY(0);}
-}
-
-.section{
-  max-width:var(--max-width);
-  margin:4rem auto;
-  padding:0 1rem;
-}
-
-h2.section-title{
-  text-align:center;
-  font-size:2.2rem;
-  font-weight:800;
-  margin-bottom:2rem;
-  color:#0A1A3A;
-}
-
-.metrics-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  gap:1.5rem;
-}
-
-.metric-card{
-  background:white;
-  padding:2rem;
-  border-radius:18px;
-  box-shadow:0 4px 12px rgba(0,0,0,0.08);
-  text-align:center;
-}
-
-.metric-card h3{
-  font-size:2rem;
-  color:var(--accent-2);
-  margin:0;
-}
-
-.metric-card p{
-  margin:0;
-  margin-top:0.5rem;
-  color:#475569;
 }
 
 .partners{
@@ -185,34 +113,6 @@ h2.section-title{
 .vision-mission-card .highlight{
   color:var(--accent-2);
   font-weight:700;
-}
-
-/* Impact Section */
-.impact-wrapper{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  background:#F5F8FB;
-  padding:2.5rem 2rem;
-  border-radius:20px;
-  box-shadow:0 4px 12px rgba(0,0,0,0.06);
-}
-
-.impact-item{
-  flex:1;
-  text-align:center;
-}
-
-.impact-number{
-  font-size:3.2rem;
-  font-weight:800;
-  margin:0;
-}
-
-.impact-divider{
-  width:1px;
-  background:#CBD5E1;
-  height:60px;
 }
 
 /* Approach card icons */
@@ -444,3 +344,25 @@ footer{
     padding:1.5rem 1rem;
   }
 }
+
+/* =========================
+   ABOUT PAGE HERO OVERRIDES
+========================= */
+
+.hero--about .hero-bg {
+  background-image: url("../assets/team/team.jpg");
+}
+
+/* keep text centered for about */
+.hero--about .hero-left {
+  max-width: 700px;
+  text-align: center;
+  align-items: center;
+  margin: 0 auto;
+  min-height: 80vh;
+}
+
+.hero--about .hero-sub-big {
+  max-width: 620px;
+}
+

@@ -1,20 +1,20 @@
 :root{
-  --navy:#0A1A3A;
-  --accent:#00D4AA;
-  --accent-2:#10B981;
-  --light:#E8FBEA;
-  --max-width:1200px;
-  --text:#0B1220;
-  --muted:#F8FAFC;
-}
-
+      --navy: #000239;
+      --accent: #00D4AA;
+      --accent-2: #10B981;
+      --bg: #e6fbff;
+      --muted: #F8FAFC;
+      --text: #0B1220;
+      --max-width:1200px;
+    }
 *{box-sizing:border-box}
 
 body{
   margin:0;
-  font-family:'Inter',sans-serif;
-  background:#C6F8D8;
-  color:var(--text);
+  font-family: var(--font-primary);
+  font-weight: 400;
+  background:var(--bg);
+  color:#000239;
   line-height:1.6;
 }
 
@@ -39,55 +39,6 @@ body{
   color:#04202a;
 }
 
-.hero{
-  position:relative;
-  height:50vh;
-  min-height:360px;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-  text-align:center;
-  background:url('../assets/images/00008.jpg') center/cover no-repeat;
-  color:white;
-  overflow:hidden;
-  margin-top:0;
-}
-
-.hero::before{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:rgba(0,0,0,0.55);
-  z-index:0;
-}
-
-.hero *{
-  position:relative;
-  z-index:1;
-  animation:fadeInHero 1.4s ease-out forwards;
-  opacity:0;
-}
-
-@keyframes fadeInHero{
-  0%{opacity:0;transform:translateY(20px);}
-  100%{opacity:1;transform:translateY(0);}
-}
-
-.hero h1{
-  font-size:2.8rem;
-  font-weight:800;
-  margin-bottom:1rem;
-}
-
-.hero p{
-  max-width:700px;
-  margin:0 auto;
-  color:white;
-  font-size:1.2rem;
-  font-weight:300;
-}
-
 .section{
   max-width:var(--max-width);
   margin:4rem auto;
@@ -99,7 +50,7 @@ h2.section-title{
   font-size:2.2rem;
   font-weight:800;
   margin-bottom:2rem;
-  color:#0A1A3A;
+  color:#000239;
 }
 
 /* Contact Form Styles */
@@ -108,7 +59,7 @@ h2.section-title{
   grid-template-columns:1fr 1fr;
   gap:3rem;
   align-items:start;
-  background:#0A1A3A;
+  background:#000239;
   padding:3rem;
   border-radius:20px;
   box-shadow:0 6px 20px rgba(0,0,0,0.08);
@@ -337,4 +288,54 @@ footer{
     grid-template-columns:repeat(1,1fr);
     gap:2rem;
   }
+}
+
+/* MAP SECTION */
+.map-section {
+  max-width: var(--max-width);
+  margin: 3rem auto;
+  padding: 1rem;
+}
+
+.map-container {
+  width: 100%;
+  height: 420px;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+}
+
+.map-container iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .map-container {
+    height: 300px;
+  }
+}
+
+/* =========================
+   CONTACT HERO OVERRIDES
+========================= */
+
+.hero--contact .hero-bg {
+  background-image: url("../assets/images/contactbgimage.jpg");
+  background-position: center right;
+}
+
+/* Shorter hero for utility pages */
+.hero--short {
+  min-height: 85vh;
+}
+
+.hero-title {
+  font-size: 3rem;
+  font-weight: 900;
+  margin: 0 0 0.5rem;
+  line-height: 1.02;
+  transform-origin: center;
 }

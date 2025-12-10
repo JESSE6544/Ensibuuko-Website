@@ -13,36 +13,51 @@
   <link rel="stylesheet" href="css/about.css">
 </head>
 <body>
-
 <header>
   <nav id="site-nav" class="container nav" role="navigation" aria-label="Primary navigation">
    <div class="brand" style="margin-right:auto;display:flex;">
+    <a href="index.html" style="text-decoration:none;">
      <div style="margin-right:auto;display:flex;gap:0.75rem;align-items:center;">
-       <img src="assets/images/LOGO EDITS v2-01.png" alt="Ensibuuko Logo" class="nav-logo" loading="lazy" />
-      <div style="font-weight:800;color:#FFFFFF">Ensibuuko</div>
+       <img src="assets/images/ENSIBUUKO LOGO -01.svg" alt="Ensibuuko Logo" class="nav-logo" loading="lazy" />
      </div>
+    </a>  
 
       <!-- Mobile menu toggle -->
-      <button id="mobile-menu-toggle" class="mobile-menu-toggle" aria-controls="site-nav" aria-expanded="false" aria-label="Toggle navigation">☰</button>
+      <button id="mobile-menu-toggle" class="mobile-menu-toggle" 
+      aria-controls="site-nav" aria-expanded="false" aria-label="Toggle navigation">☰</button>
 
     </div>
 
     <!-- Navigation links -->
     <a href="index.html">Home</a>
-    <a href="products.html">Products</a>
+    <div class="nav-dropdown">
+      <a class="dropdown-toggle">Products</a>
+      <div class="dropdown-menu">
+        <a href="chomoka.html">Savings Groups Platform</a>
+        <a href="mobis.html">Microfinance Platform</a>
+        <a href="lending.html">Mobile Lending Services</a>
+      </div>
+   </div>
     <a href="about.html">About</a>
-    <a href="careers.html">Careers</a>
     <a href="contact.html">Contact</a>
   </nav>
 </header>
 
-<section class="hero">
-  <h1>Who we are</h1>
+<main class="page-content"></main>
+<section class="hero-flex hero--about hero--short">
+  <div class="hero-left">
+    <h1>About Ensibuuko</h1>
   <p>
     We are more than a software company. We are a team of passionate engineers and professionals that are deeply committed to solving the issues holding back financial inclusion in Africa.
     <br><br>
     We are deploying technology solutions to community-based savings and loans organisations so they can efficiently reach and serve unbanked and most underserved communities in Africa with affordable and relevant financial services. Our proprietary microfinance solutions help these organizations to automate data, process and payments and to become efficient and bankable.
   </p>
+  </div>
+  <div class="hero-bg"></div>
+
+  <svg class="hero-curve" viewBox="0 0 1440 320">
+    <path fill="#54b749" d="M0,200L1440,140L1440,320L0,320Z"></path>
+  </svg>
 </section>
 
 <!-- Vision & Mission Section -->
@@ -66,10 +81,11 @@
 
   </div>
 </section>
+</main>
 
 <!-- Meet The Team Slider Section -->
 <section class="section">
-  <h2 class="section-title">Meet The Team</h2>
+  <h2 class="section-title" style="text-align: center;">Meet The Team</h2>
   <div class="team-slider">
 
     <div class="team-track" style="display:flex;transition:transform 0.6s ease;width:100%;">
@@ -92,45 +108,8 @@
   </div>
 </section>
 
-<!-- Impact Metrics Section -->
 <section class="section">
-  <h2 class="section-title">Our Impact</h2>
-
-  <div class="impact-wrapper">
-
-    <div class="impact-item">
-      <h3 class="impact-number" data-target="250">0<span style="color:#10B981">+</span></h3>
-      <p>Active Users</p>
-    </div>
-
-    <div class="impact-divider"></div>
-
-    <div class="impact-item">
-      <h3 class="impact-number" data-target="780">$0<span style="color:#10B981">+</span></h3>
-      <p>Loans Given</p>
-    </div>
-
-    <div class="impact-divider"></div>
-
-    <div class="impact-item">
-      <h3 class="impact-number" data-target="145">0<span style="color:#10B981">+</span></h3>
-      <p>Districts Affected</p>
-    </div>
-
-    <div class="impact-divider"></div>
-
-    <div class="impact-item">
-      <h3 class="impact-number" data-target="50">0<span style="color:#10B981">+</span></h3>
-      <p>Partners Joined</p>
-    </div>
-
-  </div>
-</section>
-
-
-
-<section class="section">
-  <h2 class="section-title">Our Approach</h2>
+  <h2 class="section-title" style="text-align: center;">Our Approach</h2>
   <div class="approach-grid">
     <div class="approach-card">
       <div class="approach-icon">
@@ -164,22 +143,85 @@
 </section>
 
 <!-- Partners Section -->
-<section class="section">
-  <h2 class="section-title">Our Partners & Supporters</h2>
-  <div class="partners">
-    <img src="assets/partners/usaid.png" alt="USAID" loading="lazy" />
-    <img src="assets/partners/uncdf.png" alt="UNCDF" loading="lazy" />
-    <img src="assets/partners/worldvision.png" alt="World Vision" loading="lazy" />
-    <img src="assets/partners/mtn.png" alt="MTN" loading="lazy" />
-    <img src="assets/partners/airtel.png" alt="Airtel" loading="lazy" />
-    <img src="assets/partners/dca.png" alt="DCA" loading="lazy" />
-    <img src="assets/partners/visionfund.png" alt="Vision Fund" loading="lazy" />
+<section class="section reveal" id="partners" style="margin-top:3rem;">
+  <h3 style="text-align:center;font-size:2rem;font-weight:800;color:#0A1A3A;margin-bottom:1rem;">
+    Our Partners and Investors
+  </h3>
+
+  <p style="text-align:center;color:#475569;font-size:1.05rem;max-width:800px;margin:0 auto 2.5rem;">
+    We are backed by leading investors and partners to deliver our promise on financial inclusion in Africa.
+  </p>
+
+  <div class="partners-grid">
+
+    <!-- Partner Card -->
+    <div class="partner-card">
+      <img src="assets/logos/care.svg" alt="CARE" loading="lazy">
+    </div>
+
+    <div class="partner-card">
+      <img src="assets/logos/uncdf.svg" alt="UNCDF" loading="lazy">
+    </div>
+
+    <div class="partner-card">
+      <img src="assets/logos/gsma.svg" alt="GSMA" loading="lazy">
+    </div>
+
+    <div class="partner-card">
+      <img src="assets/logos/optbank.svg" alt="Opportunity Bank" loading="lazy">
+    </div>
+
+    <div class="partner-card">
+      <img src="assets/logos/dca.svg" alt="DCA" loading="lazy">
+    </div>
+
+    <div class="partner-card">
+      <img src="assets/logos/fao.svg" alt="FAO" loading="lazy">
+    </div>
+
+    <div class="partner-card">
+      <img src="assets/logos/wv.svg" alt="World Vision" loading="lazy">
+    </div>
+
+    <div class="partner-card">
+      <img src="assets/logos/mtn.svg" alt="MTN" loading="lazy">
+    </div>
+
+    <div class="partner-card">
+      <img src="assets/logos/airtel.svg" alt="Airtel" loading="lazy">
+    </div>
+
+    <div class="partner-card">
+      <img src="assets/logos/vc.svg" alt="Village Capital" loading="lazy">
+    </div>
+
+    <div class="partner-card">
+      <img src="assets/logos/fmt.svg" alt="FMT" loading="lazy">
+    </div>
+
+    <div class="partner-card">
+      <img src="assets/logos/cenfri.svg" alt="Cenfri" loading="lazy">
+    </div>
+
+    <div class="partner-card">
+      <img src="assets/logos/cta.svg" alt="CTA" loading="lazy">
+    </div>
+
+    <div class="partner-card">
+      <img src="assets/logos/outbox.svg" alt="Outbox" loading="lazy">
+    </div>
+
+    <div class="partner-card">
+      <img src="assets/logos/fca.svg" alt="FCA" loading="lazy">
+    </div>
+
   </div>
 </section>
 
+
 <!-- CTA Section -->
 <section class="cta-section">
-  <h2 class="section-title">Partner With Us</h2>
+  <h2 class="section-title">Join Our Team or Partner With Us</h2>
   <p>Join us in building inclusive digital financial ecosystems that uplift underserved communities across Africa.</p>
   <a href="contact.html" class="cta-link">Get In Touch</a>
 </section>

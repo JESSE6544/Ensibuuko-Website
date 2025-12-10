@@ -1,250 +1,405 @@
-  // Small page scripts (clean, no unterminated comments)
-  document.getElementById('year').textContent = new Date().getFullYear();
+// === base / existing helpers (kept & merged) ===
+(function () {
+  // Auto year
+  const yearEl = document.getElementById('year');
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-  function switchTab(tab){
+  // switchTab (keeps earlier behavior)
+  window.switchTab = function(tab){
     document.querySelectorAll('.product-tab').forEach(t=>t.classList.remove('active-tab'));
     document.querySelectorAll('.product-card').forEach(c=>c.style.display='none');
     const tabBtn = document.querySelector(`[onclick="switchTab('${tab}')"]`);
     if(tabBtn) tabBtn.classList.add('active-tab');
     const card = document.getElementById(`tab-${tab}`);
     if(card) card.style.display='flex';
-  }
+  };
 
-  function subscribeForm(){
-    // placeholder - replace with real API call
+  // subscribeForm placeholder
+  window.subscribeForm = function(){
     alert('Thanks for subscribing — (simulated)');
-  }
+  };
 
-  // Card hover animation
+  // small hover effect preserved
   document.querySelectorAll('section div[style*="box-shadow"]').forEach(card=>{
     card.addEventListener('mouseenter',()=>{card.style.transform='translateY(-6px)';});
     card.addEventListener('mouseleave',()=>{card.style.transform='translateY(0)';});
   });
 
-  // Impact counters and reveal using IntersectionObserver
-  (function(){
-    const counters = [
-      {id:'impact-users',target:250, suffix:'K+'},
-      {id:'impact-loans',target:780, prefix:'$', suffix:'K+'},
-      {id:'impact-districts',target:145, suffix:'+'},
-      {id:'impact-partners',target:50, suffix:'+'}
-    ];
-
-    function runCounter(el, target, speed=18, prefix='', suffix=''){
-      let count = 0;
-      const step = Math.max(1, Math.floor(target / (1000 / speed)));
-      const timer = setInterval(()=>{
-        count += step;
-        if(count >= target){ count = target; clearInterval(timer); }
-        el.textContent = prefix + count.toLocaleString() + (suffix || '');
-      }, speed);
-    }
-
-    const obs = new IntersectionObserver((entries, observer)=>{
-      entries.forEach(entry=>{
-        if(entry.isIntersecting){
-          counters.forEach(c=>{
-            const el = document.getElementById(c.id);
-            if(el && !el.dataset.started){
-              runCounter(el, c.target, 12, c.prefix || '', c.suffix || '');
-              el.dataset.started = '1';
-            }
-          });
-          observer.disconnect();
-        }
-      });
-    },{threshold:0.5});
-
-    const impactSection = document.getElementById('impact');
-    if(impactSection) obs.observe(impactSection);
-  })();
-
-  // Pause partners animation on hover is handled via CSS
-  // Scroll reveal logic
-  const revealElements = document.querySelectorAll('.reveal');
-  const revealObserver = new IntersectionObserver((entries)=>{
-    entries.forEach(entry=>{
-      if(entry.isIntersecting){ entry.target.classList.add('visible'); }
-    });
-  },{threshold:0.15});
-  revealElements.forEach(el=>revealObserver.observe(el));
-// Testimonial slider
+  // Testimonial slider (simple)
   (function(){
     const track = document.querySelector('.testimonials-track');
     if(!track) return;
-
     let index = 0;
     const slides = track.children.length;
-
-    function moveSlider(){
-      index = (index + 1) % slides;
-      track.style.transform = `translateX(-${index * 100}%)`;
-    }
-
+    function moveSlider(){ index = (index + 1) % slides; track.style.transform = `translateX(-${index * 100}%)`; }
     setInterval(moveSlider, 4500);
   })();
 
-
-/// Hide navbar on scroll (active on all pages)
-let lastScrollY = window.scrollY;
-
-window.addEventListener("scroll", () => {
-  const header = document.querySelector("header");
-  if (!header) return;
-
-  // Only hide when past 50px from top
-  if (window.scrollY > 50) {
-    // scrolling down → hide
-    if (window.scrollY > lastScrollY) {
-      header.classList.add("hide");
-    }
-    // scrolling up → show
-    else {
-      header.classList.remove("hide");
-    }
-  } else {
-    // Always show near top
-    header.classList.remove("hide");
-  }
-
-  lastScrollY = window.scrollY;
-});
-
-// Mobile nav toggle with accessibility improvements
-(function(){
-  const toggle = document.getElementById('mobile-menu-toggle');
-  const siteNav = document.getElementById('site-nav');
-  if(!toggle || !siteNav) return;
-
-  toggle.addEventListener('click', ()=>{
-    const expanded = toggle.getAttribute('aria-expanded') === 'true';
-    toggle.setAttribute('aria-expanded', String(!expanded));
-    siteNav.classList.toggle('open');
-    if(!expanded) siteNav.setAttribute('aria-hidden', 'false');
-    else siteNav.setAttribute('aria-hidden', 'true');
+  // Hide navbar on scroll (unchanged)
+  let lastScrollY = window.scrollY;
+  window.addEventListener("scroll", () => {
+    const header = document.querySelector("header");
+    if (!header) return;
+    if (window.scrollY > 50) {
+      if (window.scrollY > lastScrollY) header.classList.add("hide");
+      else header.classList.remove("hide");
+    } else header.classList.remove("hide");
+    lastScrollY = window.scrollY;
   });
 
-  // Close mobile menu when a link is clicked
-  siteNav.querySelectorAll('a').forEach(a=>{
-    a.addEventListener('click', ()=>{
-      siteNav.classList.remove('open');
-      toggle.setAttribute('aria-expanded','false');
-      siteNav.setAttribute('aria-hidden', 'true');
+  // Mobile nav toggle (preserved + small fix)
+  (function(){
+    const toggle = document.getElementById('mobile-menu-toggle');
+    const siteNav = document.getElementById('site-nav');
+    if(!toggle || !siteNav) return;
+
+    toggle.addEventListener('click', ()=>{
+      const expanded = toggle.getAttribute('aria-expanded') === 'true';
+      toggle.setAttribute('aria-expanded', String(!expanded));
+      siteNav.classList.toggle('open');
+      if(!expanded) siteNav.setAttribute('aria-hidden', 'false');
+      else siteNav.setAttribute('aria-hidden', 'true');
+    });
+
+    // when any normal link clicked — close menu (dropdown toggles are handled below)
+   siteNav.querySelectorAll('a').forEach(a=>{
+  a.addEventListener('click', (e)=>{
+    if (a.classList.contains('dropdown-toggle') && window.innerWidth <= 768) {
+      e.preventDefault();
+      return; 
+    }
+    siteNav.classList.remove('open');
+  });
+});
+
+
+    // focus trap (keeps previous behavior but guarded)
+    const focusableElements = Array.from(siteNav.querySelectorAll('a, button'));
+    if(focusableElements.length){
+      const firstFocusable = focusableElements[0];
+      const lastFocusable = focusableElements[focusableElements.length - 1];
+      document.addEventListener('keydown', (e)=>{
+        if(e.key === 'Tab' && siteNav.classList.contains('open')){
+          if(e.shiftKey && document.activeElement === firstFocusable){ e.preventDefault(); lastFocusable.focus(); }
+          else if(!e.shiftKey && document.activeElement === lastFocusable){ e.preventDefault(); firstFocusable.focus(); }
+        }
+      });
+    }
+  })();
+  // ✅ SINGLE SOURCE: Mobile Products Dropdown
+(function(){
+  const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
+
+  dropdownToggles.forEach(toggle => {
+    toggle.addEventListener('click', (e) => {
+      if (window.innerWidth > 768) return;
+
+      e.preventDefault();
+      e.stopPropagation();
+
+      const menu = toggle.nextElementSibling;
+      if (!menu) return;
+
+      // Close other dropdowns
+      document.querySelectorAll('.dropdown-menu').forEach(m => {
+        if (m !== menu) m.style.display = 'none';
+      });
+
+      menu.style.display = menu.style.display === 'block'
+        ? 'none'
+        : 'block';
     });
   });
 
-  // Close menu on Escape key
-  document.addEventListener('keydown', (e)=>{
-    if(e.key === 'Escape' && siteNav.classList.contains('open')){
-      siteNav.classList.remove('open');
-      toggle.setAttribute('aria-expanded','false');
-      siteNav.setAttribute('aria-hidden', 'true');
-      toggle.focus();
-    }
-  });
-
-  // Focus trap: keep focus within nav when open
-  const focusableElements = siteNav.querySelectorAll('a, button');
-  const firstFocusable = focusableElements[0];
-  const lastFocusable = focusableElements[focusableElements.length - 1];
-
-  document.addEventListener('keydown', (e)=>{
-    if(e.key === 'Tab' && siteNav.classList.contains('open')){
-      if(e.shiftKey){
-        if(document.activeElement === firstFocusable){
-          e.preventDefault();
-          lastFocusable.focus();
-        }
-      } else {
-        if(document.activeElement === lastFocusable){
-          e.preventDefault();
-          firstFocusable.focus();
-        }
-      }
+  // Close dropdown when clicking outside
+  document.addEventListener('click', () => {
+    if (window.innerWidth <= 768) {
+      document.querySelectorAll('.dropdown-menu').forEach(m => {
+        m.style.display = 'none';
+      });
     }
   });
 })();
 
-// Product data used to populate the modal (can be expanded or loaded from JSON)
-const PRODUCT_DATA = {
-  MOBIS: {
-    title: 'MOBIS',
-    image: 'assets/images/Mobis.png',
-    description: 'Transform your operations with MOBIS — a comprehensive core banking suite designed for SACCOs, MFIs and rural financial institutions. Manage customer accounts through an intuitive web app while offering members access via mobile apps and USSD for non-smartphone users. MOBIS streamlines reporting, automates workflows, and scales as your institution grows.',
-    features: [
-      'Core banking system with accounts, ledgers and reports',
-      'Transaction processing: deposits, withdrawals, transfers and payments',
-      'Accounts management: onboard and track customer profiles',
-      'Loans & savings: automated lending workflows and interest calculations',
-      'Mobile & USSD access for customers',
-      'Agent banking support and integrations'
-    ]
-  }
-};
 
-// Product details modal behavior
+
+// === NEW: parallax background + smooth-scroll momentum + reveal animations + section progress ===
+
 (function(){
-  const modal = document.getElementById('product-modal');
-  if(!modal) return;
-  const overlay = modal.querySelector('.modal-overlay');
-  const closeBtn = modal.querySelector('.modal-close');
-  const titleEl = modal.querySelector('#product-modal-title');
-  const descEl = modal.querySelector('.modal-description');
-  const featuresEl = modal.querySelector('.modal-features');
-  const imgEl = modal.querySelector('.modal-image img');
+  const isTouch = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
 
-  let opener = null;
+  /* ------ Parallax background (desktop only) ------ */
+  const hero = document.querySelector('.parallax-hero');
+  function parallaxTick(){
+    if(!hero) return;
+    const speed = parseFloat(hero.getAttribute('data-speed') || '0.4');
+    const rect = hero.getBoundingClientRect();
+    const mid = window.innerHeight / 2;
+    // translate value proportional to hero center distance
+    const diff = (rect.top + rect.height/2) - mid;
+    const translateY = -diff * speed * 0.08;
+    hero.style.transform = `translateY(${translateY}px)`;
+  }
+  if(!isTouch){
+    window.addEventListener('scroll', parallaxTick, {passive:true});
+    window.addEventListener('resize', parallaxTick);
+    parallaxTick();
+  }
 
-  function openModal(data){
-    titleEl.textContent = data.title || '';
-    descEl.textContent = data.description || '';
-    imgEl.src = data.image || '';
-    imgEl.alt = data.title || '';
+  /* ------ Smooth scroll momentum (desktop only) ------ */
+  // Gentle lerp smoothing — disabled on touch devices
+  if(!isTouch){
+    let currentScroll = window.scrollY;
+    let targetScroll = window.scrollY;
+    let ticking = false;
 
-    featuresEl.innerHTML = '';
-    if(data.features){
-      if(Array.isArray(data.features)){
-        data.features.forEach(f=>{ const li = document.createElement('li'); li.textContent = f; featuresEl.appendChild(li); });
+    window.addEventListener('wheel', (e)=>{
+      // prevent default only when not using modifier keys
+      if(e.ctrlKey || e.metaKey || e.altKey) return;
+      targetScroll += e.deltaY * 0.6; // reduce sensitivity
+      targetScroll = Math.max(0, Math.min(targetScroll, document.body.scrollHeight - window.innerHeight));
+      if(!ticking){
+        requestAnimationFrame(smoothScrollLoop);
+        ticking = true;
+      }
+      e.preventDefault();
+    }, {passive:false});
+
+    function smoothScrollLoop(){
+      currentScroll += (targetScroll - currentScroll) * 0.12; // lerp
+      window.scrollTo(0, currentScroll);
+      if(Math.abs(targetScroll - currentScroll) > 0.5){
+        requestAnimationFrame(smoothScrollLoop);
       } else {
-        data.features.split(',').map(f=>f.trim()).filter(Boolean).forEach(f=>{
-          const li = document.createElement('li'); li.textContent = f; featuresEl.appendChild(li);
-        });
+        ticking = false;
       }
     }
 
-    modal.classList.add('open');
-    modal.setAttribute('aria-hidden','false');
-    // store opener for focus return
-    if(document.activeElement) opener = document.activeElement;
-    closeBtn.focus();
+    // sync target when user uses scrollbars / keyboard
+    window.addEventListener('scroll', ()=> { if(!ticking) { currentScroll = window.scrollY; targetScroll = window.scrollY; } }, {passive:true});
   }
 
-  function closeModal(){
-    modal.classList.remove('open');
-    modal.setAttribute('aria-hidden','true');
-    if(opener && opener.focus) opener.focus();
+  /* ------ Reveal animations using IntersectionObserver ------ */
+  const revealEls = document.querySelectorAll('.reveal, .slide-left, .slide-right, .product-card, .testimonial, .pattern-content');
+  const revealObserver = new IntersectionObserver((entries)=>{
+    entries.forEach(entry=>{
+      if(entry.isIntersecting){
+        entry.target.classList.add('visible');
+      }
+    });
+  }, {threshold: 0.12});
+
+  revealEls.forEach(el => revealObserver.observe(el));
+
+  /* ------ Section progress indicator ------ */
+  const sections = Array.from(document.querySelectorAll('section, #products-wrapper, main > section')).filter(s=>s.offsetHeight > 200);
+  const total = Math.max(1, sections.length);
+  const totalEl = document.getElementById('total-sections');
+  if(totalEl) totalEl.textContent = String(total).padStart(2,'0');
+
+  const currentEl = document.getElementById('current-section');
+  function updateSectionProgress(){
+    let currentIndex = 0;
+    sections.forEach((s,i)=>{
+      const rect = s.getBoundingClientRect();
+      // section counted as active if its top enters viewport 30% from top
+      if(rect.top <= window.innerHeight * 0.35 && rect.bottom > window.innerHeight * 0.15){
+        currentIndex = i;
+      }
+    });
+    if(currentEl) currentEl.textContent = String(currentIndex+1).padStart(2,'0');
   }
+  window.addEventListener('scroll', updateSectionProgress, {passive:true});
+  window.addEventListener('resize', updateSectionProgress);
+  updateSectionProgress();
 
-  // Delegate clicks for any current/future .learn-more buttons
-  document.addEventListener('click', function(e){
-    const btn = e.target.closest('.learn-more');
-    if(!btn) return;
-    e.preventDefault();
-    const data = {
-      title: btn.getAttribute('data-title') || btn.closest('.product-card')?.querySelector('h2')?.textContent || '',
-      description: btn.getAttribute('data-description') || btn.closest('.product-card')?.querySelector('p')?.textContent || '',
-      image: btn.getAttribute('data-image') || btn.closest('.product-card')?.querySelector('img')?.src || '',
-      features: btn.getAttribute('data-features') || ''
-    };
-    // Prefer the richer PRODUCT_DATA entry when available
-    const key = (data.title || '').toString().trim().toUpperCase();
-    const productEntry = PRODUCT_DATA[key] || data;
-    openModal(productEntry);
-  });
-
-  // Close handlers
-  closeBtn.addEventListener('click', closeModal);
-  overlay.addEventListener('click', closeModal);
-  document.addEventListener('keydown', function(e){ if(e.key === 'Escape' && modal.classList.contains('open')) closeModal(); });
+  /* ------ Floating menu highlight (basic) ------ */
+  const floatMenu = document.getElementById('floating-menu');
+  if(floatMenu){
+    const floatLinks = Array.from(floatMenu.querySelectorAll('a'));
+    window.addEventListener('scroll', ()=>{
+      const scTop = window.scrollY + (window.innerHeight/2);
+      floatLinks.forEach(a=>{
+        const target = document.querySelector(a.getAttribute('href'));
+        if(!target) return;
+        const rect = target.getBoundingClientRect();
+        const top = rect.top + window.scrollY;
+        const bottom = rect.bottom + window.scrollY;
+        if(scTop >= top && scTop < bottom) a.classList.add('active'); else a.classList.remove('active');
+      });
+    }, {passive:true});
+  }
 
 })();
+
+// === NEW: Random scattered hero image layout ===
+// document.addEventListener("DOMContentLoaded", () => {
+//   const images = document.querySelectorAll(".hero-img");
+//   const heroRight = document.querySelector(".hero-right");
+
+//   if (!heroRight || images.length === 0) return;
+
+//   function scatterImages() {
+//     const heroWidth = heroRight.offsetWidth;
+//     const heroHeight = heroRight.offsetHeight;
+
+//     images.forEach((img, i) => {
+//       const left = Math.random() * (heroWidth - img.offsetWidth - 40);
+//       const top = Math.random() * (heroHeight - img.offsetHeight - 40);
+
+//       img.style.left = left + "px";
+//       img.style.top = top + "px";
+
+//       img.style.opacity = "1";
+//       img.style.animationDelay = `${0.3 + i * 0.2}s`;
+//     });
+//   }
+
+//   window.addEventListener("load", scatterImages);
+//   window.addEventListener("resize", scatterImages);
+// });
+
+// === IMPACT METRICS COUNTER (UPDATED & FIXED) ===
+(function() {
+  const counters = document.querySelectorAll(".impact-number");
+  if (!counters.length) return;
+
+  function animateCounter(el) {
+    const target = parseInt(el.dataset.target, 10);
+    const hasDollar = el.textContent.includes("$");
+    const hasPlus = el.textContent.includes("+");
+
+    let count = 0;
+    const speed = 40; // adjust for smoothness
+
+    function update() {
+      const increment = Math.ceil(target / speed);
+      count += increment;
+
+      if (count >= target) count = target;
+
+      let formatted = count.toLocaleString();
+
+      if (hasDollar) formatted = "$" + formatted;
+      if (hasPlus) formatted += "+";
+
+      // Re-apply green "+" markup
+      el.innerHTML = formatted.replace("+", "<span style='color:#54b749'>+</span>");
+
+      if (count < target) requestAnimationFrame(update);
+    }
+
+    update();
+  }
+
+  const observer = new IntersectionObserver((entries, obs) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        counters.forEach(animateCounter);
+        obs.disconnect(); // run only once
+      }
+    });
+  }, { threshold: 0.4 });
+
+  const wrapper = document.querySelector(".impact-wrapper");
+  if (wrapper) observer.observe(wrapper);
+})();
+})();
+
+// === PRODUCT CARDS SCROLL REVEAL ===
+(function () {
+  const cards = document.querySelectorAll('.reveal-card');
+  if (!cards.length) return;
+
+  const observer = new IntersectionObserver(
+    entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.18 }
+  );
+
+  cards.forEach(card => observer.observe(card));
+})();
+
+// Africa map interactivity
+// Add this to your script.js for positioning help
+document.addEventListener('DOMContentLoaded', function() {
+  const markers = document.querySelectorAll('.country-marker');
+  
+  markers.forEach(marker => {
+    marker.addEventListener('click', function(e) {
+      e.preventDefault();
+      const rect = this.parentElement.getBoundingClientRect();
+      const x = ((e.clientX - rect.left) / rect.width * 100).toFixed(1);
+      const y = ((e.clientY - rect.top) / rect.height * 100).toFixed(1);
+      
+      console.log(`left: ${x}%; top: ${y}%; // ${this.getAttribute('data-country')}`);
+      
+      // Update the position (optional)
+      // this.style.left = `${x}%`;
+      // this.style.top = `${y}%`;
+    });
+  });
+});
+
+/* =========================
+   SCROLL REVEAL OBSERVER
+========================= */
+
+const revealElements = document.querySelectorAll('.reveal-card');
+
+const revealObserver = new IntersectionObserver(
+  (entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        revealObserver.unobserve(entry.target); // animate once
+      }
+    });
+  },
+  {
+    threshold: 0.2
+  }
+);
+
+revealElements.forEach(el => revealObserver.observe(el));
+
+// Scroll reveal for feature cards
+(function () {
+  const cards = document.querySelectorAll('.reveal-card');
+  if (!cards.length) return;
+
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        obs.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.2 });
+
+  cards.forEach(card => obs.observe(card));
+})();
+
+
+/* HERO LAZY LOAD */
+window.addEventListener("load", () => {
+  document.querySelectorAll(".hero-flex").forEach(hero => {
+    hero.classList.add("hero-loaded");
+  });
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  const hero = document.querySelector(".hero-flex");
+  if (hero) {
+    requestAnimationFrame(() => {
+      hero.classList.add("hero-loaded");
+    });
+  }
+});
+
