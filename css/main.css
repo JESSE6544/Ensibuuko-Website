@@ -460,11 +460,12 @@ footer {
 }
 
 .footer-logo {
-  width: 60px;
-  height: 60px;
-  border-radius: 12px;
-  background: #fff;
-  padding: 6px;
+  width: 180px;          
+  height: auto;
+  background: none;
+  padding: 0;
+  border-radius: 0;
+  object-fit: contain;
 }
 
 /* small helpers */
@@ -479,6 +480,10 @@ footer {
 
   .hero-title {
     font-size: 2rem;
+  }
+
+   .footer-logo {
+    width: 140px;
   }
 
   .tabs-row {
@@ -526,7 +531,7 @@ footer {
   align-items: center;
   justify-content: space-between;
 
-  padding: 0 2rem;
+  padding: 4.5rem 2rem 7rem;
   overflow: hidden;
 }
 
@@ -673,7 +678,7 @@ footer {
 /* CURVED BOTTOM */
 .hero-curve {
   position: absolute;
-  bottom: 0;
+  bottom: -40px; 
   left: 0;
   width: 100%;
   z-index: 2;
@@ -1276,14 +1281,21 @@ footer {
 
 /* Mobile tweak */
 @media (max-width: 600px) {
+  .partners-grid {
+    gap: 1.25rem;      
+      grid-template-columns: repeat(2, 1fr); /* ✅ always 2 per row */           
+  }
+
   .partner-card {
-    padding: 1.25rem;
+    padding: 1rem;
+    min-height: 90px;
   }
 
   .partner-card img {
-    max-height: 52px;
+    max-height: 42px;
   }
 }
+
 
 /* =========================
    ACTIVE COUNTRY FLAGS
