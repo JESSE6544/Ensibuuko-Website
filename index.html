@@ -16,98 +16,286 @@
 <header>
   <nav id="site-nav" class="container nav" role="navigation" aria-label="Primary navigation">
    <div class="brand" style="margin-right:auto;display:flex;">
+    <a href="index.html" style="text-decoration:none;">
      <div style="margin-right:auto;display:flex;gap:0.75rem;align-items:center;">
-       <img src="assets/images/LOGO EDITS v2-01.png" alt="Ensibuuko Logo" class="nav-logo" loading="lazy" />
-      <div style="font-weight:800;color:#FFFFFF">Ensibuuko</div>
+       <img src="assets/images/ENSIBUUKO LOGO -01.svg" alt="Ensibuuko Logo" class="nav-logo" loading="lazy" />
      </div>
+    </a>  
 
       <!-- Mobile menu toggle -->
-      <button id="mobile-menu-toggle" class="mobile-menu-toggle" aria-controls="site-nav" aria-expanded="false" aria-label="Toggle navigation">☰</button>
+      <button id="mobile-menu-toggle" class="mobile-menu-toggle" 
+      aria-controls="site-nav" aria-expanded="false" aria-label="Toggle navigation">☰</button>
 
     </div>
 
     <!-- Navigation links -->
     <a href="index.html">Home</a>
-    <a href="products.html">Products</a>
+    <div class="nav-dropdown">
+      <a class="dropdown-toggle">Products</a>
+      <div class="dropdown-menu">
+        <a href="chomoka.html">Savings Groups Platform</a>
+        <a href="mobis.html">Microfinance Platform</a>
+        <a href="lending.html">Mobile Lending Services</a>
+      </div>
+   </div>
     <a href="about.html">About</a>
-    <a href="careers.html">Careers</a>
     <a href="contact.html">Contact</a>
   </nav>
 </header>
 
-<!-- Hero Section -->
-  <div class="pattern-bar">
-  <div class="pattern-content hero-inner hero-animate">
-    <h2 class="hero-title">Empowering Financial Inclusion in Uganda.</h2>
-    <p class="hero-sub">We design and implement user-friendly digital products and services that connect unbanked and underserved communities to formal financial systems, enabling them to access, use, and benefit from financial services in meaningful ways.</p>
 
-    <div class="hero-ctas">
+<section class="hero-flex hero--home">
+  <div class="hero-left">
+
+    <h1 class="hero-title-big">
+      Empowering Financial Inclusion for Every Ugandan
+    </h1>
+
+    <p class="hero-sub-big">
+      Ensibuuko provides accessible digital tools — powering SACCOs, MFIs,
+      VSLAs and communities with reliable solutions built for Africa.
+    </p>
+    <div class="hero-cta">  
       <button class="btn primary" onclick="window.location.href='contact.html'">Get Started</button>
     </div>
   </div>
-</div>
-</div>
+  <div class="hero-bg"></div>
+    
+  <svg class="hero-curve" viewBox="0 0 1440 320">
+    <path fill="#54b749"  fill-opacity="1"
+      d="M0,200L1440,140L1440,320L0,320Z"></path>
+  </svg>
+</section>
+
 
 <!-- Products Showcase Section with Tabs (Option B cleaned) -->
-<div style="width:100%;background:#F3F5F7;padding:4rem 1rem;display:flex;flex-direction:column;align-items:center;">
-  <!-- Intro Statement -->
-  <div style="max-width:900px;text-align:center;margin-bottom:3rem;">
-    <h2 style="font-size:2rem;font-weight:800;color:#0A1A3A;margin-bottom:1rem;">Bridging the Gap for Underserved Communities</h2>
-    <p style="color:#475569;line-height:1.65;font-size:1.05rem;max-width:800px;margin:0 auto;">At Ensibuuko, we’re revolutionizing financial access in rural Uganda by delivering innovative fintech solutions that empower financial institutions, SACCOs, and village savings groups (VSLAs). Our mission is simple: to drive financial inclusion by building and expanding digital financial infrastructure across the developing world through technology that’s accessible, reliable, and impactful.</p>
+<section class="products-cards-section section">
+  <!-- Intro -->
+  <div class="section-inner" style="text-align:center;margin-bottom:3rem;">
+    <h2 class="section-title">Simple technological solutions for businesses and their customers.</h2>
+    <p class="lead" style="max-width:820px;margin:0 auto;">
+      We build digital financial tools designed for institutions and groups
+      serving underserved communities across Africa.
+    </p>
   </div>
 
-  <!-- Tabs -->
-  <div style="display:flex;gap:1rem;margin-bottom:2rem;font-weight:700;font-size:1.1rem;flex-wrap:wrap;justify-content:center;">
-    <div class="product-tab active-tab" onclick="switchTab('chomoka')">Chomoka</div>
-    <div class="product-tab" onclick="switchTab('mobis')">Mobis</div>
-    <div class="product-tab" onclick="switchTab('lending')">Lending</div>
+  <!-- Cards grid -->
+  <div class="section-inner products-grid">
+
+    <!-- SACCOs -->
+    <div class="product-card slide-left">
+
+  <div class="product-image">
+    <img src="assets/images/00017.jpg" alt="SACCO digital platform">
   </div>
 
-  <!-- Cards Wrapper -->
-  <div style="width:100%;display:flex;justify-content:center;">
-
-    <!-- Chomoka Card -->
-    <div id="tab-chomoka" class="product-card">
-      <div class="card-content">
-        <h3 style="color:#0A1A3A;margin-bottom:0.5rem;font-size:1.3rem;font-weight:700;">Chomoka</h3>
-        <h2 style="color:#0A1A3A;font-size:2rem;font-weight:800;margin-bottom:1rem;">Digitizing Village Savings Groups</h2>
-        <p style="color:#475569;line-height:1.6;margin-bottom:1.5rem;">Empower your VSLA with Chomoka, our mobile app that brings transparency and efficiency to group activities. Track contributions, record meetings, send reminders, manage loans, penalties, and integrate mobile money — all in one place.</p>
-      </div>
-      <div class="card-media">
-        <img src="assets/images/Chomoka-phone.png" alt="Chomoka demo" loading="lazy">
-      </div>
-    </div>
-
-    <!-- MOBIS Card -->
-    <div id="tab-mobis" class="product-card" style="display:none;">
-      <div class="card-content">
-        <h3 style="color:#0A1A3A;margin-bottom:0.5rem;font-size:1.3rem;font-weight:700;">MOBIS</h3>
-        <h2 style="color:#0A1A3A;font-size:2rem;font-weight:800;margin-bottom:1rem;">The All‑in‑One Rural Banking SaaS Platform</h2>
-        <p style="color:#475569;line-height:1.6;margin-bottom:1.5rem;">Transform operations with MOBIS, our suite for SACCOs and MFIs. Manage accounts seamlessly via our web app, while members access services through mobile apps or USSD.</p>
-      </div>
-      <div class="card-media">
-        <img src="assets/images/Mobis.png" alt="MOBIS demo" style="max-width:480px" loading="lazy">
-      </div>
-    </div>
-
-    <!-- Lending Card -->
-    <div id="tab-lending" class="product-card" style="display:none;">
-      <div class="card-content">
-        <h3 style="color:#0A1A3A;margin-bottom:0.5rem;font-size:1.3rem;font-weight:700;">Lending Services</h3>
-        <h2 style="color:#0A1A3A;font-size:2rem;font-weight:800;margin-bottom:1rem;">Unlocking Financing Opportunities Through Partners</h2>
-        <p style="color:#475569;line-height:1.6;margin-bottom:1.5rem;">Ensibuuko provides accessible financing tailored to underserved communities — from Quick Loans to Agro and Asset Financing — through strong partnerships.</p>
-      </div>
-      <div class="card-media">
-        <img src="assets/images/LOGO EDITS v2-01.png" alt="Ensibuuko" style="max-width:320px;opacity:0.4;object-fit:contain;" loading="lazy">
-      </div>
-    </div>
-
+  <div class="card-content">
+    <h3>SACCOs</h3>
+    <p>
+      A Savings and Credit Cooperative Society (SACCOs) is a democratic
+      and member-owned cooperative organization that mobilizes funds from
+      members by offering loans and providing savings. We are working to
+      make SACCOs better and bigger.
+    </p>
+    <a href="contact.html">Learn more →</a>
   </div>
+
 </div>
+
+
+    <!-- Lending companies -->
+   <div class="product-card reveal-card">
+
+
+  <div class="product-image">
+    <img src="assets/images/00008.jpg" alt="Lending companies">
+  </div>
+
+  <div class="card-content">
+    <h3>Lending Companies</h3>
+    <p>
+      Lending companies are privately owned, regulated financial entities
+      that offer micro and medium size loans and sometimes accept deposits
+      from the public. We introduce lending companies to a new way of doing
+      business, digitally.
+    </p>
+    <a href="contact.html">Learn more →</a>
+  </div>
+
+</div>
+
+
+    <!-- Savings Groups -->
+    <div class="product-card slide-left">
+
+  <div class="product-image">
+    <img src="assets/images/00024.jpg" alt="Savings groups">
+  </div>
+
+  <div class="card-content">
+    <h3>Savings Groups</h3>
+    <p>
+      Savings groups, also known as Village Savings and Loan Associations
+      (VSLAs), are community circles that meet regularly to collect savings
+      and manage small loans. We help these groups become more secure and
+      prosperous by transitioning to cashless and paperless systems.
+    </p>
+    <a href="contact.html">Learn more →</a>
+  </div>
+
+</div>
+
+
+    <!-- Investment Clubs -->
+   <div class="product-card slide-right">
+
+  <div class="product-image">
+    <img src="assets/images/00012.jpg" alt="Investment clubs">
+  </div>
+
+  <div class="card-content">
+    <h3>Investment Clubs</h3>
+    <p>
+      Investment clubs are mutual groups of fewer than 100 people who pool
+      funds with a common goal to invest in ventures they deem profitable.
+      We are introducing these clubs to modern tools they will love.
+    </p>
+    <a href="contact.html">Learn more →</a>
+  </div>
+
+</div>
+
+
+  </div>
+</section>
+
+<!-- Impact Metrics Section -->
+<section class="section africa-map-section reveal">
+  <h2 class="section-title" style="text-align:center;">Trusted by 10,000,000+ business and individual accounts</h2>
+
+  <div class="impact-wrapper">
+
+    <!-- Card 1 -->
+    <div class="impact-card reveal">
+     <h3 class="impact-number" data-target="250">0<span style="color:#54b749">+</span></h3>
+      <p>Active Users</p>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="impact-card reveal">
+      <h3 class="impact-number" data-target="780">$0<span style="color:#54b749">+</span></h3>
+      <p>Loans Given</p>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="impact-card reveal">
+     <h3 class="impact-number" data-target="145">0<span style="color:#54b749">+</span></h3>
+      <p>Districts Affected</p>
+    </div>
+
+    <!-- Card 4 -->
+    <div class="impact-card reveal">
+      <h3 class="impact-number" data-target="50">0<span style="color:#54b749">+</span></h3>
+      <p>Partners Joined</p>
+    </div>
+
+  </div>
+<!-- </section> -->
+
+
+<!-- <section class="section africa-map-section reveal"> -->
+  <div class="section-inner" style="text-align:center;margin-bottom:2.5rem;">
+    <h2 class="section-title">Where We Operate</h2>
+    <p class="lead" style="max-width:760px;margin:0 auto;">
+      Ensibuuko is powering financial inclusion across multiple African markets,
+      supporting institutions and communities at scale.
+    </p>
+  </div>
+
+  <div class="africa-map-wrapper">
+    <!-- Simple image map container -->
+    <div class="image-map-container">
+      <img 
+        src="assets/images/africa-map.png" 
+        alt="Africa map showing Ensibuuko operations" 
+        class="africa-map-image"
+        loading="lazy"
+      >
+      
+      <!-- Country markers -->
+      <div class="country-marker" style="left: 36%; top: 48%;" data-country="Ghana">
+        <div class="marker-pin"></div>
+        <span class="country-name">Ghana</span>
+      </div>
+      
+      <div class="country-marker" style="left: 34%; top: 48%;" data-country="Ivory Coast">
+        <div class="marker-pin"></div>
+        <span class="country-name">Cote d'Ivoire</span>
+      </div>
+      
+      <div class="country-marker" style="left:43%; top: 49%;" data-country="Nigeria">
+        <div class="marker-pin"></div>
+        <span class="country-name">Nigeria</span>
+      </div>
+      
+      <div class="country-marker" style="left: 64%; bottom: 45%;" data-country="Uganda">
+        <div class="marker-pin"></div>
+        <span class="country-name">Uganda</span>
+      </div>
+      
+      <div class="country-marker" style="left: 65%; bottom: 40%;" data-country="Tanzania">
+        <div class="marker-pin"></div>
+        <span class="country-name">Tanzania</span>
+      </div>
+      
+      <div class="country-marker" style="left: 64%; bottom: 28%;" data-country="Malawi">
+        <div class="marker-pin"></div>
+        <span class="country-name">Malawi</span>
+      </div>
+    </div>
+    
+    <!-- Legend -->
+    <div class="map-legend">
+      <div class="legend-item">
+        <div class="legend-dot"></div>
+        <span>Active Countries</span>
+      </div>
+    </div>
+
+    <!-- Active countries flags -->
+<div class="active-countries-flags">
+
+  <div class="flag-card" title="Uganda">
+    <img src="assets/flags/uganda.svg" alt="Uganda flag">
+  </div>
+
+  <div class="flag-card" title="Tanzania">
+    <img src="assets/flags/tanzania.svg" alt="Tanzania flag">
+  </div>
+
+  <div class="flag-card" title="Malawi">
+    <img src="assets/flags/malawi.svg" alt="Malawi flag">
+  </div>
+
+  <div class="flag-card" title="Nigeria">
+    <img src="assets/flags/nigeria.svg" alt="Nigeria flag">
+  </div>
+  <div class="flag-card" title="Cote d'Ivoire">
+    <img src="assets/flags/cote-divoire.svg" alt="Cote d'Ivoire flag">
+  </div>
+
+  <div class="flag-card" title="Ghana">
+    <img src="assets/flags/ghana.svg" alt="Ghana flag">
+  </div>
+
+  </div>
+</section>
+
 
 <main class="container" id="home">
 
   <!-- Why Choose Ensibuuko (video + text) -->
+   
   <section class="reveal" id="why" style="margin-top:3rem;padding:3rem 1rem;border-radius:18px;display:flex;gap:2rem;align-items:center;justify-content:center;flex-wrap:wrap;background:white;box-shadow:0 6px 18px rgba(0,0,0,0.06);">
 
     <div style="flex:1;display:flex;justify-content:center;">
@@ -151,39 +339,96 @@
         </li>
       </ul>
 
-      <button class="btn primary" style="padding:0.9rem 2rem;margin-top:1rem;border-radius:12px;">Learn More →</button>
+      <button class="btn primary" style="padding:0.9rem 2rem;margin-top:1rem;border-radius:12px;">
+        <a href="contact.html">Learn more →</a>
+      </button>
     </div>
 
   </section>
 
   <!-- Partners - simplified list -->
-  <section class="reveal" id="partners" style="margin-top:3rem;">
-  <h3 style="text-align:center;font-size:2rem;font-weight:800;color:#0A1A3A;margin-bottom:1rem;">Who works with us</h3>
-  <p style="text-align:center;color:#475569;font-size:1.05rem;max-width:800px;margin:0 auto 2rem;">
+   
+  <section class="section reveal" id="partners" style="margin-top:3rem;">
+  <h3 style="text-align:center;font-size:2rem;font-weight:800;color:#0A1A3A;margin-bottom:1rem;">
+    Who works with us
+  </h3>
+
+  <p style="text-align:center;color:#475569;font-size:1.05rem;max-width:800px;margin:0 auto 2.5rem;">
     We are backed by leading investors and partners to deliver our promise on financial inclusion in Africa.
   </p>
-  <div style="display:flex;flex-wrap:wrap;gap:2rem;justify-content:center;align-items:center;max-width:1100px;margin:0 auto;">
-    <img src="assets/images/usaid.png" style="height:65px;object-fit:contain;" loading="lazy" alt="USAID partner logo" />
-    <img src="assets/images/uncdf.png" style="height:65px;object-fit:contain;" loading="lazy" alt="UNCDF partner logo" />
-    <img src="assets/images/gsma.png" style="height:65px;object-fit:contain;" loading="lazy" alt="GSMA partner logo" />
-    <img src="assets/images/opportunity.png" style="height:65px;object-fit:contain;" loading="lazy" alt="Opportunity partner logo" />
-    <img src="assets/images/dca.png" style="height:65px;object-fit:contain;" loading="lazy" alt="DCA partner logo" />
-    <img src="assets/images/fao.png" style="height:65px;object-fit:contain;" loading="lazy" alt="FAO partner logo" />
-    <img src="assets/images/worldvision.png" style="height:65px;object-fit:contain;" loading="lazy" alt="World Vision partner logo" />
-    <img src="assets/images/mtn.png" style="height:65px;object-fit:contain;" loading="lazy" alt="MTN partner logo" />
-    <img src="assets/images/airtel.png" style="height:65px;object-fit:contain;" loading="lazy" alt="Airtel partner logo" />
-    <img src="assets/images/villagecapital.png" style="height:65px;object-fit:contain;" loading="lazy" alt="Village Capital partner logo" />
-    <img src="assets/images/fmt.png" style="height:65px;object-fit:contain;" loading="lazy" alt="FMT partner logo" />
-    <img src="assets/images/cenfri.png" style="height:65px;object-fit:contain;" loading="lazy" alt="Cenfri partner logo" />
-    <img src="assets/images/cta.png" style="height:65px;object-fit:contain;" loading="lazy" alt="CTA partner logo" />
-    <img src="assets/images/outbox.png" style="height:65px;object-fit:contain;" loading="lazy" alt="Outbox partner logo" />
-    <img src="assets/images/fca.png" style="height:65px;object-fit:contain;" loading="lazy" alt="FCA partner logo" />
+
+  <div class="partners-grid">
+
+    <!-- Partner Card -->
+    <div class="partner-card">
+      <img src="assets/logos/usaid.svg" alt="USAID" loading="lazy">
+    </div>
+
+    <div class="partner-card">
+      <img src="assets/logos/uncdf.svg" alt="UNCDF" loading="lazy">
+    </div>
+
+    <div class="partner-card">
+      <img src="assets/logos/gsma.svg" alt="GSMA" loading="lazy">
+    </div>
+
+    <div class="partner-card">
+      <img src="assets/logos/optbank.svg" alt="Opportunity Bank" loading="lazy">
+    </div>
+
+    <div class="partner-card">
+      <img src="assets/logos/dca.svg" alt="DCA" loading="lazy">
+    </div>
+
+    <div class="partner-card">
+      <img src="assets/logos/fao.svg" alt="FAO" loading="lazy">
+    </div>
+
+    <div class="partner-card">
+      <img src="assets/logos/wv.svg" alt="World Vision" loading="lazy">
+    </div>
+
+    <div class="partner-card">
+      <img src="assets/logos/mtn.svg" alt="MTN" loading="lazy">
+    </div>
+
+    <div class="partner-card">
+      <img src="assets/logos/airtel.svg" alt="Airtel" loading="lazy">
+    </div>
+
+    <div class="partner-card">
+      <img src="assets/logos/vc.svg" alt="Village Capital" loading="lazy">
+    </div>
+
+    <div class="partner-card">
+      <img src="assets/logos/fmt.svg" alt="FMT" loading="lazy">
+    </div>
+
+    <div class="partner-card">
+      <img src="assets/logos/cenfri.svg" alt="Cenfri" loading="lazy">
+    </div>
+
+    <div class="partner-card">
+      <img src="assets/logos/cta.svg" alt="CTA" loading="lazy">
+    </div>
+
+    <div class="partner-card">
+      <img src="assets/logos/outbox.svg" alt="Outbox" loading="lazy">
+    </div>
+
+    <div class="partner-card">
+      <img src="assets/logos/fca.svg" alt="FCA" loading="lazy">
+    </div>
+
   </div>
 </section>
 
+
+
   <!-- Testimonials -->
+   
   <section class="reveal" id="impact">
-    <h3 style="text-align:center;font-size:2rem;font-weight:800;color:#0A1A3A;margin-bottom:1rem;">Stories from our community</h3>
+    <h3 style="text-align:center;font-size:2rem;font-weight:800;color:#000239;margin-bottom:1rem;">Stories from our community</h3>
 
     <div class="testimonials-slider" style="position:relative;overflow:hidden;width:100%;max-width:900px;margin:0 auto;">
 
@@ -191,32 +436,34 @@
       <div class="testimonials-track" style="display:flex;transition:transform 0.8s ease;">
 
         <!-- Slide 1 -->
-        <div class="testimonial" style="min-width:100%;background:#ffffff;padding:1.5rem;border-radius:14px;box-shadow:0 6px 16px rgba(0,0,0,0.08);">
+        <div class="testimonial" style="min-width:100%;background:#54b749;padding:1.5rem;border-radius:14px;box-shadow:0 6px 16px rgba(0,0,0,0.08);">
           <p style="font-weight:700;font-size:1.05rem;">"Chomoka replaced our paper books — records are accurate and members trust the process."</p>
-          <div style="margin-top:0.5rem;color:#64748b;font-size:0.95rem">— Grace (VSLA Chair)</div>
+          <div style="margin-top:0.5rem;color:#000239;font-size:0.95rem">— Grace (VSLA Chair)</div>
         </div>
 
         <!-- Slide 2 -->
-        <div class="testimonial" style="min-width:100%;background:#ffffff;padding:1.5rem;border-radius:14px;box-shadow:0 6px 16px rgba(0,0,0,0.08);">
+        <div class="testimonial" style="min-width:100%;background:#54b749;padding:1.5rem;border-radius:14px;box-shadow:0 6px 16px rgba(0,0,0,0.08);">
           <p style="font-weight:700;font-size:1.05rem;">"MOBIS simplified reconciliation and saved our SACCO valuable time every month."</p>
-          <div style="margin-top:0.5rem;color:#64748b;font-size:0.95rem">— John (SACCO Manager)</div>
+          <div style="margin-top:0.5rem;color:#000239;font-size:0.95rem">— John (SACCO Manager)</div>
         </div>
 
         <!-- Slide 3 -->
-        <div class="testimonial" style="min-width:100%;background:#ffffff;padding:1.5rem;border-radius:14px;box-shadow:0 6px 16px rgba(0,0,0,0.08);">
+        <div class="testimonial" style="min-width:100%;background:#54b749;padding:1.5rem;border-radius:14px;box-shadow:0 6px 16px rgba(0,0,0,0.08);">
           <p style="font-weight:700;font-size:1.05rem;">"Our VSLA is more organized, faster and transparent thanks to Chomoka."</p>
-          <div style="margin-top:0.5rem;color:#64748b;font-size:0.95rem">— Sarah (Group Treasurer)</div>
+          <div style="margin-top:0.5rem;color:#000239;font-size:0.95rem">— Sarah (Group Treasurer)</div>
+        </div>
+
+         <!-- Slide 4 -->
+        <div class="testimonial" style="min-width:100%;background:#54b749;padding:1.5rem;border-radius:14px;box-shadow:0 6px 16px rgba(0,0,0,0.08);">
+          <p style="font-weight:700;font-size:1.05rem;">"
+              Before Chomoka, our VSLA lost members over record disputes. Now, with real-time dashboards, everyone contributes confidently. We've expanded to three subgroups and funded a community well! "</p>
+          <div style="margin-top:0.5rem;color:#000239;font-size:0.95rem">— 
+            Fatuma .N.
+            (Umoja Savings Group)
+          </div>
         </div>
 
       </div>
-
-      <!-- Navigation Dots -->
-      <div class="testimonial-dots" style="display:flex;gap:0.5rem;justify-content:center;margin-top:1rem;">
-        <span class="dot active" data-slide="0" style="width:10px;height:10px;border-radius:50%;background:#0A1A3A;cursor:pointer;"></span>
-        <span class="dot" data-slide="1" style="width:10px;height:10px;border-radius:50%;background:#94A3B8;cursor:pointer;"></span>
-        <span class="dot" data-slide="2" style="width:10px;height:10px;border-radius:50%;background:#94A3B8;cursor:pointer;"></span>
-      </div>
-    </div>
 </section>
 
   <!-- Newsletter -->
@@ -229,9 +476,9 @@
     <style>
       @keyframes shine {0%{left:-120%}50%{left:120%}100%{left:120%}}
       .newsletter-input{padding:0.85rem 1rem;border-radius:12px;border:1px solid rgba(10,26,58,0.12);font-size:1rem;width:100%;transition:all .25s ease}
-      .newsletter-input:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(0,212,170,0.25);outline:none}
+      .newsletter-input:focus{border-color:var(--accent);box-shadow:0 0 0 3px#54b749;outline:none}
       .newsletter-btn{padding:0.85rem 1.6rem;border-radius:12px;font-weight:700;background:#0A1A3A;border:none;color:#ffffff;cursor:pointer;font-size:1rem;transition:transform .25s ease, box-shadow .25s ease;min-height:44px}
-      .newsletter-btn:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(0,212,170,0.35)}
+      .newsletter-btn:hover{transform:translateY(-2px);box-shadow:0 6px 16px #54b749}
       @media (max-width:768px){
         .newsletter-form{grid-template-columns:1fr !important;width:100% !important}
         .newsletter-btn{width:100%}
@@ -240,8 +487,8 @@
     </style>
 
     <div style="text-align:center;margin-bottom:1.5rem;">
-      <h2 style="font-size:1.8rem;font-weight:800;color:#0A1A3A;margin:0;">Stay Informed</h2>
-      <p style="color:#64748b;margin-top:0.5rem;font-size:1rem">Get product updates, partner stories and impactful insights.</p>
+      <h2 style="font-size:1.8rem;font-weight:800;color: #ffffff;margin:0;">Stay Informed</h2>
+      <p style="color:#ffffff;margin-top:0.5rem;font-size:1rem">Get product updates, partner stories and impactful insights.</p>
     </div>
 
     <form id="news-form" class="newsletter-form" onsubmit="event.preventDefault();subscribeForm();" style="display:grid;grid-template-columns:1fr 1fr auto;gap:1rem;max-width:750px;margin:0 auto;background:#DFFFE4;padding:1.5rem;border-radius:14px;box-shadow:0 4px 14px rgba(0,0,0,0.08);">
@@ -252,13 +499,14 @@
   </div>
 </section>
 
+
 </main>
 
 <footer>
   <div class="container">
     <div class="footer-grid">
       <div>
-        <img src="assets/images/LOGO EDITS v2-01.png" alt="Ensibuuko Logo" class="footer-logo" loading="lazy" />
+        <img src="assets/images/LOGO EDITS v2-02.png" alt="Ensibuuko Logo" class="footer-logo" loading="lazy" />
         <p style="color:#E6F6F3;line-height:1.6;margin:0.5rem 0 0.75rem 0;">
           Plot 238 Kikawa Road<br>
           Kiwatule.<br>
@@ -267,37 +515,22 @@
           +256 (0) 773-474-472<br>
           sales@ensibuuko.com
         </p>
-        <div style="display:flex;gap:0.75rem;margin-top:0.75rem;align-items:center;">
-          <a href="#" aria-label="Facebook" style="display:flex;align-items:center;">
-            <svg width="22" height="22" fill="#E6F6F3" viewBox="0 0 24 24"><path d="M22 12.07C22 6.48 17.52 2 11.93 2S1.86 6.48 1.86 12.07c0 4.99 3.66 9.13 8.44 9.93v-7.03H7.9v-2.9h2.4V9.98c0-2.38 1.42-3.7 3.6-3.7 1.04 0 2.13.18 2.13.18v2.34h-1.2c-1.18 0-1.55.73-1.55 1.48v1.78h2.64l-.42 2.9h-2.22V22c4.78-.8 8.44-4.94 8.44-9.93z"/></svg>
-          </a>
-          <a href="#" aria-label="Twitter" style="display:flex;align-items:center;">
-            <svg width="22" height="22" fill="#E6F6F3" viewBox="0 0 24 24"><path d="M22.46 6c-.77.35-1.6.58-2.46.69a4.3 4.3 0 0 0 1.88-2.37 8.59 8.59 0 0 1-2.72 1.04 4.28 4.28 0 0 0-7.3 3.9A12.14 12.14 0 0 1 3.15 4.8a4.27 4.27 0 0 0 1.33 5.71 4.24 4.24 0 0 1-1.94-.53v.05c0 2.06 1.47 3.78 3.42 4.17-.36.1-.75.15-1.15.15-.28 0-.55-.03-.81-.08a4.29 4.29 0 0 0 4 2.97A8.6 8.6 0 0 1 2 19.54 12.1 12.1 0 0 0 8.56 21c7.55 0 11.68-6.26 11.68-11.68 0-.18-.01-.35-.02-.53A8.18 8.18 0 0 0 22.46 6z"/></svg>
-          </a>
-          <a href="#" aria-label="WhatsApp" style="display:flex;align-items:center;">
-            <svg width="22" height="22" fill="#E6F6F3" viewBox="0 0 24 24"><path d="M20.52 3.48A11.81 11.81 0 0 0 12 0C5.37 0 0 5.37 0 12c0 2.11.55 4.18 1.6 6.01L0 24l6.17-1.6A11.93 11.93 0 0 0 12 24c6.63 0 12-5.37 12-12 0-3.19-1.24-6.19-3.48-8.52zM12 21.6c-1.9 0-3.74-.52-5.34-1.52l-.38-.23-3.66.95.98-3.56-.25-.37A9.63 9.63 0 0 1 2.4 12c0-5.29 4.31-9.6 9.6-9.6 2.56 0 4.97 1 6.78 2.8a9.52 9.52 0 0 1 2.82 6.8c0 5.29-4.31 9.6-9.6 9.6zm5.12-7.38c-.28-.14-1.65-.81-1.9-.9-.25-.1-.43-.14-.6.14-.18.28-.7.9-.86 1.08-.16.18-.32.2-.6.07-.28-.14-1.18-.43-2.24-1.38a8.53 8.53 0 0 1-1.58-1.96c-.17-.28 0-.43.13-.57.14-.14.28-.32.43-.5.14-.18.18-.28.28-.46.1-.18.05-.35 0-.49-.05-.14-.6-1.45-.82-1.98-.22-.53-.44-.46-.6-.46h-.5c-.18 0-.49.07-.74.35-.25.28-.97.95-.97 2.32 0 1.37 1 2.69 1.14 2.88.14.18 1.96 3 4.74 4.2.66.28 1.17.45 1.57.58.66.21 1.27.18 1.74.11.53-.08 1.65-.68 1.88-1.33.23-.65.23-1.2.16-1.33-.07-.14-.25-.22-.53-.36z"/></svg>
-          </a>
-          <a href="#" aria-label="Instagram" style="display:flex;align-items:center;">
-            <svg width="22" height="22" fill="#E6F6F3" viewBox="0 0 24 24"><path d="M12 2.16c3.2 0 3.584.012 4.85.07 1.17.056 1.97.24 2.43.403a4.9 4.9 0 0 1 1.77 1.15 4.9 4.9 0 0 1 1.15 1.77c.163.46.347 1.26.403 2.43.058 1.266.07 1.65.07 4.85s-.012 3.584-.07 4.85c-.056 1.17-.24 1.97-.403 2.43a4.9 4.9 0 0 1-1.15 1.77 4.9 4.9 0 0 1-1.77 1.15c-.46.163-1.26.347-2.43.403-1.266.058-1.65.07-4.85.07s-3.584-.012-4.85-.07c-1.17-.056-1.97-.24-2.43-.403a4.9 4.9 0 0 1-1.77-1.15 4.9 4.9 0 0 1-1.15-1.77c-.163-.46-.347-1.26-.403-2.43C2.172 15.784 2.16 15.4 2.16 12s.012-3.584.07-4.85c.056-1.17.24-1.97.403-2.43A4.9 4.9 0 0 1 3.783 2.95a4.9 4.9 0 0 1 1.77-1.15c.46-.163 1.26-.347 2.43-.403C8.216 2.172 8.6 2.16 12 2.16m0-2.16C8.74 0 8.332.014 7.052.072 5.775.13 4.73.325 3.85.64a6.9 6.9 0 0 0-2.49 1.62A6.9 6.9 0 0 0 .64 4.85c-.315.88-.51 1.925-.568 3.202C.014 8.332 0 8.74 0 12c0 3.26.014 3.668.072 4.948.058 1.277.253 2.322.568 3.202a6.9 6.9 0 0 0 1.62 2.49 6.9 6.9 0 0 0 2.49 1.62c.88.315 1.925.51 3.202.568C8.332 23.986 8.74 24 12 24s3.668-.014 4.948-.072c1.277-.058 2.322-.253 3.202-.568a6.9 6.9 0 0 0 2.49-1.62 6.9 6.9 0 0 0 1.62-2.49c.315-.88.51-1.925.568-3.202.058-1.28.072-1.688.072-4.948s-.014-3.668-.072-4.948c-.058-1.277-.253-2.322-.568-3.202a6.9 6.9 0 0 0-1.62-2.49A6.9 6.9 0 0 0 20.152.64c-.88-.315-1.925-.51-3.202-.568C15.668.014 15.26 0 12 0z"/></svg>
-          </a>
-        </div>
       </div>
 
       <div>
         <h4 style="color:#fff">Products</h4>
         <ul style="list-style:none;padding:0;margin:0;color:#E6F6F3">
-          <li><a href="#products" style="color:#E6F6F3;text-decoration:none;">MOBIS</a></li>
-          <li><a href="#products" style="color:#E6F6F3;text-decoration:none;">Chomoka</a></li>
-          <li><a href="#products" style="color:#E6F6F3;text-decoration:none;">Agent Banking</a></li>
+          <li><a href="chomoka.html" style="color:#E6F6F3;text-decoration:none;">Savings Groups Platform</a></li>
+          <li><a href="mobis.html" style="color:#E6F6F3;text-decoration:none;">Microfinance Platform</a></li>
+          <li><a href="lending.html" style="color:#E6F6F3;text-decoration:none;">Mobile Lending Services</a></li>
         </ul>
       </div>
 
       <div>
         <h4 style="color:#fff">Company</h4>
         <ul style="list-style:none;padding:0;margin:0;color:#E6F6F3">
-          <li><a href="#impact" style="color:#E6F6F3;text-decoration:none;">Impact</a></li>
-          <li><a href="#team" style="color:#E6F6F3;text-decoration:none;">Team</a></li>
-          <li><a href="#partners" style="color:#E6F6F3;text-decoration:none;">Partners</a></li>
+          <li><a href="about.html" style="color:#E6F6F3;text-decoration:none;">About</a></li>
+          <li><a href="contact.html" style="color:#E6F6F3;text-decoration:none;">Contact Us</a></li>
         </ul>
       </div>
 
@@ -313,12 +546,16 @@
           <a href="#" aria-label="Facebook" style="display:flex;align-items:center;">
             <svg width="20" height="20" fill="#E6F6F3" viewBox="0 0 24 24"><path d="M22 12.07C22 6.48 17.52 2 11.93 2S1.86 6.48 1.86 12.07c0 4.99 3.66 9.13 8.44 9.93v-7.03H7.9v-2.9h2.4V9.98c0-2.38 1.42-3.7 3.6-3.7 1.04 0 2.13.18 2.13.18v2.34h-1.2c-1.18 0-1.55.73-1.55 1.48v1.78h2.64l-.42 2.9h-2.22V22c4.78-.8 8.44-4.94 8.44-9.93z"/></svg>
           </a>
+          <a href="#" aria-label="WhatsApp" style="display:flex;align-items:center;">
+            <svg width="22" height="22" fill="#E6F6F3" viewBox="0 0 24 24"><path d="M20.52 3.48A11.81 11.81 0 0 0 12 0C5.37 0 0 5.37 0 12c0 2.11.55 4.18 1.6 6.01L0 24l6.17-1.6A11.93 11.93 0 0 0 12 24c6.63 0 12-5.37 12-12 0-3.19-1.24-6.19-3.48-8.52zM12 21.6c-1.9 0-3.74-.52-5.34-1.52l-.38-.23-3.66.95.98-3.56-.25-.37A9.63 9.63 0 0 1 2.4 12c0-5.29 4.31-9.6 9.6-9.6 2.56 0 4.97 1 6.78 2.8a9.52 9.52 0 0 1 2.82 6.8c0 5.29-4.31 9.6-9.6 9.6zm5.12-7.38c-.28-.14-1.65-.81-1.9-.9-.25-.1-.43-.14-.6.14-.18.28-.7.9-.86 1.08-.16.18-.32.2-.6.07-.28-.14-1.18-.43-2.24-1.38a8.53 8.53 0 0 1-1.58-1.96c-.17-.28 0-.43.13-.57.14-.14.28-.32.43-.5.14-.18.18-.28.28-.46.1-.18.05-.35 0-.49-.05-.14-.6-1.45-.82-1.98-.22-.53-.44-.46-.6-.46h-.5c-.18 0-.49.07-.74.35-.25.28-.97.95-.97 2.32 0 1.37 1 2.69 1.14 2.88.14.18 1.96 3 4.74 4.2.66.28 1.17.45 1.57.58.66.21 1.27.18 1.74.11.53-.08 1.65-.68 1.88-1.33.23-.65.23-1.2.16-1.33-.07-.14-.25-.22-.53-.36z"/></svg>
+          </a>
         </div>
         <div style="margin-top:1.5rem;color:#E6F6F3;font-size:0.9rem">&copy; <span id="year">2025</span> Ensibuuko — All rights reserved.</div>
       </div>
     </div>
   </div>
 </footer>
+
 <script src="js/script.js"></script>
 </body>
 </html>

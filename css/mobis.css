@@ -1,0 +1,550 @@
+/* MOBIS page specific styles (placeholders) */
+
+/* centered section with dashboard */
+.section-centered {
+  padding: 4rem 1rem;
+  text-align: center
+}
+
+.center-title {
+  font-size: 2.2rem;
+  color: #07123a;
+  margin: 0 0 1rem;
+  font-weight: 800
+}
+
+.center-lead {
+  max-width: 900px;
+  margin: 0 auto 2.25rem;
+  color: #374151
+}
+
+/* dashboard / user card */
+.dashboard-wrap {
+  display: flex;
+  gap: 2.5rem;
+  align-items: flex-start;
+  justify-content: center;
+  max-width: 1100px;
+  margin: 2rem auto
+}
+
+.dashboard {
+  flex: 1;
+  max-width: 720px;
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(2, 6, 23, 0.08)
+}
+
+.user-card {
+  width: 220px;
+  background: #fff;
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 8px 26px rgba(2, 6, 23, 0.06);
+  text-align: left
+}
+
+.user-photo {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  display: block;
+  margin-bottom: 0.6rem
+}
+
+.user-meta h4 {
+  margin: 0 0 0.25rem;
+  color: #07123a
+}
+
+/* features grid */
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  padding: 3rem 1rem;
+  max-width: 1200px;
+  margin: 0 auto
+}
+
+.features-grid h4 {
+  color: var(--accent-2);
+  margin-bottom: 0.5rem
+}
+
+.features-grid p {
+  color: #475569
+}
+
+/* split sections */
+.split {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  padding: 3rem 1rem;
+  max-width: 1200px;
+  margin: 0 auto
+}
+
+.split .split-media {
+  flex: 1
+}
+
+.split .split-media img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px
+}
+
+.split .split-content {
+  flex: 1
+}
+
+.split h2 {
+  font-size: 1.8rem;
+  margin-bottom: 0.75rem
+}
+
+.icon-list {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0 0 0
+}
+
+.icon-list li {
+  margin-bottom: 1rem;
+  color: #475569;
+}
+
+/* dark card sections */
+.mobis-dark {
+  background: #07123a;
+  color: #fff;
+  padding: 3rem 0
+}
+
+.mobis-dark .dark-inner {
+  display: flex;
+  gap: 3rem;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1.25rem
+}
+
+.mobis-dark .dark-left {
+  flex: 1
+}
+
+.mobis-dark .dark-right {
+  flex: 1;
+  display: flex;
+  justify-content: center
+}
+
+.mobis-dark h3 {
+  color: var(--accent);
+  font-size: 1.5rem;
+  margin-bottom: 0.75rem
+}
+
+.check-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 1rem
+}
+
+.check-list li {
+  margin-bottom: 0.8rem;
+  color: rgba(255, 255, 255, 0.9)
+}
+
+/* image card inside dark */
+.image-card {
+  background: rgba(255, 255, 255, 0.06);
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: inset 0 4px 12px rgba(0, 0, 0, 0.12)
+}
+
+.image-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  display: block
+}
+
+/* CTA layout */
+.cta-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2.5rem 1rem
+}
+
+.cta-text h3 {
+  font-size: 1.6rem;
+  margin: 0 0 0.5rem
+}
+
+.cta-action .btn {
+  padding: 0.85rem 1.5rem;
+  border-radius: 8px
+}
+
+footer {
+  background: var(--navy);
+  color: white;
+  padding: 2rem 1rem;
+  margin-top: 4rem;
+  text-align: center;
+}
+
+/* responsive adjustments */
+@media (max-width: 992px) {
+  .features-grid {
+    grid-template-columns: repeat(2, 1fr)
+  }
+
+  .dashboard-wrap {
+    flex-direction: column;
+    align-items: center
+  }
+
+  .user-card {
+    width: 100%;
+    max-width: 360px
+  }
+
+  .device-stack {
+    height: 260px
+  }
+}
+
+@media (max-width: 768px) {
+  .mobis-hero .hero-inner {
+    flex-direction: column;
+    text-align: center;
+    padding: 0 1rem
+  }
+
+  .mobis-hero .hero-left {
+    max-width: 100%
+  }
+
+  .device-stack {
+    height: auto;
+    margin-top: 1rem
+  }
+
+  .features-grid {
+    grid-template-columns: 1fr
+  }
+
+  .split {
+    flex-direction: column
+  }
+
+  .mobis-dark .dark-inner {
+    flex-direction: column
+  }
+
+  .dashboard {
+    max-width: 100%
+  }
+
+  .user-card {
+    position: relative;
+    right: auto;
+    margin-top: 1rem
+  }
+
+  .cta-inner {
+    flex-direction: column;
+    align-items: stretch
+  }
+
+  .cta-action {
+    display: flex;
+    justify-content: flex-start
+  }
+}
+
+/* =========================
+   MOBIS HIGHLIGHT CARDS
+========================= */
+
+.mobis-highlights {
+  background: #e6fbff;
+  padding: 4rem 1rem;
+}
+
+.highlights-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 5rem;
+}
+
+/* white card */
+.highlight-card {
+  background: #ffffff;
+  padding: 2rem 1.75rem;
+  border-radius: 18px;
+  box-shadow: 0 12px 34px rgba(3,10,35,0.1);
+  transition: transform .35s ease, box-shadow .35s ease;
+}
+
+/* hover lift */
+.highlight-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 22px 50px rgba(3,10,35,0.18);
+}
+
+/* heading */
+.highlight-card h4 {
+  margin: 0 0 0.5rem;
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--accent);
+}
+
+/* text */
+.highlight-card p {
+  margin: 0;
+  color: #475569;
+  line-height: 1.65;
+  font-size: 0.95rem;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 1024px) {
+  .highlights-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .highlights-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =========================
+   MOBIS FEATURE CARDS (70%)
+   ========================= */
+
+.mobis-feature {
+  background: #e6fbff;              /* same dark page background */
+  padding: 3.5rem 0;
+}
+
+/* main card */
+.mobis-feature-card {
+  max-width: 70%;                   /* ≈ 70% of the page */
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+  padding: 2.5rem 2.75rem;
+  border-radius: 26px;
+  background: #000239;              /* slightly lighter than page */
+  box-shadow: 0 20px 60px rgba(0,0,0,0.45);
+}
+
+/* text side */
+.mobis-feature-text {
+  flex: 1.1;
+}
+
+.mobis-feature-text h3 {
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+  font-size: 1.7rem;
+  font-weight: 800;
+  color: #54b749;
+}
+
+.mobis-feature-text p {
+  color: #e5f2ff;
+  margin-bottom: 1.2rem;
+}
+
+.mobis-feature-text .check-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.mobis-feature-text .check-list li {
+  color: #cbd5f5;
+  margin-bottom: 0.45rem;
+  position: relative;
+  padding-left: 1.4rem;
+}
+
+.mobis-feature-text .check-list li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #54b749;
+  font-size: 0.9rem;
+}
+
+/* image side */
+.mobis-feature-media {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.mobis-feature-media img {
+  width: 100%;
+  max-width: 360px;
+  border-radius: 24px;
+  display: block;
+  box-shadow: 0 16px 40px rgba(0,0,0,0.55);
+}
+
+/* ===== Scroll-in animation (uses your existing .reveal-card JS) ===== */
+
+.mobis-feature-card.reveal-card {
+  transform: translateY(40px);
+}
+
+/* mobile + tablet */
+@media (max-width: 1024px) {
+  .mobis-feature-card {
+    max-width: 88%;
+    flex-direction: column-reverse;  /* image below text for better reading */
+    text-align: left;
+    padding: 2rem 1.75rem;
+  }
+
+  .mobis-feature-media img {
+    max-width: 320px;
+  }
+}
+
+@media (max-width: 640px) {
+  .mobis-feature {
+    padding: 3rem 0;
+  }
+
+  .mobis-feature-card {
+    max-width: 94%;
+    padding: 1.75rem 1.3rem;
+    gap: 1.5rem;
+  }
+
+  .mobis-feature-text h3 {
+    font-size: 1.4rem;
+  }
+}
+
+/* =========================
+   MOBIS HERO VARIANT
+========================= */
+
+.hero--mobis {
+  background-color: #020b29;
+  min-height: 85vh;
+}
+
+.hero--mobis .hero-bg {
+  background-image:
+    linear-gradient(
+      to left,
+      rgba(2,11,41,0.45),
+      rgba(2,11,41,0.85)
+    ),
+    url("../assets/images/mobis-hero.jpg");
+  background-size: cover;
+  background-position: center right;
+}
+
+.hero-bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to left,
+    rgba(2,11,41,0.05),
+    rgba(2,11,41,0.65),
+    #020b29
+  );
+}
+
+
+
+.hero--mobis .hero-logo {
+  width: 180px;
+  height: auto;
+  display: block;
+  background: none;
+  padding: 0;
+  border-radius: 0;
+  box-shadow: none;
+  margin-bottom: 1.25rem;
+}
+
+/* ===== FORCE MOBIS HERO BACKGROUND VISIBLE ===== */
+
+.hero--mobis {
+  position: relative;
+  min-height: 85vh;
+  overflow: hidden;
+  background-color:#000239;
+}
+
+.hero--mobis .hero-bg {
+  position: absolute;
+  inset: 0;
+  width: 55%;
+  margin-left: auto;
+
+  background-image:
+    linear-gradient(
+      to left,
+      rgba(2,11,41,0.45),
+      rgba(2,11,41,0.85)
+    ),
+    url("../assets/images/mobisapp.jpg");
+
+  background-size: cover;
+  background-position: center right;
+  background-repeat: no-repeat;
+
+  z-index: 1;
+  opacity: 1; /* ✅ DO NOT FADE */
+}
+
+/* ensure text always above */
+.hero--mobis .hero-left {
+  position: relative;
+  z-index: 3;
+}
+
+/* curve sits above background */
+.hero--mobis .hero-curve {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 2;
+}
+
+
+
+
+
+

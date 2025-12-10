@@ -1,0 +1,703 @@
+ :root {
+   --navy: #161d77;
+   --accent: #161d77;
+   --accent-2: #161d77;
+   --bg: #e6fbff;
+   --muted: #F8FAFC;
+   --text: #ecedf0;
+   --max-width: 1200px;
+ }
+
+ * {
+   box-sizing: border-box
+ }
+
+ body {
+   margin: 0;
+    font-family: var(--font-primary);
+  font-weight: 400;
+   line-height: 1.5;
+   color: #0A1A3A;
+   background: var(--bg);
+ }
+
+ .container {
+   max-width: var(--max-width);
+   margin: 0 auto;
+   padding: 1rem
+ }
+
+ header {
+   position: sticky;
+   top: 0;
+   background: var(--navy);
+   z-index: 40;
+   border-bottom: 2px solid rgba(255, 255, 255, 0.12);
+   backdrop-filter: blur(6px);
+   transition: opacity .4s ease, box-shadow .3s ease;
+   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.25);
+ }
+
+ 
+
+ .btn {
+   padding: 0.55rem 0.9rem;
+   border-radius: 10px;
+   border: 0;
+   cursor: pointer;
+   font-weight: 600
+ }
+
+ /* centered intro */
+ .centered-intro {
+   padding: 3rem 1rem;
+   text-align: center
+ }
+
+ .centered-intro h2 {
+   font-size: 2.2rem;
+   color: #07123a;
+   margin-bottom: 1rem;
+   font-weight: 800
+ }
+
+ .centered-intro p {
+   max-width: 900px;
+   margin: 0 auto;
+   color: #475569
+ }
+
+ /* split-two section */
+ .split-two {
+   display: flex;
+   gap: 2rem;
+   align-items: flex-start;
+   padding: 3rem 1rem;
+   max-width: 1200px;
+   margin: 0 auto
+ }
+
+ .split-left {
+   flex: 1
+ }
+
+ .split-right {
+   flex: 1;
+   padding: 2rem;
+   border-radius: 8px;
+   background: #eef7f0
+ }
+
+ .split-right.tone h4 {
+   color: #54b749;
+   margin-top: 0
+ }
+
+ .mini-phone img {
+   width: 160px;
+   display: block;
+   margin-top: 1rem
+ }
+
+ /* dark features */
+ .ch-features {
+   background: linear-gradient(180deg, #54b749 0%, #161d77 100%);
+   padding: 4rem 0;
+   color: #fff
+ }
+
+ .features-inner {
+   display: grid;
+   grid-template-columns: repeat(3, 1fr);
+   gap: 2rem;
+   max-width: 1200px;
+   margin: 0 auto;
+   padding: 0 1rem
+ }
+
+ .feature {
+   background: rgba(255, 255, 255, 0.03);
+   padding: 2rem;
+   border-radius: 12px;
+   text-align: center
+ }
+
+ .icon {
+   width: 64px;
+   height: 64px;
+   border-radius: 999px;
+   background: rgba(255, 255, 255, 0.06);
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   margin: 0 auto 1rem;
+   font-size: 22px
+ }
+
+ .feature h4 {
+   margin: 0 0 0.5rem;
+   color: #fff
+ }
+
+ .feature p {
+   color: rgba(255, 255, 255, 0.78);
+   font-size: 0.95rem
+ }
+
+ /* problems area */
+ .problems-inner {
+   display: flex;
+   gap: 2rem;
+   align-items: flex-start;
+   max-width: 1200px;
+   margin: 0 auto;
+   padding: 2rem 1rem
+ }
+
+ .image-side {
+   flex: 1
+ }
+
+ .image-side img {
+   width: 100%;
+   height: auto;
+   border-radius: 12px;
+   box-shadow: 0 8px 30px rgba(2, 6, 23, 0.06)
+ }
+
+ .content-side {
+   flex: 1
+ }
+
+ .content-side h3 {
+   color: #10451b;
+   font-size: 1.6rem;
+   margin-bottom: 0.5rem
+ }
+
+ .two-columns {
+   display: flex;
+   gap: 2rem;
+   margin-top: 1.25rem
+ }
+
+ .two-columns .col {
+   flex: 1
+ }
+
+ .item {
+   margin-bottom: 1.2rem;
+   padding: 0.6rem 0
+ }
+
+ .item.bad h4 {
+   color: #525252
+ }
+
+ .item.good h4 {
+   color: #0b7d33;
+   color: var(--accent-2)
+ }
+
+ /* final CTA */
+ .final-cta {
+   padding: 3rem 0
+ }
+
+ .cta-inner {
+   display: flex;
+   align-items: center;
+   gap: 2rem;
+   max-width: 1200px;
+   margin: 0 auto;
+   padding: 0 1rem
+ }
+
+ .cta-left {
+   flex: 1
+ }
+
+ .cta-right {
+   flex: 1;
+   display: flex;
+   justify-content: center
+ }
+
+ .cta-right img {
+   max-width: 380px;
+   transform: none;
+   border-radius: 12px
+ }
+
+ /* footer spacing */
+ footer {
+   background: var(--navy);
+   color: white;
+   padding: 2rem 1rem;
+   margin-top: 4rem;
+   text-align: center;
+ }
+
+
+ /* responsive */
+ @media (max-width: 992px) {
+   .features-inner {
+     grid-template-columns: repeat(2, 1fr)
+   }
+
+   .split-two {
+     flex-direction: column
+   }
+
+   .two-columns {
+     flex-direction: column
+   }
+
+   .phone-main {
+     transform: none;
+     max-width: 320px
+   }
+
+   .stat-mid {
+     right: 4%
+   }
+
+   .hero-inner {
+     padding: 0 1rem
+   }
+ }
+
+ @media (max-width: 768px) {
+   .ch-hero .hero-inner {
+     flex-direction: column;
+     align-items: flex-start
+   }
+
+   .hero-right {
+     order: 2;
+     width: 100%
+   }
+
+   .hero-left {
+     width: 100%
+   }
+
+   .features-inner {
+     grid-template-columns: 1fr
+   }
+
+   .cta-inner {
+     flex-direction: column
+   }
+
+   .phone-main {
+     width: 260px
+   }
+
+   .stat-mid {
+     position: static;
+     transform: none;
+     margin-top: 0.5rem;
+     display: block;
+     right: auto
+   }
+
+   .stat-top {
+     position: static;
+     margin-top: 0.5rem;
+     display: block
+   }
+
+   .centered-intro h2 {
+     font-size: 1.6rem
+   }
+ }
+
+ /* All generic paragraphs */
+ p {
+   color: #0A1A3A !important;
+ }
+
+ /* All headings readable everywhere */
+ h1,
+ h2,
+ h3,
+ h4,
+ h5 {
+   color: #0A1A3A !important;
+ }
+
+ /* Lists */
+ li {
+   color: #0A1A3A !important;
+ }
+
+ /* === PROBLEM SECTION: CARD LAYOUT === */
+ .problem-card-grid {
+   display: grid;
+   grid-template-columns: repeat(3, 1fr);
+   gap: 1.75rem;
+   margin-top: 2rem;
+ }
+
+ .problem-card {
+   background: #ffffff;
+   padding: 1.5rem;
+   border-radius: 14px;
+   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+   transition: transform .25s ease, box-shadow .25s ease;
+   color: #0A1A3A;
+ }
+
+ .problem-card:hover {
+   transform: translateY(-6px);
+   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.10);
+ }
+
+ .problem-card h4 {
+   margin: 0 0 0.
+ }
+
+ /* =========================
+   CENTERED INTRO – BG IMAGE
+========================= */
+
+.centered-intro {
+  position: relative;
+  padding: 5rem 1.5rem;
+  text-align: center;
+  background-image: url("../assets/images/chomokalogo.jpg"); 
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  isolation: isolate;
+}
+
+/* Overlay for text readability */
+.centered-intro::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0.94),
+      rgba(255, 255, 255, 0.9)
+    );
+  z-index: -1;
+}
+
+/* Typography polish */
+.centered-intro h2 {
+  max-width: 900px;
+  margin: 0 auto 1rem;
+}
+
+.centered-intro p {
+  font-size: 1.05rem;
+  max-width: 900px;
+}
+
+
+/* =========================
+   PROBLEMS & SOLUTIONS – STATIC VERTICAL
+========================= */
+
+.problem-card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.75rem;
+}
+
+/* Tablet */
+@media (max-width: 992px) {
+  .problem-card-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .problem-card-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Problems: always visible, no animation */
+.problem {
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+/* Solutions: animate on scroll */
+.solution {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 600ms cubic-bezier(.2,.9,.2,1);
+}
+
+.solution.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+/* =========================
+   SIDE IMAGE CARDS – FIXED
+========================= */
+
+.cards-side-by-side {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 3.5rem;
+  padding: 3rem 1rem;
+}
+
+/* Card */
+.side-card {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+  background: #ffffff;
+  padding: 2.5rem;
+  border-radius: 22px;
+  box-shadow: 0 14px 36px rgba(0,0,0,0.08);
+}
+
+/* Reverse desktop */
+.side-card.reverse {
+  flex-direction: row-reverse;
+}
+
+/* Image */
+.side-card-image {
+  flex: 1;
+  max-width: 420px;
+}
+
+.side-card-image img {
+  width: 100%;
+  border-radius: 18px;
+  object-fit: cover;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+}
+
+/* Content */
+.side-card-content {
+  flex: 1;
+}
+
+.side-card-content h3 {
+  font-size: 1.9rem;
+  font-weight: 900;
+  margin-bottom: 0.75rem;
+}
+
+.side-card-content p {
+  font-size: 1.05rem;
+  line-height: 1.65;
+  color: #475569;
+}
+
+/* =========================
+   MOBILE FIX
+========================= */
+
+@media (max-width: 900px) {
+  .side-card,
+  .side-card.reverse {
+    flex-direction: column;
+    padding: 2rem;
+    gap: 1.75rem;
+  }
+
+  .side-card-image {
+    max-width: 50%;
+  }
+
+  .side-card-content {
+    text-align: center;
+  }
+
+  .side-card-content h3 {
+    font-size: 1.55rem;
+  }
+
+  .side-card-content p {
+    font-size: 1rem;
+  }
+}
+
+
+/* =========================
+   WHITE FEATURE CARDS
+========================= */
+
+.ch-features {
+  background: linear-gradient(180deg, #54b749 0%, #161d77 100%);
+  padding: 4rem 0;
+}
+
+/* grid stays the same */
+.features-inner {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+/* ✅ card style */
+.feature {
+  background: #ffffff;                 
+  color: #0A1A3A;
+  padding: 2.2rem 1.8rem;
+  border-radius: 18px;
+  text-align: center;
+  box-shadow: 0 14px 36px rgba(3,10,35,0.12);
+  transition: transform .35s ease, box-shadow .35s ease;
+}
+
+/* hover polish */
+.feature:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 22px 50px rgba(3,10,35,0.22);
+}
+
+/* icon container */
+.feature .icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 999px;
+  background: rgba(84,183,73,0.15);
+  color: var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1rem;
+  font-size: 26px;
+}
+
+/* headings */
+.feature h4 {
+  margin: 0 0 0.5rem;
+  color: #0A1A3A;
+  font-weight: 800;
+}
+
+/* text */
+.feature p {
+  color: #475569;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* responsive */
+@media (max-width: 992px) {
+  .features-inner {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .features-inner {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =========================
+   CHOMOKA HERO OVERRIDES
+========================= */
+
+.hero--chomoka .hero-bg {
+  background-image: url("../assets/images/chomokaphone2.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Taller hero for product */
+.hero--tall {
+  min-height: 85vh;
+}
+
+/* Optional: align text slightly left */
+.hero--chomoka .hero-left {
+  max-width: 580px;
+}
+
+
+/* ===== FIX HERO BACKGROUND VISIBILITY ===== */
+.hero-flex {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Right-side background image */
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  width: 55%;
+  margin-left: auto;
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  z-index: 1;
+  opacity: 1;
+  transition: opacity 800ms ease;
+}
+
+
+/* fade blend into green */
+.hero-bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to left,
+    rgba(22,29,119,0.05) 0%,
+    rgba(22,29,119,0.55) 45%,
+    #161d77 100%
+  );
+}
+
+/* ===== HERO LOGO (MATCH NAV LOGO STYLE) ===== */
+.ch-logo {
+  width: 200px;
+  height: auto;
+  display: block;
+  background: none;
+  padding: 0;
+  border-radius: 0;
+  margin-bottom: 1.25rem;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .ch-logo {
+    width: 160px;
+  }
+}
+
+/* ===== CHOMOKA BUTTON STYLE ===== */
+.hero--chomoka .btn.primary {
+  background: #54b749;        /* deep blue */
+  color: #161d77;
+  padding: 0.95rem 2.2rem;
+  border-radius: 14px;
+  font-weight: 800;
+}
+
+.hero--chomoka .btn.primary:hover {
+  opacity: 0.92;
+}
+
+.hero--chomoka h1,
+.hero--chomoka h2,
+.hero--chomoka h3,
+.hero--chomoka p {
+  color: #ffffff !important; 
+}
+
