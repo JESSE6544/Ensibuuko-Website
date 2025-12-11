@@ -289,7 +289,7 @@ function initTeamSlider() {
     const initials = member.name.split(' ').map(n => n[0]).slice(0,2).join('');
     
     card.innerHTML = `
-      <img src="${member.image}" alt="${member.name}" style="width:140px;height:140px;border-radius:50%;object-fit:cover;border:4px solid #E8FBEA;margin-bottom:1.5rem;" 
+      <img src="${member.image}" alt="${member.name}"  style="width:140px;height:140px;border-radius:50%;object-fit:cover;border:4px solid #E8FBEA;margin-bottom:1.5rem;" loading="lazy"
            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
       <div style="width:140px;height:140px;border-radius:50%;background:#E8FBEA;display:none;align-items:center;justify-content:center;margin:0 auto 1.5rem;border:4px solid #E8FBEA;">
         <span style="font-size:2.5rem;font-weight:bold;color:#10B981;">${initials}</span>
