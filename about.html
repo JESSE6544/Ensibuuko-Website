@@ -236,29 +236,29 @@
 <script>
 // Team data from your profiles
 const teamProfiles = [
-  {name:"Gerald Otim", title:"CEO", desc:"Founder and CEO leading strategy, partnerships, and innovation in digital financial services.", image:"assets/team/ceo.jpg", loading:"lazy"},
-  {name:"Ambrose Mwaka", title:"Chief Technology Officer (CTO)", desc:"Leads technology strategy, architecture, and product innovation for scalable digital financial solutions.", image:"assets/team/cto.jpg", loading:"lazy"},
-  {name:"Agatha Katangaza", title:"Head of Operations", desc:"Oversees organizational operations and drives efficiency across teams and projects.", image:"assets/team/agatha.jpg", loading:"lazy"},
-  {name:"Ephrance Nalunga", title:"Finance Manager", desc:"Manages financial planning, reporting, budgeting, and compliance.", image:"assets/team/ephrance.jpg", loading:"lazy"},
-  {name:"Samuel Otim", title:"Product Manager", desc:"Leads product strategy and development, working with technology teams to deliver impactful digital financial solutions.", image:"assets/team/sam.jpg", loading:"lazy"},
-  {name:"Naoeme Atwiine", title:"Human Resource Manager", desc:"Leads HR operations, talent development, and organizational culture.", image:"assets/team/naoeme.jpg", loading:"lazy"},
-  {name:"Dikan Isaac", title:"VSLA Implementation Manager", desc:"Leads rollout and execution of VSLA digitalization projects, ensuring successful community adoption.", image:"assets/team/dikan.jpg", loading:"lazy"},
-  {name:"Linda Letaru", title:"Operations Manager (SACCOs/MFIs)", desc:"Oversees operational delivery for SACCOs and MFIs, ensuring smooth onboarding, support, and system performance.", image:"assets/team/linda.jpg", loading:"lazy"},
-  {name:"Sarah Ademun", title:"Communications & Partnerships Manager", desc:"Drives communication strategy, brand visibility, and partnership engagements to advance Ensibuuko's mission.", image:"assets/team/sarah.jpg", loading:"lazy"},
-  {name:"Steward Musinguzi", title:"Senior Software Developer", desc:"Develops and maintains key system features, ensuring high-quality code and platform performance.", image:"assets/team/steward.jpg", loading:"lazy"},
-  {name:"George Opuch", title:"DevOps Engineer", desc:"Manages infrastructure reliability, deployments, and system scalability across the technology stack.", image:"assets/team/opuch.jpg", loading:"lazy"},
-  {name:"Benard Charles Ndege", title:"Data Scientist", desc:"Manages analytics and insights generation, supporting decision-making and product optimization.", image:"assets/team/benard.jpg", loading:"lazy"},
-  {name:"Ebucu Jesse", title:"Junior Software Developer", desc:"Contributes to building and improving Ensibuuko's digital financial solutions, ensuring reliability and user-friendliness.", image:"assets/team/jesse.jpg", loading:"lazy"},
-  {name:"Engur Isaac", title:"Credit Manager", desc:"Isaac drives client growth, onboarding SACCOs and financial institutions with tailored demos and strategies that boost adoption. ", image:"assets/team/engur.jpg", loading:"lazy"},
-  {name:"Joan Amoding Enabu", title:"Credit Operations Supervisor", desc:"Oversees Ensibuuko's credit operations, ensuring efficient loan processing, compliance, and customer support.", image:"assets/team/joan.jpg", loading:"lazy"},
-  {name:"Adriko titus", title:"Senior Credit Officer", desc:"Naomi day-to-day excellence, from compliance with Bank of Uganda standards to optimizing workflows for efficiency. ", image:"assets/team/adriko.jpg", loading:"lazy"},
-  {name:"Anita Kisa Ansianju" ,title:"Credit Officer", desc:"credit officer West Nile subregion is a dedicated ,hardworking employee who takes the initiative to ensure communities embrace our digital platform and our target of financial inclusion is met.Anita holds a diploma in business studies (Accounting ). ", image:"assets/team/anita.jpg", loading:"lazy"},
-  {name:"Racho Mugoya", title:"Account Manager, Quick Loans", desc:"Manages the Quick Loans portfolio, supporting partners in loan performance and service delivery.", image:"assets/team/racho.jpg", loading:"lazy"},
-  {name:"Joseph Mayeku", title:"Account Manager", desc:"Manages key partner accounts, ensuring effective service delivery and product adoption.", image:"assets/team/joseph.jpg", loading:"lazy"},
-  {name:"Sheena Kemigisha", title:"Credit Administrator", desc:"Supports loan administration, ensuring accuracy and compliance in credit operations.", image:"assets/team/sheena.jpg", loading:"lazy"},
-  {name:"Nakandi Sauda", title:"Finance Officer", desc:"Supports financial operations, including reporting, reconciliations, and compliance.", image:"assets/team/sauda.jpg", loading:"lazy"},
-  {name:"Namuyiga Sharon", title:"Assistant Finance Officer", desc:"Assists in day-to-day finance tasks, supporting budgeting and expenditure tracking.", image:"assets/team/sharon.jpg", loading:"lazy"},
-  {name:"Acayo Prisca", title:"Graduate Trainee, VSLA Project Coordinator", desc:"Supports VSLA activities, field operations, and capacity-building initiatives.", image:"assets/team/prisca.jpg", loading:"lazy"}
+  {name:"Gerald Otim", title:"CEO", desc:"Founder and CEO leading strategy, partnerships, and innovation in digital financial services.", image:"assets/team/ceo.jpg"},
+  {name:"Ambrose Mwaka", title:"Chief Technology Officer (CTO)", desc:"Leads technology strategy, architecture, and product innovation for scalable digital financial solutions.", image:"assets/team/cto.jpg"},
+  {name:"Agatha Katangaza", title:"Head of Operations", desc:"Oversees organizational operations and drives efficiency across teams and projects.", image:"assets/team/agatha.jpg"},
+  {name:"Ephrance Nalunga", title:"Finance Manager", desc:"Manages financial planning, reporting, budgeting, and compliance.", image:"assets/team/ephrance.jpg"},
+  {name:"Samuel Otim", title:"Product Manager", desc:"Leads product strategy and development, working with technology teams to deliver impactful digital financial solutions.", image:"assets/team/sam.jpg"},
+  {name:"Naoeme Atwiine", title:"Human Resource Manager", desc:"Leads HR operations, talent development, and organizational culture.", image:"assets/team/naoeme.jpg"},
+  {name:"Dikan Isaac", title:"VSLA Implementation Manager", desc:"Leads rollout and execution of VSLA digitalization projects, ensuring successful community adoption.", image:"assets/team/dikan.jpg"},
+  {name:"Linda Letaru", title:"Operations Manager (SACCOs/MFIs)", desc:"Oversees operational delivery for SACCOs and MFIs, ensuring smooth onboarding, support, and system performance.", image:"assets/team/linda.jpg"},
+  {name:"Sarah Ademun", title:"Communications & Partnerships Manager", desc:"Drives communication strategy, brand visibility, and partnership engagements to advance Ensibuuko's mission.", image:"assets/team/sarah.jpg"},
+  {name:"Steward Musinguzi", title:"Senior Software Developer", desc:"Develops and maintains key system features, ensuring high-quality code and platform performance.", image:"assets/team/steward.jpg"},
+  {name:"George Opuch", title:"DevOps Engineer", desc:"Manages infrastructure reliability, deployments, and system scalability across the technology stack.", image:"assets/team/opuch.jpg"},
+  {name:"Benard Charles Ndege", title:"Data Scientist", desc:"Manages analytics and insights generation, supporting decision-making and product optimization.", image:"assets/team/benard.jpg"},
+  {name:"Ebucu Jesse", title:"Junior Software Developer", desc:"Contributes to building and improving Ensibuuko's digital financial solutions, ensuring reliability and user-friendliness.", image:"assets/team/jesse.jpg"},
+  {name:"Engur Isaac", title:"Credit Manager", desc:"Isaac drives client growth, onboarding SACCOs and financial institutions with tailored demos and strategies that boost adoption. ", image:"assets/team/engur.jpg"},
+  {name:"Joan Amoding Enabu", title:"Credit Operations Supervisor", desc:"Oversees Ensibuuko's credit operations, ensuring efficient loan processing, compliance, and customer support.", image:"assets/team/joan.jpg"},
+  {name:"Adriko titus", title:"Senior Credit Officer", desc:"Naomi day-to-day excellence, from compliance with Bank of Uganda standards to optimizing workflows for efficiency. ", image:"assets/team/adriko.jpg"},
+  {name:"Anita Kisa Ansianju" ,title:"Credit Officer", desc:"credit officer West Nile subregion is a dedicated ,hardworking employee who takes the initiative to ensure communities embrace our digital platform and our target of financial inclusion is met.Anita holds a diploma in business studies (Accounting ). ", image:"assets/team/anita.jpg"},
+  {name:"Racho Mugoya", title:"Account Manager, Quick Loans", desc:"Manages the Quick Loans portfolio, supporting partners in loan performance and service delivery.", image:"assets/team/racho.jpg"},
+  {name:"Joseph Mayeku", title:"Account Manager", desc:"Manages key partner accounts, ensuring effective service delivery and product adoption.", image:"assets/team/joseph.jpg"},
+  {name:"Sheena Kemigisha", title:"Credit Administrator", desc:"Supports loan administration, ensuring accuracy and compliance in credit operations.", image:"assets/team/sheena.jpg"},
+  {name:"Nakandi Sauda", title:"Finance Officer", desc:"Supports financial operations, including reporting, reconciliations, and compliance.", image:"assets/team/sauda.jpg"},
+  {name:"Namuyiga Sharon", title:"Assistant Finance Officer", desc:"Assists in day-to-day finance tasks, supporting budgeting and expenditure tracking.", image:"assets/team/sharon.jpg"},
+  {name:"Acayo Prisca", title:"Graduate Trainee, VSLA Project Coordinator", desc:"Supports VSLA activities, field operations, and capacity-building initiatives.", image:"assets/team/prisca.jpg"}
 ];
 
 let teamIndex = 0;
@@ -289,7 +289,7 @@ function initTeamSlider() {
     const initials = member.name.split(' ').map(n => n[0]).slice(0,2).join('');
     
     card.innerHTML = `
-      <img src="${member.image}" alt="${member.name}"  style="width:140px;height:140px;border-radius:50%;object-fit:cover;border:4px solid #E8FBEA;margin-bottom:1.5rem;" loading="lazy"
+      <img src="${member.image}" alt="${member.name}" style="width:140px;height:140px;border-radius:50%;object-fit:cover;border:4px solid #E8FBEA;margin-bottom:1.5rem;" 
            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
       <div style="width:140px;height:140px;border-radius:50%;background:#E8FBEA;display:none;align-items:center;justify-content:center;margin:0 auto 1.5rem;border:4px solid #E8FBEA;">
         <span style="font-size:2.5rem;font-weight:bold;color:#10B981;">${initials}</span>
