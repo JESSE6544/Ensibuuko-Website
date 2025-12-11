@@ -65,6 +65,7 @@
   --hero-emerald: linear-gradient(120deg, rgba(0, 212, 170, 0.16), rgba(16, 185, 129, 0.06));
   --hero-height-desktop: 85vh;
   --hero-height-mobile: 70vh;
+ 
   
 }
 
@@ -87,6 +88,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
 
 .container {
   max-width: var(--max-width);
@@ -519,6 +521,7 @@ footer {
     animation: none !important;
   }
 }
+
 
 .hero-flex {
   position: relative;
@@ -1244,6 +1247,8 @@ footer {
   grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
   gap: 2.5rem;
   padding: 0 1rem;
+  width: 100%;
+  min-height: 1px;
 }
 
 /* Individual partner card */
@@ -1264,8 +1269,10 @@ footer {
   max-width: 100%;
   object-fit: contain;
   filter: grayscale(100%);
-  opacity: 0.85;
   transition: filter .35s ease, opacity .35s ease;
+  font-family: initial !important;
+  display: block !important;
+  opacity: 1 !important;
 }
 
 /* Hover polish */
@@ -1283,12 +1290,16 @@ footer {
 @media (max-width: 600px) {
   .partners-grid {
     gap: 1.25rem;      
-      grid-template-columns: repeat(2, 1fr); /* ✅ always 2 per row */           
+   grid-template-columns: repeat(2, 1fr);    
+   width: 100%;
+   min-height: 1px;    
+   display: grid;    
   }
 
   .partner-card {
     padding: 1rem;
     min-height: 90px;
+    width: 100%;
   }
 
   .partner-card img {
@@ -1378,4 +1389,6 @@ footer {
     text-align: left;
   }
 }
+
+
 
