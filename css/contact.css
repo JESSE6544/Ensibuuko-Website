@@ -233,9 +233,9 @@ h2.section-title{
 footer{
   background:var(--navy);
   color:white;
-  padding:2rem 1rem;
-  margin-top:4rem;
-  text-align:center;
+  padding:2rem 0;
+  margin-top:2rem;
+  width: 100%;
 }
 
 .footer-grid{
@@ -244,6 +244,8 @@ footer{
   gap:1rem;
   max-width:var(--max-width);
   margin:0 auto;
+  padding: 0 1rem;
+  box-sizing: border-box;
 }
 
 .footer-logo {
@@ -252,9 +254,11 @@ footer{
   background: none;
   padding: 0;
   border-radius: 0;
-  object-fit: contain;
-  display: block;
-  margin: 0 auto 1rem;  
+  object-fit: contain;  
+}
+
+.section {
+  padding: 4rem 1rem;
 }
 
 /* Responsive Design - Contact Page Specific */
@@ -288,12 +292,12 @@ footer{
 
   .footer-grid{
     grid-template-columns:repeat(1,1fr);
-    gap:2rem;
+    
   }
 }
 
  .footer-logo {
-    width: 140px;       /* same mobile scale as navbar */
+    width: 140px;       
   }
 
 /* MAP SECTION */
