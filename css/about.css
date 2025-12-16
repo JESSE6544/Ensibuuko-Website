@@ -115,18 +115,6 @@ body{
   font-weight:700;
 }
 
-/* Approach card icons */
-.approach-icon{
-  background:#E8FBEA;
-  width:58px;
-  height:58px;
-  border-radius:50%;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  margin-bottom:1rem;
-}
-
 /* Team group photo */
 .team-photo{
   max-width:900px;

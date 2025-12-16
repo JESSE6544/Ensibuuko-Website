@@ -403,3 +403,56 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
+/* =========================
+   PRODUCTS CARDS SLIDER
+========================= */
+(function () {
+  const slider = document.querySelector('.products-slider');
+  if (!slider) return;
+
+  const track = slider.querySelector('.products-track');
+  const slides = track.children;
+  const prevBtn = slider.querySelector('.slider-btn.prev');
+  const nextBtn = slider.querySelector('.slider-btn.next');
+
+  let index = 0;
+  let slideWidth = slider.offsetWidth;
+  let autoTimer;
+
+  function updateSlider() {
+    track.style.transform = `translateX(-${index * slideWidth}px)`;
+  }
+
+  function nextSlide() {
+    index = (index + 1) % slides.length;
+    updateSlider();
+  }
+
+  function prevSlide() {
+    index = (index - 1 + slides.length) % slides.length;
+    updateSlider();
+  }
+
+  nextBtn.addEventListener('click', nextSlide);
+  prevBtn.addEventListener('click', prevSlide);
+
+  function startAuto() {
+    autoTimer = setInterval(nextSlide, 5000);
+  }
+
+  function stopAuto() {
+    clearInterval(autoTimer);
+  }
+
+  slider.addEventListener('mouseenter', stopAuto);
+  slider.addEventListener('mouseleave', startAuto);
+
+  window.addEventListener('resize', () => {
+    slideWidth = slider.offsetWidth;
+    updateSlider();
+  });
+
+  startAuto();
+  updateSlider();
+})();
+

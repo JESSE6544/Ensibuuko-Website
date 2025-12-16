@@ -1,57 +1,4 @@
-/* Gilroy Font Definitions */
-@font-face {
-  font-family: 'Gilroy';
-  src: url('../fonts/gilroy-light.woff2') format('woff2'),
-       url('../fonts/gilroy-light.woff') format('woff');
-  font-weight: 300;
-  font-style: normal;
-  font-display: swap;
-}
 
-@font-face {
-  font-family: 'Gilroy';
-  src: url('../fonts/gilroy-regular.woff2') format('woff2'),
-       url('../fonts/gilroy-regular.woff') format('woff');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Gilroy';
-  src: url('../fonts/gilroy-regularitalic.woff2') format('woff2'),
-       url('../fonts/gilroy-regularitalic.woff') format('woff');
-  font-weight: 400;
-  font-style: italic;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Gilroy';
-  src: url('../fonts/gilroy-medium.woff2') format('woff2'),
-       url('../fonts/gilroy-medium.woff') format('woff');
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Gilroy';
-  src: url('../fonts/gilroy-bold.woff2') format('woff2'),
-       url('../fonts/gilroy-bold.woff') format('woff');
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Gilroy';
-  src: url('../fonts/gilroy-extrabold.woff2') format('woff2'),
-       url('../fonts/gilroy-extrabold.woff') format('woff');
-  font-weight: 800;
-  font-style: normal;
-  font-display: swap;
-}
 
 :root {
   --navy: #000239;
@@ -65,7 +12,7 @@
   --hero-emerald: linear-gradient(120deg, rgba(0, 212, 170, 0.16), rgba(16, 185, 129, 0.06));
   --hero-height-desktop: 85vh;
   --hero-height-mobile: 70vh;
- 
+  --font-primary: inherits, "Helvetica Neue", Helvetica, sans-serif;
   
 }
 
@@ -1388,6 +1335,74 @@ footer {
     width: 100%;
     text-align: left;
   }
+}
+
+/* =========================
+   PRODUCTS SLIDER
+========================= */
+
+.products-slider {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+.products-track {
+  display: flex;
+  transition: transform 0.8s ease;
+  width: 100%;
+}
+
+.products-track .product-card {
+  flex: 0 0 100%;           
+  display: flex;
+  justify-content: center; 
+}
+
+.products-track .product-image {
+  height: 170px;
+  overflow: hidden;
+  border-radius: 16px;
+}
+
+.products-track .product-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (max-width: 768px) {
+  .products-track .product-card {
+    max-width: 92%;
+  }
+
+  .products-track .product-image {
+    height: 150px;
+  }
+}
+
+/* Controls */
+.slider-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #ffffff;
+  border: none;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  font-size: 1.8rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+  z-index: 5;
+}
+
+.slider-btn.prev { left: 12px; }
+.slider-btn.next { right: 12px; }
+
+.slider-btn:hover {
+  transform: translateY(-50%) scale(1.08);
 }
 
 
