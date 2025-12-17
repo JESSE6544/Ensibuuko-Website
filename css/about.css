@@ -115,79 +115,6 @@ body{
   font-weight:700;
 }
 
-/* Team group photo */
-.team-photo{
-  max-width:900px;
-  margin:2.5rem auto;
-  width:100%;
-}
-
-.team-photo img{
-  width:100%;
-  border-radius:18px;
-  box-shadow:0 4px 16px rgba(0,0,0,0.1);
-  object-fit:cover;
-  max-height:420px;
-}
-
-/* Team slider wrapper */
-.team-slider{
-  position:relative;
-  overflow:hidden;
-  width:100%;
-  max-width:600px;
-  margin:0 auto;
-}
-
-/* Team track for card sliding */
-.team-track{
-  display:flex;
-  transition:transform 0.6s ease;
-  width:100%;
-  margin:0;
-  padding:0;
-}
-
-/* Team nav buttons */
-.team-nav-btn{
-  position:absolute;
-  top:50%;
-  background:var(--accent-2);
-  border:none;
-  color:white;
-  padding:0.8rem 1rem;
-  border-radius:50%;
-  cursor:pointer;
-  z-index:10;
-  font-size:1.2rem;
-  width:45px;
-  height:45px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  box-shadow:0 2px 8px rgba(0,0,0,0.2);
-  transition:transform 0.2s ease;
-  transform:translateY(-50%);
-}
-
-.team-nav-btn:hover{
-  transform:scale(1.05) translateY(-50%);
-}
-
-.team-nav-btn#team-prev{
-  left:10px;
-}
-
-.team-nav-btn#team-next{
-  right:10px;
-}
-
-/* Team card styling */
-.team-card{
-  flex:0 0 100%;
-  width:100%;
-}
-
 /* CTA link styling */
 .cta-link{
   background:var(--accent-2);
@@ -278,44 +205,6 @@ footer{
     padding:1.5rem;
   }
   
-  .team-slider{
-    max-width:100%;
-    width:100%;
-  }
-  
-  .team-track{
-    flex-direction:row;
-  }
-  
-  .team-card{
-    padding:1.5rem !important;
-  }
-  
-  .team-nav-btn{
-    width:40px;
-    height:40px;
-    padding:0;
-    font-size:1rem;
-    top:50%;
-    transform:translateY(-50%);
-  }
-  
-  .team-nav-btn:hover{
-    transform:scale(1.05) translateY(-50%);
-  }
-  
-  .team-nav-btn#team-prev{
-    left:5px;
-  }
-  
-  .team-nav-btn#team-next{
-    right:5px;
-  }
-  
-  .team-dots{
-    margin-top:1rem;
-  }
-  
   .cta-section{
     margin-top:3rem;
     padding:1rem;
@@ -353,5 +242,78 @@ footer{
 .hero--about .hero-sub-big {
   max-width: 620px;
 }
+
+/* =========================
+   TEAM PORTRAIT CARDS
+========================= */
+
+.team-slider{
+  max-width:1200px;
+  width: 1;
+  margin:0 auto;
+}
+
+.team-track{
+  display:flex;
+  flex-wrap:wrap;              /* allow multiple rows */
+  gap:2rem;
+  justify-content:center;      /* center cards horizontally */
+}
+
+
+/* Individual card */
+.team-card{
+  background:#ffffff;
+  border-radius:16px;
+  box-shadow:0 6px 16px rgba(0,0,0,0.08);
+  padding:1.5rem;
+  text-align:center;
+
+  width:260px;          
+  flex: 0 0 auto;    /* prevent stretching */
+}
+
+
+/* Portrait image */
+.team-card img{
+  width:60%;
+  height:180px;                 /* portrait height */
+  object-fit:cover;
+  border-radius:0;              /* remove circle */
+  margin:0 auto;              /* center image */
+  border:none;
+}
+
+/* Text spacing */
+.team-card h3{
+  font-size:1.1rem;
+  font-weight:700;
+  color:#0A1A3A;
+  margin:1rem 0 0.25rem;
+}
+
+/* =========================
+   CEO CARD PRIORITY
+========================= */
+
+.team-track.team-ceo-first{
+  display:flex;
+  flex-wrap:wrap;
+  gap:2rem;
+  justify-content:center;
+}
+
+.team-ceo{
+  order:-1;                 /* move to top */
+  width:100%;               /* full row */
+  max-width:320px;          /* prevent over-stretching */
+  margin:0 auto;            /* center it */
+}
+
+
+
+
+
+
 
 
