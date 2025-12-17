@@ -31,13 +31,13 @@
     <!-- Navigation links -->
     <a href="index.html">Home</a>
     <div class="nav-dropdown">
-      <a class="dropdown-toggle">Products</a>
+      <a class="dropdown-toggle">Platforms</a>
       <div class="dropdown-menu">
         <a href="chomoka.html">Savings Groups Platform</a>
         <a href="mobis.html">Microfinance Platform</a>
-        <a href="lending.html">Mobile Lending Services</a>
       </div>
    </div>
+    <a href="lending.html">Lending</a>
     <a href="about.html">About</a>
     <a href="contact.html">Contact</a>
   </nav>
@@ -69,104 +69,91 @@
 
 
 <!-- Products Showcase Section with Tabs (Option B cleaned) -->
-<section class="products-cards-section section">
-  <!-- Intro -->
-  <div class="section-inner" style="text-align:center;margin-bottom:3rem;">
-    <h2 class="section-title">Simple technological solutions for businesses and their customers.</h2>
-    <p class="lead" style="max-width:820px;margin:0 auto;">
+
+<div style="width:100%;background:#ffffff;padding:4rem 1rem;display:flex;flex-direction:column;align-items:center;">
+
+  <!-- Intro Statement -->
+  <div style="max-width:900px;text-align:center;margin-bottom:3rem;">
+    <h2 style="font-size:2rem;font-weight:800;color:#0A1A3A;margin-bottom:1rem;">
+      Simple technological solutions for businesses and their customers.
+    </h2>
+    <p style="color:#475569;line-height:1.65;font-size:1.05rem;max-width:800px;margin:0 auto;">
       We build digital financial tools designed for institutions and groups
       serving underserved communities across Africa.
     </p>
   </div>
 
-  <!-- Cards grid -->
-<div class="section-inner products-slider">
-    <div class="products-track">
-
-    <!-- SACCOs -->
-    <div class="product-card slide-left">
-
-  <div class="product-image">
-    <img src="assets/images/00017.jpg" alt="SACCO digital platform">
+  <!-- Tabs -->
+  <div style="display:flex;gap:3rem;margin-bottom:2rem;font-weight:700;font-size:1.1rem;">
+    <div class="product-tab active-tab" onclick="switchTab('chomoka')">SACCOs</div>
+    <div class="product-tab" onclick="switchTab('mobis')">Lending Companies</div>
+    <div class="product-tab" onclick="switchTab('lending')">Savings Groups</div>
   </div>
 
-  <div class="card-content">
-    <h3>SACCOs</h3>
-    <p>
-      A Savings and Credit Cooperative Society (SACCOs) is a democratic
-      and member-owned cooperative organization that mobilizes funds from
-      members by offering loans and providing savings. We are working to
-      make SACCOs better and bigger.
-    </p>
-  </div>
+  <!-- Cards Wrapper -->
+  <div style="width:100%;display:flex;justify-content:center;">
 
-</div>
-
-
-    <!-- Lending companies -->
-   <div class="product-card reveal-card">
-
-
-  <div class="product-image">
-    <img src="assets/images/00008.jpg" alt="Lending companies">
-  </div>
-
-  <div class="card-content">
-    <h3>Lending Companies</h3>
-    <p>
-      Lending companies are privately owned, regulated financial entities
-      that offer micro and medium size loans and sometimes accept deposits
-      from the public. We introduce lending companies to a new way of doing
-      business, digitally.
-    </p>
-  </div>
-
-</div>
-
-
-    <!-- Savings Groups -->
-    <div class="product-card slide-left">
-
-  <div class="product-image">
-    <img src="assets/images/00024.jpg" alt="Savings groups">
-  </div>
-
-  <div class="card-content">
-    <h3>Savings Groups</h3>
-    <p>
-      Savings groups, also known as Village Savings and Loan Associations
-      (VSLAs), are community circles that meet regularly to collect savings
-      and manage small loans. We help these groups become more secure and
-      prosperous by transitioning to cashless and paperless systems.
-    </p>
-  </div>
-
-</div>
-
-
-    <!-- Investment Clubs -->
-   <div class="product-card slide-right">
-
-  <div class="product-image">
-    <img src="assets/images/00012.jpg" alt="Investment clubs">
-  </div>
-
-  <div class="card-content">
-    <h3>Investment Clubs</h3>
-    <p>
-      Investment clubs are mutual groups of fewer than 100 people who pool
-      funds with a common goal to invest in ventures they deem profitable.
-      We are introducing these clubs to modern tools they will love.
-    </p>
-
-  </div>
- </div>
+    <!-- SACCOs Card -->
+    <div id="tab-chomoka" class="product-card" style="max-width:1100px;width:100%;display:flex;gap:2rem;align-items:center;background:#FFFFFF;padding:2rem;border-radius:20px;box-shadow:0 4px 14px rgba(0,0,0,0.08);">
+      <div style="flex:1;">
+        <h3 style="color:#0A1A3A;margin-bottom:0.5rem;font-size:1.3rem;font-weight:700;">SACCOs</h3>
+        <h2 style="color:#0A1A3A;font-size:2rem;font-weight:800;margin-bottom:1rem;">
+          Digitally Empowering Member-Owned Cooperatives
+        </h2>
+        <p style="color:#475569;line-height:1.6;margin-bottom:1.5rem;">
+          Savings and Credit Cooperative Societies (SACCOs) are democratic,
+          member-owned institutions that mobilize savings and offer credit.
+          We help SACCOs grow stronger by digitizing operations, improving
+          transparency, and expanding access to financial services.
+        </p>
+      </div>
+      <div style="flex:1;display:flex;justify-content:center;">
+        <img src="assets/images/00017.jpg" alt="SACCO digital platform" style="width:100%;max-width:420px;border-radius:18px;box-shadow:0 6px 16px rgba(0,0,0,0.12);object-fit:cover;">
+      </div>
     </div>
 
-   <button class="slider-btn prev" aria-label="Previous">‹</button>
-  <button class="slider-btn next" aria-label="Next">›</button>
+    <!-- Lending Companies Card -->
+    <div id="tab-mobis" class="product-card" style="display:none;max-width:1100px;width:100%;gap:2rem;align-items:center;background:#FFFFFF;padding:2rem;border-radius:20px;box-shadow:0 4px 14px rgba(0,0,0,0.08);">
+      <div style="flex:1;">
+        <h3 style="color:#0A1A3A;margin-bottom:0.5rem;font-size:1.3rem;font-weight:700;">Lending Companies</h3>
+        <h2 style="color:#0A1A3A;font-size:2rem;font-weight:800;margin-bottom:1rem;">
+          A New Way of Doing Lending — Digitally
+        </h2>
+        <p style="color:#475569;line-height:1.6;margin-bottom:1.5rem;">
+          Lending companies provide micro and medium-sized loans to individuals
+          and businesses. We introduce these institutions to secure, scalable
+          digital platforms that streamline loan management, reporting,
+          and customer engagement.
+        </p>
+      </div>
+      <div style="flex:1;display:flex;justify-content:center;">
+        <img src="assets/images/00008.jpg" alt="Lending companies" style="width:100%;max-width:480px;border-radius:18px;box-shadow:0 6px 16px rgba(0,0,0,0.12);object-fit:cover;">
+      </div>
+    </div>
+
+    <!-- Savings Groups Card -->
+    <div id="tab-lending" class="product-card" style="display:none;max-width:1100px;width:100%;gap:2rem;align-items:center;background:#FFFFFF;padding:2rem;border-radius:20px;box-shadow:0 4px 14px rgba(0,0,0,0.08);">
+      <div style="flex:1;">
+        <h3 style="color:#0A1A3A;margin-bottom:0.5rem;font-size:1.3rem;font-weight:700;">Savings Groups</h3>
+        <h2 style="color:#0A1A3A;font-size:2rem;font-weight:800;margin-bottom:1rem;">
+          Secure and Prosperous Community Savings
+        </h2>
+        <p style="color:#475569;line-height:1.6;margin-bottom:1.5rem;">
+          Savings Groups, also known as Village Savings and Loan Associations
+          (VSLAs), are community-based financial circles. We help these groups
+          transition from cash-based systems to secure, cashless, and
+          paperless digital tools that promote accountability and growth.
+        </p>
+      </div>
+      <div style="flex:1;display:flex;justify-content:center;">
+        <img src="assets/images/00024.jpg" alt="Savings groups" style="width:100%;max-width:420px;border-radius:18px;box-shadow:0 6px 16px rgba(0,0,0,0.12);object-fit:cover;">
+      </div>
+    </div>
+
+  </div>
 </div>
-</section>
+
+
 
 <!-- Impact Metrics Section -->
 <section class="section africa-map-section reveal">
@@ -339,7 +326,7 @@
       </ul>
 
       <button class="btn primary" style="padding:0.9rem 2rem;margin-top:1rem;border-radius:12px;">
-        <a href="contact.html">Learn more</a>
+        <a href="contact.html">Learn more </a>
       </button>
     </div>
 
