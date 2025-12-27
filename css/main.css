@@ -51,6 +51,16 @@ header {
   border-bottom: 2px solid rgba(255, 255, 255, 0.06);
 }
 
+header {
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+/* hidden state */
+header.nav-hidden {
+  transform: translateY(-100%);
+  box-shadow: none;
+
+}
 
 .nav {
   display: flex;
@@ -1088,17 +1098,16 @@ footer {
 .flag-card {
   background: #ffffff;
   border-radius: 999px;
-  padding: 0.6rem 0.9rem;
+  padding: 1.1rem 1.6rem;              /* bigger pill */
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 10px 26px rgba(0,0,0,0.12);
+  box-shadow: 0 14px 34px rgba(0,0,0,0.14);
   transition: transform .3s ease, box-shadow .3s ease;
 }
 
-/* flag image */
 .flag-card img {
-  height: 22px;
+  height: 36px;                        /* bigger flag */
   width: auto;
   display: block;
 }
@@ -1111,8 +1120,12 @@ footer {
 
 /* mobile sizing */
 @media (max-width: 600px) {
+  .flag-card {
+    padding: 0.9rem 1.2rem;
+  }
+
   .flag-card img {
-    height: 20px;
+    height: 28px;
   }
 }
 

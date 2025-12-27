@@ -456,3 +456,20 @@ document.addEventListener("DOMContentLoaded", () => {
   updateSlider();
 })();
 
+let lastScrollY = window.scrollY;
+const header = document.querySelector('header');
+
+window.addEventListener('scroll', () => {
+  const currentScrollY = window.scrollY;
+
+  // Scroll down → hide
+  if (currentScrollY > lastScrollY && currentScrollY > 80) {
+    header.classList.add('nav-hidden');
+  } 
+  // Scroll up → show
+  else {
+    header.classList.remove('nav-hidden');
+  }
+
+  lastScrollY = currentScrollY;
+});

@@ -81,6 +81,24 @@ body{
   font-weight:700;
 }
 
+
+.approach-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 14px;
+  background: #ffffff; /* soft green background */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.approach-icon img {
+  width: 28px;
+  height: 28px;
+  display: block;
+}
+
 /* Vision/Mission Cards */
 .vision-mission-grid{
   display:grid;
