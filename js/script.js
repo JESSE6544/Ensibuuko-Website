@@ -86,14 +86,12 @@
       });
     }
   })();
-  // ✅ SINGLE SOURCE: Mobile Products Dropdown
+  // ✅ SINGLE SOURCE: Products Dropdown (mobile and desktop)
 (function(){
   const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
 
   dropdownToggles.forEach(toggle => {
     toggle.addEventListener('click', (e) => {
-      if (window.innerWidth > 768) return;
-
       e.preventDefault();
       e.stopPropagation();
 
@@ -102,22 +100,18 @@
 
       // Close other dropdowns
       document.querySelectorAll('.dropdown-menu').forEach(m => {
-        if (m !== menu) m.style.display = 'none';
+        if (m !== menu) m.classList.remove('open');
       });
 
-      menu.style.display = menu.style.display === 'block'
-        ? 'none'
-        : 'block';
+      menu.classList.toggle('open');
     });
   });
 
   // Close dropdown when clicking outside
   document.addEventListener('click', () => {
-    if (window.innerWidth <= 768) {
-      document.querySelectorAll('.dropdown-menu').forEach(m => {
-        m.style.display = 'none';
-      });
-    }
+    document.querySelectorAll('.dropdown-menu').forEach(m => {
+      m.classList.remove('open');
+    });
   });
 })();
 

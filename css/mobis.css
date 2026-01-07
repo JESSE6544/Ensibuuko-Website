@@ -533,6 +533,7 @@ footer {
 .hero--mobis .hero-left {
   position: relative;
   z-index: 3;
+  color: #ffffff;
 }
 
 /* curve sits above background */

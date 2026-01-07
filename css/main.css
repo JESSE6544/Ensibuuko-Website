@@ -88,12 +88,18 @@ header.nav-hidden {
   text-decoration: none;
   color: #FFFFFF;
   font-weight: 600;
-  transition: opacity .25s ease;
-  margin-left: 1.5rem
+  transition: opacity .25s ease, color .25s ease;
+  margin-left: 1.5rem;
+  position: relative;
 }
 
 .nav a:hover {
-  opacity: 0.9
+  opacity: 0.9;
+  color: var(--accent);
+}
+
+.nav a.active {
+  color: var(--accent);
 }
 
 /* Dropdown */
@@ -108,6 +114,13 @@ header.nav-hidden {
   font-weight: 600;
   padding: 0.25rem 0.5rem;
   cursor: pointer;
+  position: relative;
+  transition: color .25s ease;
+}
+
+.dropdown-toggle:hover,
+.dropdown-toggle.active {
+  color: var(--accent);
 }
 
 .dropdown-menu {
@@ -135,11 +148,9 @@ header.nav-hidden {
   border-bottom: none;
 }
 
-@media (min-width: 769px) {
-  .nav-dropdown:hover .dropdown-menu {
-    display: flex;
-    flex-direction: column;
-  }
+.dropdown-menu.open {
+  display: flex;
+  flex-direction: column;
 }
 
 @media (max-width: 768px) {
@@ -317,7 +328,8 @@ header.nav-hidden {
   background: #fff;
   padding: 1.5rem;
   border-radius: 12px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06)
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+  color: #ffffff;
 }
 
 /* Newsletter */
@@ -564,7 +576,7 @@ footer {
 
 .btn.primary {
   background: var(--accent);
-  color: #04202a
+  color: #ffffff
 }
 
 .btn.ghost {

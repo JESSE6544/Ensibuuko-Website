@@ -1,6 +1,5 @@
  :root {
    --navy: #161d77;
-   --accent:  #54b749;;
    --accent-2: #161d77;
    --bg: #e5e9ff;
    --muted: #F8FAFC;
@@ -674,7 +673,7 @@
 /* ===== CHOMOKA BUTTON STYLE ===== */
 .hero--chomoka .btn.primary {
   background: #54b749;        /* deep blue */
-  color: #161d77;
+  color: #ffffff;
   padding: 0.95rem 2.2rem;
   border-radius: 14px;
   font-weight: 800;
