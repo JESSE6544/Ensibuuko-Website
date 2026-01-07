@@ -68,6 +68,7 @@
 .eligible-text {
     flex:1;
     min-width:300px;
+    text-align: center;
 }
 
 .eligible-text h2 {
@@ -106,6 +107,8 @@ body {
   background: #eeeeee;
 }
 
+@media (max-width:768px) {
+
     .lending-hero {
         text-align:center;
         justify-content:center;
@@ -116,13 +119,35 @@ body {
     }
 
     .eligible-container {
-        text-align:center;
+        flex-direction: column;
+        text-align: center;
+        gap: 2rem;
+        max-width: 100%;
+        padding: 1.5rem;
+    }
+
+    .eligible-image {
+        max-width: 100%;
+        min-width: auto;
+        height: auto;
+    }
+
+    .eligible-text {
+        text-align: center;
+    }
+
+    .eligible-text h2 {
+        font-size: 2rem;
     }
 
     .eligible-text ul {
-        text-align:left;
-        margin-left:20%;
+        text-align: left;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 300px;
+        font-size: 1rem;
     }
+}
 
 
 /* =========================

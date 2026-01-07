@@ -460,6 +460,11 @@ footer {
     gap: 0.6rem;
   }
 
+  .product-tab {
+    padding: 0.4rem 0.8rem;
+    font-size: 1rem;
+  }
+
   .footer-grid {
     grid-template-columns: repeat(1, 1fr)
   }
@@ -829,33 +834,6 @@ footer {
   }
 }
 
-
-/* Africa Map Section */
-.africa-map-section {
-  padding: 4rem 1rem;
-  background: #f9fafb;
-}
-
-.africa-map-wrapper {
-  max-width: 900px;
-  margin: 0 auto;
-}
-
-.image-map-container {
-  position: relative;
-  background: white;
-  border-radius: 16px;
-  padding: 2rem;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-}
-
-.africa-map-image {
-  width: 100%;
-  height: auto;
-  display: block;
-  opacity: 0.8;
-  filter: grayscale(20%);
-}
 
 /* Country markers */
 .country-marker {
@@ -1242,20 +1220,20 @@ footer {
     padding: 2.5rem 1rem;
   }
 
-  /* TEXT FIRST */
-  .products-track .card-content,
-  .products-cards-grid .card-content {
+  /* IMAGE ABOVE TEXT */
+  .products-track .product-image,
+  .products-cards-grid .product-image {
     order: 1;
     width: 100%;
+    height: 200px;
     margin-bottom: 1.5rem;
   }
 
-  /* IMAGE BELOW TEXT */
-  .products-track .product-image,
-  .products-cards-grid .product-image {
+  /* TEXT BELOW IMAGE */
+  .products-track .card-content,
+  .products-cards-grid .card-content {
     order: 2;
     width: 100%;
-    height: 200px;
   }
 }
 
