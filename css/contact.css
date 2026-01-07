@@ -2,7 +2,7 @@
       --navy: #000239;
       --accent: #00D4AA;
       --accent-2: #10B981;
-      --bg: #e6fbff;
+      --bg: #eeeeee;
       --muted: #F8FAFC;
       --text: #0B1220;
       --max-width:1200px;
@@ -204,7 +204,7 @@ h2.section-title{
 .option-icon{
   width:70px;
   height:70px;
-  background:#E8FBEA;
+  background:#ffffff;
   border-radius:50%;
   display:flex;
   align-items:center;
