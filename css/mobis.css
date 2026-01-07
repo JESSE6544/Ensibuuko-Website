@@ -280,7 +280,7 @@ footer {
 ========================= */
 
 .mobis-highlights {
-  background: #e6fbff;
+  background:#eeeeee;
   padding: 4rem 1rem;
 }
 
@@ -544,8 +544,11 @@ footer {
   z-index: 2;
 }
 
+/* Background images for sections */
+.split {
+  background:#eeeeee;
+}
 
-
-
-
-
+.mobis-feature {
+ background:#eeeeee;
+}

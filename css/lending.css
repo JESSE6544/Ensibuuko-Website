@@ -1,5 +1,5 @@
 .growth-section {
-    background:#F5F7FB;
+    background:#eeeeee;
     padding:80px 40px;
 }
 
@@ -27,7 +27,7 @@
 .loan-card {
     display:flex;
     gap:20px;
-    background:white;
+    background:#FFFFFF;
     padding:20px;
     border-radius:12px;
 }
@@ -44,7 +44,7 @@
 }
 
 .eligible-section {
-    background:#000239;
+    background:#eeeeee;
     padding:100px 40px;
     color:white;
 }
@@ -81,6 +81,7 @@
     font-size:1.2rem;
 }
 
+
 .inquire-btn {
     margin-top:25px;
     background:#2ECC71;
@@ -101,7 +102,9 @@ footer{
   text-align:center;
 } 
 
-@media (max-width:768px) {
+body {
+  background: #eeeeee;
+}
 
     .lending-hero {
         text-align:center;
@@ -120,7 +123,7 @@ footer{
         text-align:left;
         margin-left:20%;
     }
-}
+
 
 /* =========================
    GROWTH / LOANS SECTION
@@ -128,7 +131,7 @@ footer{
 
 .growth-section {
   padding: 5rem 1rem;
-  background: #f5f6f8;
+  background: #eeeeee;
 }
 
 /* top text */
@@ -148,7 +151,7 @@ footer{
 }
 
 .growth-container p {
-  color: #475569;
+  color: #0A1A3A;
   line-height: 1.7;
   margin: 0;
 }
