@@ -604,14 +604,14 @@ footer {
   bottom: 0;
   width: 55%;
   background-size: cover;
-  background-position: center right;
+  background-position: center left;
   background-repeat: no-repeat;
   z-index: 0;
 }
 
 /* HERO BACKGROUNDS PER PAGE */
 .hero--home .hero-bg {
-  background-image: url("../assets/images/00023.jpg");
+  background-image: url("../assets/images/GettyImages-865541244.jpg");
 }
 
 .hero--about .hero-bg {
@@ -649,16 +649,6 @@ footer {
       rgba(0, 2, 57, 0) 0%,
       rgba(0, 2, 57, 0.7) 40%,
       var(--navy) 100%);
-}
-
-/* CURVED BOTTOM */
-.hero-curve {
-  position: absolute;
-  bottom: -40px; 
-  left: 0;
-  width: 100%;
-  z-index: 2;
-  pointer-events: none;
 }
 
 /* =================================
@@ -770,7 +760,7 @@ footer {
   border-radius: 28px;
   overflow: hidden;
   background: #ffffff;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+ 
   opacity: 0;
   animation: floatAnimation 6s ease-in-out infinite alternate;
   transition: transform .4s ease, opacity .4s ease;

@@ -286,10 +286,11 @@ body {
   background-image:
     linear-gradient(
       to left,
-      rgba(0,2,57,0.45),
-      rgba(0,2,57,0.85)
+      rgba(0,2,57,0.45) 0%,
+      rgba(0,2,57,0.85) 50%,
+      #000239 0%,
     ),
-    url("../assets/images/ussd.jpg");  
+    url("../assets/images/lending-hero.jpg");  
 
   background-size: cover;
   background-position: center right;

@@ -243,23 +243,36 @@ footer{
    ABOUT PAGE HERO OVERRIDES
 ========================= */
 
-.hero--about .hero-bg {
-  background-image: url("../assets/team/team.jpg");
+.hero--about,
+.hero--mobis {
+  position: relative;
+  min-height: 85vh;
+  background-color: #000239; /* your solid navy background */
+  overflow: hidden;
 }
 
-/* keep text centered for about */
-.hero--about .hero-left {
-  max-width: 550px;      
-  text-align: left;          
-  align-items: flex-start;  
-  margin: 0;               
+/* HERO IMAGE (no gradient, full cover) */
+.hero--about .hero-bg,
+.hero--mobis .hero-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%; /* cover entire section width */
+  height: 100%;
+  background-image: url("../assets/images/WEBSITE 1920-789-04.jpg"); /* or your hero image */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 1; /* full image visibility */
+  z-index: 1;
 }
 
-
-.hero--about .hero-sub-big {
-  max-width: 620px;
+/* HERO TEXT LAYER */
+.hero--about .hero-left,
+.hero--mobis .hero-left {
+  position: relative;
+  z-index: 2; /* keep text above the image */
+  color: white; /* for good contrast on dark bg */
 }
-
 /* =========================
    TEAM PORTRAIT CARDS
 ========================= */

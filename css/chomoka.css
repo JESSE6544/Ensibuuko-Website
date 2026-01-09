@@ -106,6 +106,12 @@
    color: #fff
  }
 
+/* Icon background override for dark feature section: white circle with dark icon */
+.ch-features .icon {
+  background: #ffffff !important;
+  color: #161d77 !important;
+}
+
  .features-inner {
    display: grid;
    grid-template-columns: repeat(3, 1fr);
@@ -461,15 +467,23 @@
 
 /* Image */
 .side-card-image {
-  flex: 1;
-  max-width: 420px;
+  /* Reduce image container size by ~40% (420px -> 252px)
+     and match its background to the parent card for a seamless look. */
+  flex: 0 0 252px;
+  max-width: 252px;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 18px;
 }
 
 .side-card-image img {
+  max-width: 100%;
   width: 100%;
-  border-radius: 18px;
+  height: auto;
+  border-radius: 12px;
   object-fit: cover;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
 }
 
 /* Content */
@@ -502,7 +516,10 @@
   }
 
   .side-card-image {
-    max-width: 50%;
+    /* On small screens make the image full-width of its container when stacked */
+    max-width: 100%;
+    flex: 0 0 auto;
+    width: 100%;
   }
 
   .side-card-content {
@@ -598,7 +615,7 @@
 ========================= */
 
 .hero--chomoka .hero-bg {
-  background-image: url("../assets/images/chomokaphone2.jpg");
+  background-image: url("../assets/images/chomokaphone.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
